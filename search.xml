@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>hexo安装与搭建</title>
+      <link href="/2022/07/01/hexo-an-zhuang-yu-da-jian/"/>
+      <url>/2022/07/01/hexo-an-zhuang-yu-da-jian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><pre class=" language-shell"><code class="language-shell">npm install -g hexo-cli</code></pre><h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><pre class=" language-shell"><code class="language-shell">hexo init blog</code></pre><pre class=" language-shell"><code class="language-shell">cd blog</code></pre><pre class=" language-shell"><code class="language-shell">npm install</code></pre><h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><pre class=" language-shell"><code class="language-shell">hexo s</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker常用命令</title>
       <link href="/2022/07/01/docker-chang-yong-ming-ling/"/>
       <url>/2022/07/01/docker-chang-yong-ming-ling/</url>
