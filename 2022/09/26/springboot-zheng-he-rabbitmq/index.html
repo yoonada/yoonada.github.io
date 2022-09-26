@@ -369,7 +369,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    776
+                    825
                 </div>
                 
 
@@ -672,6 +672,26 @@
                     null<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="5、实际应用例子"><a href="#5、实际应用例子" class="headerlink" title="5、实际应用例子"></a>5、实际应用例子</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>
+<span class="token keyword">private</span> RabbitTemplate rabbitTemplate<span class="token punctuation">;</span>
+
+rabbitTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span>
+        RabbitMqExchangeEnum<span class="token punctuation">.</span>E_TOPIC_MAIL_SEND<span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        RabbitMqRoutingKeyEnum<span class="token punctuation">.</span>K_MAIL_SEND<span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        JSON<span class="token punctuation">.</span><span class="token function">toJSONString</span><span class="token punctuation">(</span>mailTask<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Slf4j</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token annotation punctuation">@RequiredArgsConstructor</span><span class="token punctuation">(</span>onConstructor <span class="token operator">=</span> <span class="token annotation punctuation">@__</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Autowired</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@RabbitListener</span><span class="token punctuation">(</span>queues <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Q_MAIL_SEND"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MailSendListener</span><span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@RabbitHandler</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">receive</span><span class="token punctuation">(</span>String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 处理监到消息逻辑xxx...</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
