@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>doris-1.1.3的编译</title>
+      <link href="/2022/10/26/doris-1-1-3-de-bian-yi/"/>
+      <url>/2022/10/26/doris-1-1-3-de-bian-yi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1、创建存放doris的目录"><a href="#1、创建存放doris的目录" class="headerlink" title="1、创建存放doris的目录"></a>1、创建存放doris的目录</h3><pre class=" language-shell"><code class="language-shell">/home/software/doris-1.1.3</code></pre><h3 id="2、下载doris-1-1-3源码"><a href="#2、下载doris-1-1-3源码" class="headerlink" title="2、下载doris-1.1.3源码"></a>2、下载doris-1.1.3源码</h3><pre class=" language-shell"><code class="language-shell">cd /home/software/doris-1.1.3</code></pre><pre class=" language-shell"><code class="language-shell">wget https://mirrors.tuna.tsinghua.edu.cn/apache/doris/1.1/1.1.3-rc02/apache-doris-1.1.3-src.tar.gz --no-check-certificate</code></pre><h3 id="3、解压"><a href="#3、解压" class="headerlink" title="3、解压"></a>3、解压</h3><pre class=" language-shell"><code class="language-shell">tar -zxvf apache-doris-1.1.3-src.tar.gz </code></pre><h3 id="4、通过docker拉取docker-1-1-3对应的镜像版本-目前是这个"><a href="#4、通过docker拉取docker-1-1-3对应的镜像版本-目前是这个" class="headerlink" title="4、通过docker拉取docker-1.1.3对应的镜像版本(目前是这个)"></a>4、通过docker拉取docker-1.1.3对应的镜像版本(目前是这个)</h3><p>具体查看 <a href="https://doris.apache.org/zh-CN/docs/dev/install/source-install/compilation">https://doris.apache.org/zh-CN/docs/dev/install/source-install/compilation</a></p><pre class=" language-shell"><code class="language-shell">docker pull apache/doris:build-env-ldb-toolchain-latest</code></pre><h3 id="5、做两个目录映射，一个是maven的repository目录，一个是doris源码目录，避免容器挂了之后之前下载或编译的内容丢失"><a href="#5、做两个目录映射，一个是maven的repository目录，一个是doris源码目录，避免容器挂了之后之前下载或编译的内容丢失" class="headerlink" title="5、做两个目录映射，一个是maven的repository目录，一个是doris源码目录，避免容器挂了之后之前下载或编译的内容丢失"></a>5、做两个目录映射，一个是maven的repository目录，一个是doris源码目录，避免容器挂了之后之前下载或编译的内容丢失</h3><pre class=" language-shell"><code class="language-shell">docker run -it -v /usr/local/maven/repository:/root/.m2 -v /home/software/doris-1.1.3/apache-doris-1.1.3-src:/root/doris-1.3.0/apache-doris-1.1.3-src apache/doris:build-env-ldb-toolchain-latest</code></pre><h3 id="6、查看java的版本，默认是jdk11"><a href="#6、查看java的版本，默认是jdk11" class="headerlink" title="6、查看java的版本，默认是jdk11"></a>6、查看java的版本，默认是jdk11</h3><pre class=" language-shell"><code class="language-shell">java -version</code></pre><h3 id="7、切换到jdk8吧"><a href="#7、切换到jdk8吧" class="headerlink" title="7、切换到jdk8吧"></a>7、切换到jdk8吧</h3><pre class=" language-shell"><code class="language-shell">alternatives --set java java-1.8.0-openjdk.x86_64</code></pre><pre class=" language-shell"><code class="language-shell">alternatives --set javac java-1.8.0-openjdk.x86_64</code></pre><pre class=" language-shell"><code class="language-shell">export JAVA_HOME=/usr/lib/jvm/java-1.8.0</code></pre><pre class=" language-shell"><code class="language-shell">java -version</code></pre><h3 id="8、进入到doris-1-1-3目录中"><a href="#8、进入到doris-1-1-3目录中" class="headerlink" title="8、进入到doris-1.1.3目录中"></a>8、进入到doris-1.1.3目录中</h3><pre class=" language-shell"><code class="language-shell">cd doris-1.3.0/apache-doris-1.1.3-src</code></pre><h3 id="9、开始编译-至少需要两个小时"><a href="#9、开始编译-至少需要两个小时" class="headerlink" title="9、开始编译 (至少需要两个小时)"></a>9、开始编译 (至少需要两个小时)</h3><pre class=" language-shell"><code class="language-shell">sh build.sh</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> doris </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringBoot整合RabbitMQ</title>
       <link href="/2022/09/26/springboot-zheng-he-rabbitmq/"/>
       <url>/2022/09/26/springboot-zheng-he-rabbitmq/</url>
@@ -86,9 +105,9 @@
             
             <tag> MyBatis-Plus </tag>
             
-            <tag> 多数据源 </tag>
-            
             <tag> 日常随笔 </tag>
+            
+            <tag> 多数据源 </tag>
             
         </tags>
       
@@ -373,9 +392,9 @@
       
         <tags>
             
-            <tag> docker </tag>
-            
             <tag> RabbitMQ </tag>
+            
+            <tag> docker </tag>
             
         </tags>
       
