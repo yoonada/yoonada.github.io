@@ -377,7 +377,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    696
+                    832
                 </div>
                 
 
@@ -438,7 +438,7 @@ slave_skip_errors=1062
 </code></pre>
 <h3 id="查看主库容器的ip并记录起来"><a href="#查看主库容器的ip并记录起来" class="headerlink" title="查看主库容器的ip并记录起来"></a>查看主库容器的ip并记录起来</h3><pre class=" language-shell"><code class="language-shell">docker inspect mysql-master
 </code></pre>
-<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011420971.png"></p>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011443887.png"></p>
 <h3 id="进入主库容器"><a href="#进入主库容器" class="headerlink" title="进入主库容器"></a>进入主库容器</h3><pre class=" language-shell"><code class="language-shell">docker exec -it mysql-master /bin/bash
 </code></pre>
 <h3 id="登录主库"><a href="#登录主库" class="headerlink" title="登录主库"></a>登录主库</h3><pre class=" language-shell"><code class="language-shell">mysql -uroot -proot123456 -P3308
@@ -447,7 +447,10 @@ slave_skip_errors=1062
 </code></pre>
 <pre class=" language-shell"><code class="language-shell">GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'slave'@'%';
 </code></pre>
-<h3 id="创建从库"><a href="#创建从库" class="headerlink" title="创建从库"></a>创建从库</h3><pre class=" language-shell"><code class="language-shell">mkdir -p /usr/local/mysql/mysql-slave01/{data,conf,log}
+<h3 id="在主机中查看主机当前状态"><a href="#在主机中查看主机当前状态" class="headerlink" title="在主机中查看主机当前状态"></a>在主机中查看主机当前状态</h3><pre class=" language-shell"><code class="language-shell">show master status;
+</code></pre>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011444213.png"></p>
+<h3 id="另起一个终端，创建从库"><a href="#另起一个终端，创建从库" class="headerlink" title="另起一个终端，创建从库"></a>另起一个终端，创建从库</h3><pre class=" language-shell"><code class="language-shell">mkdir -p /usr/local/mysql/mysql-slave01/{data,conf,log}
 </code></pre>
 <h3 id="创建从库配置文件my-cnf"><a href="#创建从库配置文件my-cnf" class="headerlink" title="创建从库配置文件my.cnf"></a>创建从库配置文件my.cnf</h3><pre class=" language-shell"><code class="language-shell">vim /usr/local/mysql/mysql-slave01/conf/my.cnf
 </code></pre>
@@ -483,11 +486,21 @@ read_only=1
 </code></pre>
 <h3 id="查看从库容器的ip并记录起来"><a href="#查看从库容器的ip并记录起来" class="headerlink" title="查看从库容器的ip并记录起来"></a>查看从库容器的ip并记录起来</h3><pre class=" language-shell"><code class="language-shell">docker inspect mysql-slave01
 </code></pre>
-<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011423559.jpg"></p>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011445629.png"></p>
 <h3 id="进入从库容器"><a href="#进入从库容器" class="headerlink" title="进入从库容器"></a>进入从库容器</h3><pre class=" language-shell"><code class="language-shell">docker exec -it mysql-slave01 /bin/bash
 </code></pre>
 <h3 id="登录从库"><a href="#登录从库" class="headerlink" title="登录从库"></a>登录从库</h3><pre class=" language-shell"><code class="language-shell">mysql -uroot -proot123456 -P3309
 </code></pre>
+<h3 id="修改一下命令对应的信息（在从库上配置主机信息）"><a href="#修改一下命令对应的信息（在从库上配置主机信息）" class="headerlink" title="修改一下命令对应的信息（在从库上配置主机信息）"></a>修改一下命令对应的信息（在从库上配置主机信息）</h3><pre class=" language-shell"><code class="language-shell">change master to master_host='172.17.0.7',master_user='slave',master_password='root123456',master_port=3306,master_log_file='mall-mysql-bin.000003',master_log_pos=617,master_connect_retry=30;
+</code></pre>
+<h3 id="查看从库状态"><a href="#查看从库状态" class="headerlink" title="查看从库状态"></a>查看从库状态</h3><pre class=" language-shell"><code class="language-shell">show slave status \G
+</code></pre>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011453134.png"><br>查看Slave_IO_Running，Slave_SQL_Running两个参数，当前为no，表示暂未开始主从同步。</p>
+<h3 id="从机开启主从同步-然后再次查看从机状态发现两个参数为true，即表示配置成功"><a href="#从机开启主从同步-然后再次查看从机状态发现两个参数为true，即表示配置成功" class="headerlink" title="从机开启主从同步,然后再次查看从机状态发现两个参数为true，即表示配置成功"></a>从机开启主从同步,然后再次查看从机状态发现两个参数为true，即表示配置成功</h3><pre class=" language-shell"><code class="language-shell">start slave;
+</code></pre>
+<pre class=" language-shell"><code class="language-shell">show slave status \G
+</code></pre>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011456238.png"></p>
 
                 
             </div>
@@ -1031,7 +1044,7 @@ read_only=1
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.4k</span>
+                        class="white-color">5.5k</span>
             
             
             
