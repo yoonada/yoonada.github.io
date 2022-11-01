@@ -5,9 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="docker搭建MySQL的主从复制, YoonaDa Blog">
-    <meta name="description" content="创建主库的数据目录mkdir -p /usr/local/mysql/mysql-master/{data,conf,log}
+    <meta name="description" content="docker拉取MySQL5.7的镜像docker pull mysql:5.7
 
-创建主库配置文件my.cnfvim /usr/local/mysql/mysql-master/conf/my">
+创建主库的数据目录mkdir -p /usr/local/mysql/mysql-master/{data,conf,log}
+
+创建主库配置文件my.cn">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -377,7 +379,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    832
+                    843
                 </div>
                 
 
@@ -404,7 +406,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="创建主库的数据目录"><a href="#创建主库的数据目录" class="headerlink" title="创建主库的数据目录"></a>创建主库的数据目录</h3><pre class=" language-shell"><code class="language-shell">mkdir -p /usr/local/mysql/mysql-master/{data,conf,log}
+                <h3 id="docker拉取MySQL5-7的镜像"><a href="#docker拉取MySQL5-7的镜像" class="headerlink" title="docker拉取MySQL5.7的镜像"></a>docker拉取MySQL5.7的镜像</h3><pre><code>docker pull mysql:5.7
+</code></pre>
+<h3 id="创建主库的数据目录"><a href="#创建主库的数据目录" class="headerlink" title="创建主库的数据目录"></a>创建主库的数据目录</h3><pre class=" language-shell"><code class="language-shell">mkdir -p /usr/local/mysql/mysql-master/{data,conf,log}
 </code></pre>
 <h3 id="创建主库配置文件my-cnf"><a href="#创建主库配置文件my-cnf" class="headerlink" title="创建主库配置文件my.cnf"></a>创建主库配置文件my.cnf</h3><pre class=" language-shell"><code class="language-shell">vim /usr/local/mysql/mysql-master/conf/my.cnf
 </code></pre>
@@ -1044,7 +1048,7 @@ read_only=1
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.5k</span>
+                        class="white-color">5.6k</span>
             
             
             
