@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>PicGo配置图床</title>
+      <link href="/2022/11/01/picgo-pei-zhi-tu-chuang/"/>
+      <url>/2022/11/01/picgo-pei-zhi-tu-chuang/</url>
+      
+        <content type="html"><![CDATA[<h3 id="官网下载最新正式版并安装"><a href="#官网下载最新正式版并安装" class="headerlink" title="官网下载最新正式版并安装"></a>官网下载最新正式版并安装</h3><p><a href="https://github.com/Molunerfinn/PicGo/releases">https://github.com/Molunerfinn/PicGo/releases</a></p><h3 id="配置阿里云OSS"><a href="#配置阿里云OSS" class="headerlink" title="配置阿里云OSS"></a>配置阿里云OSS</h3><p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011524621.png"></p><h3 id="Typora配置PicGo"><a href="#Typora配置PicGo" class="headerlink" title="Typora配置PicGo"></a>Typora配置PicGo</h3><p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011526352.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> PicGo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PicGo </tag>
+            
+            <tag> 图床 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker搭建MySQL的主从复制</title>
       <link href="/2022/10/31/docker-da-jian-mysql-de-zhu-cong-fu-zhi/"/>
       <url>/2022/10/31/docker-da-jian-mysql-de-zhu-cong-fu-zhi/</url>
@@ -138,9 +165,9 @@
             
             <tag> MyBatis-Plus </tag>
             
-            <tag> 多数据源 </tag>
-            
             <tag> 日常随笔 </tag>
+            
+            <tag> 多数据源 </tag>
             
         </tags>
       
@@ -425,9 +452,9 @@
       
         <tags>
             
-            <tag> RabbitMQ </tag>
-            
             <tag> docker </tag>
+            
+            <tag> RabbitMQ </tag>
             
         </tags>
       
