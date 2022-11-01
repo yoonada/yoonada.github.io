@@ -4,14 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="抽取基本枚举接口, YoonaDa Blog">
-    <meta name="description" content="抽取公共的枚举类，方便一些场景下的使用import cn.hutool.core.util.ObjectUtil;
+    <meta name="keywords" content="docker搭建MySQL的主从复制, YoonaDa Blog">
+    <meta name="description" content="创建主库的数据目录mkdir -p /usr/local/mysql/mysql-master/{data,conf,log}
 
-import java.util.EnumSet;
-import java.util.Objects;
-
-/**
- * @">
+创建主库配置文件my.cnfvim /usr/local/mysql/mysql-master/conf/my">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -25,7 +21,7 @@ import java.util.Objects;
 
     
 
-    <title>抽取基本枚举接口 | YoonaDa Blog</title>
+    <title>docker搭建MySQL的主从复制 | YoonaDa Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -210,12 +206,12 @@ import java.util.Objects;
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">抽取基本枚举接口</h1>
+                    <h1 class="description center-align post-title">docker搭建MySQL的主从复制</h1>
                 </div>
             </div>
         </div>
@@ -331,16 +327,16 @@ import java.util.Objects;
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/centos/">
+                                <span class="chip bg-color">centos</span>
                             </a>
                         
-                            <a href="/tags/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/">
-                                <span class="chip bg-color">日常随笔</span>
+                            <a href="/tags/docker/">
+                                <span class="chip bg-color">docker</span>
                             </a>
                         
-                            <a href="/tags/%E6%9E%9A%E4%B8%BE/">
-                                <span class="chip bg-color">枚举</span>
+                            <a href="/tags/MySQL/">
+                                <span class="chip bg-color">MySQL</span>
                             </a>
                         
                     </div>
@@ -351,12 +347,16 @@ import java.util.Objects;
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
+                            <a href="/categories/centos/" class="post-category">
+                                centos
                             </a>
                         
-                            <a href="/categories/Java/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" class="post-category">
-                                日常随笔
+                            <a href="/categories/centos/docker/" class="post-category">
+                                docker
+                            </a>
+                        
+                            <a href="/categories/centos/docker/MySQL/" class="post-category">
+                                MySQL
                             </a>
                         
                     </div>
@@ -368,7 +368,7 @@ import java.util.Objects;
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-23
+                    2022-10-31
                 </div>
                 
 
@@ -377,14 +377,14 @@ import java.util.Objects;
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    352
+                    696
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -404,131 +404,89 @@ import java.util.Objects;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="抽取公共的枚举类，方便一些场景下的使用"><a href="#抽取公共的枚举类，方便一些场景下的使用" class="headerlink" title="抽取公共的枚举类，方便一些场景下的使用"></a>抽取公共的枚举类，方便一些场景下的使用</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> cn<span class="token punctuation">.</span>hutool<span class="token punctuation">.</span>core<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ObjectUtil<span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>EnumSet<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Objects<span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">/**
- * @author YoonaDa
- * @email lintiaoda@suntang.com
- * @description: 基本枚举接口
- * @date 2022-04-24 09:26
- */</span>
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IBaseEnum</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * 获取值
-     *
-     * @return
-     */</span>
-    T <span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * 获取值的描述
-     *
-     * @return
-     */</span>
-    String <span class="token function">getDescription</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-    <span class="token comment" spellcheck="true">/**
-     * 根据值获取枚举
-     *
-     * @param value
-     * @param clazz
-     * @param &lt;E>
-     * @return
-     */</span>
-    <span class="token keyword">static</span> <span class="token operator">&lt;</span>E <span class="token keyword">extends</span> <span class="token class-name">Enum</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token operator">&amp;</span> IBaseEnum<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">>></span> E <span class="token function">getEnumByValue</span><span class="token punctuation">(</span>Object value<span class="token punctuation">,</span> Class<span class="token operator">&lt;</span>E<span class="token operator">></span> clazz<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Objects<span class="token punctuation">.</span><span class="token function">requireNonNull</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> EnumSet<span class="token punctuation">.</span><span class="token function">allOf</span><span class="token punctuation">(</span>clazz<span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>e <span class="token operator">-</span><span class="token operator">></span> ObjectUtil<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">findFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">orElse</span><span class="token punctuation">(</span>null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * 根据文本标签获取值
-     *
-     * @param value
-     * @param clazz
-     * @param &lt;E>
-     * @return
-     */</span>
-    <span class="token keyword">static</span> <span class="token operator">&lt;</span>E <span class="token keyword">extends</span> <span class="token class-name">Enum</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token operator">&amp;</span> IBaseEnum<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">>></span> String <span class="token function">getDescriptionByValue</span><span class="token punctuation">(</span>Object value<span class="token punctuation">,</span> Class<span class="token operator">&lt;</span>E<span class="token operator">></span> clazz<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Objects<span class="token punctuation">.</span><span class="token function">requireNonNull</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        E matchEnum <span class="token operator">=</span> EnumSet<span class="token punctuation">.</span><span class="token function">allOf</span><span class="token punctuation">(</span>clazz<span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>e <span class="token operator">-</span><span class="token operator">></span> ObjectUtil<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">findFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">orElse</span><span class="token punctuation">(</span>null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>Objects<span class="token punctuation">.</span><span class="token function">nonNull</span><span class="token punctuation">(</span>matchEnum<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> matchEnum<span class="token punctuation">.</span><span class="token function">getDescription</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-    <span class="token comment" spellcheck="true">/**
-     * 根据值获取描述
-     *
-     * @param description
-     * @param clazz
-     * @param &lt;E>
-     * @return
-     */</span>
-    <span class="token keyword">static</span> <span class="token operator">&lt;</span>E <span class="token keyword">extends</span> <span class="token class-name">Enum</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token operator">&amp;</span> IBaseEnum<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">>></span> Object <span class="token function">getValueByDescription</span><span class="token punctuation">(</span>String description<span class="token punctuation">,</span> Class<span class="token operator">&lt;</span>E<span class="token operator">></span> clazz<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Objects<span class="token punctuation">.</span><span class="token function">requireNonNull</span><span class="token punctuation">(</span>description<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        E matchEnum <span class="token operator">=</span> EnumSet<span class="token punctuation">.</span><span class="token function">allOf</span><span class="token punctuation">(</span>clazz<span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>e <span class="token operator">-</span><span class="token operator">></span> ObjectUtil<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getDescription</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> description<span class="token punctuation">)</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">findFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">orElse</span><span class="token punctuation">(</span>null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>Objects<span class="token punctuation">.</span><span class="token function">nonNull</span><span class="token punctuation">(</span>matchEnum<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> matchEnum<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
+                <h3 id="创建主库的数据目录"><a href="#创建主库的数据目录" class="headerlink" title="创建主库的数据目录"></a>创建主库的数据目录</h3><pre class=" language-shell"><code class="language-shell">mkdir -p /usr/local/mysql/mysql-master/{data,conf,log}
 </code></pre>
-<h4 id="实际使用如下"><a href="#实际使用如下" class="headerlink" title="实际使用如下"></a>实际使用如下</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> com<span class="token punctuation">.</span>yoona<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>common<span class="token punctuation">.</span>core<span class="token punctuation">.</span>base<span class="token punctuation">.</span>IBaseEnum<span class="token punctuation">;</span>
-<span class="token keyword">import</span> lombok<span class="token punctuation">.</span>AllArgsConstructor<span class="token punctuation">;</span>
-<span class="token keyword">import</span> lombok<span class="token punctuation">.</span>Getter<span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">/**
- * @author YoonaDa
- * @email lintiaoda@suntang.com
- * @description: 所有状态枚举
- * @date 2022-04-22 10:25
- */</span>
-<span class="token annotation punctuation">@Getter</span>
-<span class="token annotation punctuation">@AllArgsConstructor</span>
-<span class="token keyword">public</span> <span class="token keyword">enum</span> StatusEnum <span class="token keyword">implements</span> <span class="token class-name">IBaseEnum</span><span class="token operator">&lt;</span>Integer<span class="token operator">></span> <span class="token punctuation">{</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * 枚举所有状态
-     */</span>
-    <span class="token function">ENABLE</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"启用"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-
-    <span class="token function">DISABLED</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"禁用"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">final</span> Integer value<span class="token punctuation">;</span>
-    
-    <span class="token keyword">private</span> <span class="token keyword">final</span> String description<span class="token punctuation">;</span>
-
-<span class="token punctuation">}</span>
+<h3 id="创建主库配置文件my-cnf"><a href="#创建主库配置文件my-cnf" class="headerlink" title="创建主库配置文件my.cnf"></a>创建主库配置文件my.cnf</h3><pre class=" language-shell"><code class="language-shell">vim /usr/local/mysql/mysql-master/conf/my.cnf
 </code></pre>
-<pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">// 获取整个枚举</span>
-    StatusEnum statusEnum <span class="token operator">=</span> IBaseEnum<span class="token punctuation">.</span><span class="token function">getEnumByValue</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> StatusEnum<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-shell"><code class="language-shell">[mysqld]
+## 设置server_id，在同一局域网中需要唯一
+server_id=1
+## 指定不需要同步的数据库名称
+binlog-ignore-db=mysql
+## 指定需要同步的数据库
+## binlog-do-db=db1
+## 开启二进制日志功能
+log-bin=mall-mysql-bin
+## 数据库时区
+default-time_zone='+8:00'
+## 设置二进制日志使用内存大小（事务）
+binlog_cache_size=1M
+## 设置使用的二进制日志格式（row-行级别；statement=语句级别；mixed-混合级别）
+binlog_format=mixed
+## 二进制日志过期清理时间。默认为0，表示不自动清理
+expire_logs_days=7
+## 忽略主从复制中遇到的所有错误活指定的错误类型，避免slave端复制中断
+## 如：1062错误码代表主键重复；1032错误码代表主从数据库数据不一致
+slave_skip_errors=1062
 </code></pre>
-<pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">// 结果：启用</span>
-    String description <span class="token operator">=</span> IBaseEnum<span class="token punctuation">.</span><span class="token function">getDescriptionByValue</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> StatusEnum<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="启动主库"><a href="#启动主库" class="headerlink" title="启动主库"></a>启动主库</h3><pre class=" language-shell"><code class="language-shell">docker run -d -p 3308:3306 --privileged=true \
+-v /usr/local/mysql/mysql-master/log:/var/log/mysql  \
+-v /usr/local/mysql/mysql-master/data:/var/lib/mysql  \
+-v /usr/local/mysql/mysql-master/conf:/etc/mysql/conf.d \
+-e MYSQL_ROOT_PASSWORD=root123456 \
+--name mysql-master mysql:5.7
 </code></pre>
-<pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">// 结果：0</span>
-    Integer value <span class="token operator">=</span> <span class="token punctuation">(</span>Integer<span class="token punctuation">)</span> IBaseEnum<span class="token punctuation">.</span><span class="token function">getValueByDescription</span><span class="token punctuation">(</span><span class="token string">"启用"</span><span class="token punctuation">,</span> StatusEnum<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="查看主库容器的ip并记录起来"><a href="#查看主库容器的ip并记录起来" class="headerlink" title="查看主库容器的ip并记录起来"></a>查看主库容器的ip并记录起来</h3><pre class=" language-shell"><code class="language-shell">docker inspect mysql-master
+</code></pre>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011420971.png"></p>
+<h3 id="进入主库容器"><a href="#进入主库容器" class="headerlink" title="进入主库容器"></a>进入主库容器</h3><pre class=" language-shell"><code class="language-shell">docker exec -it mysql-master /bin/bash
+</code></pre>
+<h3 id="登录主库"><a href="#登录主库" class="headerlink" title="登录主库"></a>登录主库</h3><pre class=" language-shell"><code class="language-shell">mysql -uroot -proot123456 -P3308
+</code></pre>
+<h3 id="创建slave数据同步用户"><a href="#创建slave数据同步用户" class="headerlink" title="创建slave数据同步用户"></a>创建slave数据同步用户</h3><pre class=" language-shell"><code class="language-shell">CREATE USER 'slave'@'%' IDENTIFIED BY 'root123456';
+</code></pre>
+<pre class=" language-shell"><code class="language-shell">GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'slave'@'%';
+</code></pre>
+<h3 id="创建从库"><a href="#创建从库" class="headerlink" title="创建从库"></a>创建从库</h3><pre class=" language-shell"><code class="language-shell">mkdir -p /usr/local/mysql/mysql-slave01/{data,conf,log}
+</code></pre>
+<h3 id="创建从库配置文件my-cnf"><a href="#创建从库配置文件my-cnf" class="headerlink" title="创建从库配置文件my.cnf"></a>创建从库配置文件my.cnf</h3><pre class=" language-shell"><code class="language-shell">vim /usr/local/mysql/mysql-slave01/conf/my.cnf
+</code></pre>
+<pre class=" language-shell"><code class="language-shell">[mysqld]
+## 设置server_id，同一局域网中需要唯一
+server_id=2
+## 指定不需要同步的数据库
+binlog-ignore-db=mysql
+## 开启二进制日志功能，以备slave作为其它数据库实例的Master时使用
+log-bin=mall-mysql-slave1-bin
+## 设置二进制日志使用内存大小（事务）
+binlog_cache_size=1M
+## 设置使用的二进制日志格式
+binlog_format=mixed
+## 二进制日志过期清理时间，默认为0，代表不自动清理
+expire_logs_days=7
+## 忽略主从复制中遇到的所有错误活指定的错误类型，避免slave端复制中断   
+## 如：1062错误码代表主键重复；1032错误码代表主从数据库数据不一致
+slave_skip_errors=1062
+## relay_log配置中继日志
+relay_log=mall-mysql-relay-bin
+## log_slave_updates表示slave将复制事件写进自己的二进制日志
+log_slave_updates=1
+## slave设置为只读权限（具有super权限的用户除外）
+read_only=1
+</code></pre>
+<h3 id="启动从库"><a href="#启动从库" class="headerlink" title="启动从库"></a>启动从库</h3><pre class=" language-shell"><code class="language-shell">docker run -d -p 3309:3306 --privileged=true \
+-v /usr/local/mysql/mysql-slave01/log:/var/log/mysql  \
+-v /usr/local/mysql/mysql-slave01/data:/var/lib/mysql  \
+-v /usr/local/mysql/mysql-slave01/conf:/etc/mysql/conf.d \
+-e MYSQL_ROOT_PASSWORD=root123456 \
+--name mysql-slave01 mysql:5.7
+</code></pre>
+<h3 id="查看从库容器的ip并记录起来"><a href="#查看从库容器的ip并记录起来" class="headerlink" title="查看从库容器的ip并记录起来"></a>查看从库容器的ip并记录起来</h3><pre class=" language-shell"><code class="language-shell">docker inspect mysql-slave01
+</code></pre>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011423559.jpg"></p>
+<h3 id="进入从库容器"><a href="#进入从库容器" class="headerlink" title="进入从库容器"></a>进入从库容器</h3><pre class=" language-shell"><code class="language-shell">docker exec -it mysql-slave01 /bin/bash
+</code></pre>
+<h3 id="登录从库"><a href="#登录从库" class="headerlink" title="登录从库"></a>登录从库</h3><pre class=" language-shell"><code class="language-shell">mysql -uroot -proot123456 -P3309
 </code></pre>
 
                 
@@ -556,7 +514,7 @@ import java.util.Objects;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.yoonada.cn/2022/09/23/chou-qu-ji-ben-mei-ju-jie-kou/">https://blog.yoonada.cn/2022/09/23/chou-qu-ji-ben-mei-ju-jie-kou/</a>
+                    <a href="https://blog.yoonada.cn/2022/10/31/docker-da-jian-mysql-de-zhu-cong-fu-zhi/">https://blog.yoonada.cn/2022/10/31/docker-da-jian-mysql-de-zhu-cong-fu-zhi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -594,16 +552,16 @@ import java.util.Objects;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/centos/">
+                                    <span class="chip bg-color">centos</span>
                                 </a>
                             
-                                <a href="/tags/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/">
-                                    <span class="chip bg-color">日常随笔</span>
+                                <a href="/tags/docker/">
+                                    <span class="chip bg-color">docker</span>
                                 </a>
                             
-                                <a href="/tags/%E6%9E%9A%E4%B8%BE/">
-                                    <span class="chip bg-color">枚举</span>
+                                <a href="/tags/MySQL/">
+                                    <span class="chip bg-color">MySQL</span>
                                 </a>
                             
                         </div>
@@ -777,17 +735,18 @@ import java.util.Objects;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/09/23/quan-ju-yi-chang-chu-li-lei/">
+                <a href="/2022/10/31/docker-da-jian-mysql-de-zhu-cong-fu-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="全局异常处理类">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="docker搭建MySQL的主从复制">
                         
-                        <span class="card-title">全局异常处理类</span>
+                        <span class="card-title">docker搭建MySQL的主从复制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -797,38 +756,43 @@ import java.util.Objects;
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/centos/" class="post-category">
+                                    centos
                                 </a>
                             
-                            <a href="/categories/Java/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" class="post-category">
-                                    日常随笔
+                            <a href="/categories/centos/docker/" class="post-category">
+                                    docker
+                                </a>
+                            
+                            <a href="/categories/centos/docker/MySQL/" class="post-category">
+                                    MySQL
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/centos/">
+                        <span class="chip bg-color">centos</span>
                     </a>
                     
-                    <a href="/tags/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">日常随笔</span>
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
-                    <a href="/tags/%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8/">
-                        <span class="chip bg-color">全局异常</span>
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>
@@ -842,13 +806,13 @@ import java.util.Objects;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/09/21/frp-shi-xian-xu-ni-ji-centos-de-nei-wang-chuan-tou/">
+                <a href="/2022/10/26/doris-1-1-3-de-bian-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="frp实现虚拟机centos的内网穿透">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="doris-1.1.3的编译">
                         
-                        <span class="card-title">frp实现虚拟机centos的内网穿透</span>
+                        <span class="card-title">doris-1.1.3的编译</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -859,24 +823,12 @@ import java.util.Objects;
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-26
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/centos/" class="post-category">
-                                    centos
-                                </a>
-                            
-                            <a href="/categories/centos/ssh/" class="post-category">
-                                    ssh
-                                </a>
-                            
-                            <a href="/categories/centos/ssh/frp/" class="post-category">
-                                    frp
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            YoonaDa
                             
                         </span>
                     </div>
@@ -884,16 +836,8 @@ import java.util.Objects;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/centos/">
-                        <span class="chip bg-color">centos</span>
-                    </a>
-                    
-                    <a href="/tags/ssh/">
-                        <span class="chip bg-color">ssh</span>
-                    </a>
-                    
-                    <a href="/tags/frp/">
-                        <span class="chip bg-color">frp</span>
+                    <a href="/tags/doris/">
+                        <span class="chip bg-color">doris</span>
                     </a>
                     
                 </div>

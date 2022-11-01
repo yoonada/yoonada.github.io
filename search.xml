@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>docker搭建MySQL的主从复制</title>
+      <link href="/2022/10/31/docker-da-jian-mysql-de-zhu-cong-fu-zhi/"/>
+      <url>/2022/10/31/docker-da-jian-mysql-de-zhu-cong-fu-zhi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="创建主库的数据目录"><a href="#创建主库的数据目录" class="headerlink" title="创建主库的数据目录"></a>创建主库的数据目录</h3><pre class=" language-shell"><code class="language-shell">mkdir -p /usr/local/mysql/mysql-master/{data,conf,log}</code></pre><h3 id="创建主库配置文件my-cnf"><a href="#创建主库配置文件my-cnf" class="headerlink" title="创建主库配置文件my.cnf"></a>创建主库配置文件my.cnf</h3><pre class=" language-shell"><code class="language-shell">vim /usr/local/mysql/mysql-master/conf/my.cnf</code></pre><pre class=" language-shell"><code class="language-shell">[mysqld]## 设置server_id，在同一局域网中需要唯一server_id=1## 指定不需要同步的数据库名称binlog-ignore-db=mysql## 指定需要同步的数据库## binlog-do-db=db1## 开启二进制日志功能log-bin=mall-mysql-bin## 数据库时区default-time_zone='+8:00'## 设置二进制日志使用内存大小（事务）binlog_cache_size=1M## 设置使用的二进制日志格式（row-行级别；statement=语句级别；mixed-混合级别）binlog_format=mixed## 二进制日志过期清理时间。默认为0，表示不自动清理expire_logs_days=7## 忽略主从复制中遇到的所有错误活指定的错误类型，避免slave端复制中断## 如：1062错误码代表主键重复；1032错误码代表主从数据库数据不一致slave_skip_errors=1062</code></pre><h3 id="启动主库"><a href="#启动主库" class="headerlink" title="启动主库"></a>启动主库</h3><pre class=" language-shell"><code class="language-shell">docker run -d -p 3308:3306 --privileged=true \-v /usr/local/mysql/mysql-master/log:/var/log/mysql  \-v /usr/local/mysql/mysql-master/data:/var/lib/mysql  \-v /usr/local/mysql/mysql-master/conf:/etc/mysql/conf.d \-e MYSQL_ROOT_PASSWORD=root123456 \--name mysql-master mysql:5.7</code></pre><h3 id="查看主库容器的ip并记录起来"><a href="#查看主库容器的ip并记录起来" class="headerlink" title="查看主库容器的ip并记录起来"></a>查看主库容器的ip并记录起来</h3><pre class=" language-shell"><code class="language-shell">docker inspect mysql-master</code></pre><p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011420971.png"></p><h3 id="进入主库容器"><a href="#进入主库容器" class="headerlink" title="进入主库容器"></a>进入主库容器</h3><pre class=" language-shell"><code class="language-shell">docker exec -it mysql-master /bin/bash</code></pre><h3 id="登录主库"><a href="#登录主库" class="headerlink" title="登录主库"></a>登录主库</h3><pre class=" language-shell"><code class="language-shell">mysql -uroot -proot123456 -P3308</code></pre><h3 id="创建slave数据同步用户"><a href="#创建slave数据同步用户" class="headerlink" title="创建slave数据同步用户"></a>创建slave数据同步用户</h3><pre class=" language-shell"><code class="language-shell">CREATE USER 'slave'@'%' IDENTIFIED BY 'root123456';</code></pre><pre class=" language-shell"><code class="language-shell">GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'slave'@'%';</code></pre><h3 id="创建从库"><a href="#创建从库" class="headerlink" title="创建从库"></a>创建从库</h3><pre class=" language-shell"><code class="language-shell">mkdir -p /usr/local/mysql/mysql-slave01/{data,conf,log}</code></pre><h3 id="创建从库配置文件my-cnf"><a href="#创建从库配置文件my-cnf" class="headerlink" title="创建从库配置文件my.cnf"></a>创建从库配置文件my.cnf</h3><pre class=" language-shell"><code class="language-shell">vim /usr/local/mysql/mysql-slave01/conf/my.cnf</code></pre><pre class=" language-shell"><code class="language-shell">[mysqld]## 设置server_id，同一局域网中需要唯一server_id=2## 指定不需要同步的数据库binlog-ignore-db=mysql## 开启二进制日志功能，以备slave作为其它数据库实例的Master时使用log-bin=mall-mysql-slave1-bin## 设置二进制日志使用内存大小（事务）binlog_cache_size=1M## 设置使用的二进制日志格式binlog_format=mixed## 二进制日志过期清理时间，默认为0，代表不自动清理expire_logs_days=7## 忽略主从复制中遇到的所有错误活指定的错误类型，避免slave端复制中断   ## 如：1062错误码代表主键重复；1032错误码代表主从数据库数据不一致slave_skip_errors=1062## relay_log配置中继日志relay_log=mall-mysql-relay-bin## log_slave_updates表示slave将复制事件写进自己的二进制日志log_slave_updates=1## slave设置为只读权限（具有super权限的用户除外）read_only=1</code></pre><h3 id="启动从库"><a href="#启动从库" class="headerlink" title="启动从库"></a>启动从库</h3><pre class=" language-shell"><code class="language-shell">docker run -d -p 3309:3306 --privileged=true \-v /usr/local/mysql/mysql-slave01/log:/var/log/mysql  \-v /usr/local/mysql/mysql-slave01/data:/var/lib/mysql  \-v /usr/local/mysql/mysql-slave01/conf:/etc/mysql/conf.d \-e MYSQL_ROOT_PASSWORD=root123456 \--name mysql-slave01 mysql:5.7</code></pre><h3 id="查看从库容器的ip并记录起来"><a href="#查看从库容器的ip并记录起来" class="headerlink" title="查看从库容器的ip并记录起来"></a>查看从库容器的ip并记录起来</h3><pre class=" language-shell"><code class="language-shell">docker inspect mysql-slave01</code></pre><p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211011423559.jpg"></p><h3 id="进入从库容器"><a href="#进入从库容器" class="headerlink" title="进入从库容器"></a>进入从库容器</h3><pre class=" language-shell"><code class="language-shell">docker exec -it mysql-slave01 /bin/bash</code></pre><h3 id="登录从库"><a href="#登录从库" class="headerlink" title="登录从库"></a>登录从库</h3><pre class=" language-shell"><code class="language-shell">mysql -uroot -proot123456 -P3309</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> centos </category>
+          
+          <category> docker </category>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> centos </tag>
+            
+            <tag> docker </tag>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>doris-1.1.3的编译</title>
       <link href="/2022/10/26/doris-1-1-3-de-bian-yi/"/>
       <url>/2022/10/26/doris-1-1-3-de-bian-yi/</url>
@@ -105,9 +138,9 @@
             
             <tag> MyBatis-Plus </tag>
             
-            <tag> 日常随笔 </tag>
-            
             <tag> 多数据源 </tag>
+            
+            <tag> 日常随笔 </tag>
             
         </tags>
       
