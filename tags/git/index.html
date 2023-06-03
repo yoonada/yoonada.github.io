@@ -20,7 +20,7 @@
     
 
     <title>标签: git | YoonaDa Blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -109,6 +109,17 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -188,6 +199,17 @@
           
         </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
         
     </ul>
 </div>
@@ -207,30 +229,13 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                     
                 
             </div>
 
             <div class="description center-align">
                 
-                    <span id="subtitle"></span>
-                    <script src="/libs/typed/typed.js"></script>
-                    <script>
-                        var typed = new Typed("#subtitle", {
-                            strings: [
-                                
-                                "为天地立心\，为生民立命\，为往圣继绝学\，为万世开太平",
-                                
-                                "To ordain conscience for Heaven and Earth\, To secure life and fortune for the people\, To continue lost teachings for past sages\, To establish peace for all future generations.",
-                                
-                            ],
-                            startDelay: 300,
-                            typeSpeed: 100,
-                            loop: true,
-                            backSpeed: 80,
-                            showCursor: true
-                        });
-                    </script>
+                    
                 
             </div>
         </div>
@@ -239,7 +244,8 @@
 
 
     <script>
-        $('.bg-cover').css('background-image', 'url(/medias/banner/1.jpg)');
+        <!--$('.bg-cover').css('background-image', 'url(/medias/banner/9.jpg)');-->
+        $('.bg-cover').css('background-image', 'url(https://images.yoonada.cn/featureimages/0.jpg)');
     </script>
 
 
@@ -259,11 +265,38 @@
             <div class="tag-chips">
                 
                 
-                <a href="/tags/Java/" title="Java: 4">
+                <a href="/tags/Hadoop/" title="Hadoop: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Java" style="background-color: #F9EBEA;">Java
-                        <span class="tag-length">4</span>
+                            data-tagname="Hadoop" style="background-color: #F9EBEA;">Hadoop
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/centos/" title="centos: 12">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="centos" style="background-color: #F5EEF8;">centos
+                        <span class="tag-length">12</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%9B%86%E7%BE%A4/" title="集群: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="集群" style="background-color: #D5F5E3;">集群
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Java/" title="Java: 7">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Java" style="background-color: #E8F8F5;">Java
+                        <span class="tag-length">7</span>
                     </span>
                 </a>
                 
@@ -271,34 +304,7 @@
                 <a href="/tags/MyBatis-Plus/" title="MyBatis-Plus: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="MyBatis-Plus" style="background-color: #F5EEF8;">MyBatis-Plus
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" title="日常随笔: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="日常随笔" style="background-color: #D5F5E3;">日常随笔
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/centos/" title="centos: 9">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="centos" style="background-color: #E8F8F5;">centos
-                        <span class="tag-length">9</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/docker-compose/" title="docker-compose: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="docker-compose" style="background-color: #FEF9E7;">docker-compose
+                            data-tagname="MyBatis-Plus" style="background-color: #FEF9E7;">MyBatis-Plus
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -313,10 +319,37 @@
                 </a>
                 
                 
+                <a href="/tags/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" title="日常随笔: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="日常随笔" style="background-color: #82E0AA;">日常随笔
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/MySQL/" title="MySQL: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="MySQL" style="background-color: #D7BDE2;">MySQL
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%9D%A2%E8%AF%95/" title="面试: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="面试" style="background-color: #A3E4D7;">面试
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/PicGo/" title="PicGo: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="PicGo" style="background-color: #82E0AA;">PicGo
+                            data-tagname="PicGo" style="background-color: #85C1E9;">PicGo
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -325,8 +358,17 @@
                 <a href="/tags/%E5%9B%BE%E5%BA%8A/" title="图床: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="图床" style="background-color: #D7BDE2;">图床
+                            data-tagname="图床" style="background-color: #F8C471;">图床
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/redis/" title="redis: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="redis" style="background-color: #F9E79F;">redis
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -334,7 +376,7 @@
                 <a href="/tags/SpringBoot/" title="SpringBoot: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="SpringBoot" style="background-color: #A3E4D7;">SpringBoot
+                            data-tagname="SpringBoot" style="background-color: #F9E79F;">SpringBoot
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -343,35 +385,17 @@
                 <a href="/tags/RabbitMQ/" title="RabbitMQ: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="RabbitMQ" style="background-color: #85C1E9;">RabbitMQ
+                            data-tagname="RabbitMQ" style="background-color: #E8F8F5;">RabbitMQ
                         <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/jdk/" title="jdk: 1">
+                <a href="/tags/docker-compose/" title="docker-compose: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="jdk" style="background-color: #F8C471;">jdk
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/redis/" title="redis: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="redis" style="background-color: #F9E79F;">redis
+                            data-tagname="docker-compose" style="background-color: #85C1E9;">docker-compose
                         <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/maven/" title="maven: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="maven" style="background-color: #FEF9E7;">maven
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -385,11 +409,11 @@
                 </a>
                 
                 
-                <a href="/tags/%E5%91%BD%E4%BB%A4/" title="命令: 3">
+                <a href="/tags/jdk/" title="jdk: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="命令" style="background-color: #F8F9F9;">命令
-                        <span class="tag-length">3</span>
+                            data-tagname="jdk" style="background-color: #D7BDE2;">jdk
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -403,11 +427,29 @@
                 </a>
                 
                 
-                <a href="/tags/MySQL/" title="MySQL: 2">
+                <a href="/tags/maven/" title="maven: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="MySQL" style="background-color: #F9EBEA;">MySQL
-                        <span class="tag-length">2</span>
+                            data-tagname="maven" style="background-color: #FEF9E7;">maven
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%91%BD%E4%BB%A4/" title="命令: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="命令" style="background-color: #F8F9F9;">命令
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/k8s/" title="k8s: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="k8s" style="background-color: #D5F5E3;">k8s
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -466,10 +508,28 @@
                 </a>
                 
                 
-                <a href="/tags/%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8/" title="全局异常: 1">
+                <a href="/tags/window/" title="window: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="全局异常" style="background-color: #F9EBEA;">全局异常
+                            data-tagname="window" style="background-color: #F9EBEA;">window
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/mysql/" title="mysql: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="mysql" style="background-color: #F8C471;">mysql
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%9D%90%E6%A0%87%E7%B3%BB/" title="坐标系: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="坐标系" style="background-color: #82E0AA;">坐标系
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -493,6 +553,15 @@
                 </a>
                 
                 
+                <a href="/tags/%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8/" title="全局异常: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="全局异常" style="background-color: #F9EBEA;">全局异常
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/%E6%9E%9A%E4%B8%BE/" title="枚举: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -502,10 +571,37 @@
                 </a>
                 
                 
-                <a href="/tags/%E5%9D%90%E6%A0%87%E7%B3%BB/" title="坐标系: 1">
+                <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="坐标系" style="background-color: #82E0AA;">坐标系
+                            data-tagname="算法" style="background-color: #F9EBEA;">算法
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%8E%92%E5%BA%8F/" title="排序: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="排序" style="background-color: #FFF;">排序
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="数据结构" style="background-color: #F5EEF8;">数据结构
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="知识总结: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="知识总结" style="background-color: #F9EBEA;">知识总结
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -527,7 +623,7 @@
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ssh配置">
+                            <img src="https://images.yoonada.cn/featureimages/1.jpg" class="responsive-img" alt="ssh配置">
                             
                             <span class="card-title">ssh配置</span>
                         </div>
@@ -617,7 +713,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <a href="/about" target="_blank">YoonaDa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -625,7 +721,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">10.8k</span>
+                        class="white-color">38.8k</span>
             
             
             

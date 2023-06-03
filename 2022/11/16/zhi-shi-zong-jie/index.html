@@ -1,0 +1,2134 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="知识总结, YoonaDa Blog">
+    <meta name="description" content="Java基础JVM&amp;amp;JDK&amp;amp;JRE
+JDK（Java Development Kit）：Java开发工具包，提供了Java的开发环境和运行环境
+JRE（Java Runtime Environment）：Java运行时环境，">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>知识总结 | YoonaDa Blog</title>
+    <link rel="icon" type="image/png" href="/medias/logo.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+<!--                    -->
+<!--                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">-->
+<!--                    -->
+                    <span class="logo-span">YoonaDa Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">YoonaDa Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://images.yoonada.cn/featureimages/1.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">知识总结</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">知识总结</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="post-category">
+                                知识总结
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-11-16
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    20.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    73 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="JVM-amp-JDK-amp-JRE"><a href="#JVM-amp-JDK-amp-JRE" class="headerlink" title="JVM&amp;JDK&amp;JRE"></a>JVM&amp;JDK&amp;JRE</h3><ul>
+<li>JDK（Java Development Kit）：Java开发工具包，提供了Java的开发环境和运行环境</li>
+<li>JRE（Java Runtime Environment）：Java运行时环境，为Java运行提供所需的环境</li>
+<li>JVM：Java虚拟机</li>
+</ul>
+<p>具体来说 <strong>JDK 其实包含了 JRE</strong>，同时还包含了编译 java 源码的编译器 javac，还包含了很多 java 程序调试和分析的工具。简单来说：如果你需要运行 java 程序，只需安装 JRE 就可以了，如果你需要编写 java 程序，需要安装 JDK。</p>
+<h3 id="什么是字节码"><a href="#什么是字节码" class="headerlink" title="什么是字节码"></a>什么是字节码</h3><p>在 Java 中，JVM 可以理解的代码就叫做字节码（即扩展名为 <code>.class</code> 的文件）</p>
+<h3 id="Java和C-的区别"><a href="#Java和C-的区别" class="headerlink" title="Java和C++的区别"></a>Java和C++的区别</h3><ul>
+<li>Java不提供指针来直接访问内存，程序内存更加安全；</li>
+<li>Java的类是单继承，C++支持多重继承；</li>
+<li>Java有自动内存管理垃圾回收机制（GC），不需要程序员手动释放无用内存</li>
+</ul>
+<h3 id="continue、break和return的区别是什么"><a href="#continue、break和return的区别是什么" class="headerlink" title="continue、break和return的区别是什么"></a>continue、break和return的区别是什么</h3><ul>
+<li>continue：指跳出当前的这一次循环，继续下一次循环</li>
+<li>break：指跳出整个循环体，继续执行循环体下面的语句</li>
+<li>return：用于跳出所在方法，结束该方法的运行</li>
+</ul>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="成员变量和局部变量的区别？"><a href="#成员变量和局部变量的区别？" class="headerlink" title="成员变量和局部变量的区别？"></a>成员变量和局部变量的区别？</h4><h3 id="面向对象和面向过程的区别"><a href="#面向对象和面向过程的区别" class="headerlink" title="面向对象和面向过程的区别"></a>面向对象和面向过程的区别</h3><ul>
+<li><strong>面向过程</strong>：<strong>是分析解决问题的步骤</strong>，然后用函数把这些步骤一步一步地实现，然后在使用的时候一一调用则可。性能较高，所以单片机、嵌入式开发等一般采用面向过程开发</li>
+<li><strong>面向对象</strong>：是把构成问题的事务分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在<strong>解决整个问题的过程中所发生的行为</strong>。面向对象有<strong>封装、继承、多态</strong>的特性，所以易维护、易复用、易扩展。可以设计出低耦合的系统。 但是性能上来说，比面向过程要低。</li>
+</ul>
+<h3 id="重写（Override）和重载（Overload）的区别"><a href="#重写（Override）和重载（Overload）的区别" class="headerlink" title="重写（Override）和重载（Overload）的区别"></a>重写（Override）和重载（Overload）的区别</h3><h4 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h4><ul>
+<li>发生在父子类之间</li>
+<li><strong>方法名</strong>、<strong>参数列表</strong>、<strong>返回类型</strong>必须相同</li>
+<li>访问修饰符的限制一定要大于被重写方法的访问修饰符（public&gt;protected&gt;default&gt;private）</li>
+<li>重写方法一定不能排除新的检查异常或者比被重写方法声明更加宽泛的检查型异常</li>
+</ul>
+<h4 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h4><ul>
+<li>重载是一个类中多态性的一种表现</li>
+<li>重载要求同名方法的参数列表不同（参数类型、参数个数、参数顺序）</li>
+<li>重载的时候，返回值类型可以相同也可以不同</li>
+</ul>
+<h3 id="equals与-x3D-x3D-的区别"><a href="#equals与-x3D-x3D-的区别" class="headerlink" title="equals与==的区别"></a>equals与==的区别</h3><ul>
+<li>==比较的是两个对象的内存地址，即它们是否指向同一个对象。而equals()比较的是两个对象的内容是否相同，即它们是否具有相同的值</li>
+<li>对于基本数据类型（byte、short、int、long、float、double、char、boolean），==比较的是它们的值是否相等，而不是地址是否相等</li>
+<li>对于引用类型（对象），==比较的是它们在内存中的地址是否相同。而equals()默认使用Object类中的equals()方法，该方法是比较两个对象的地址是否相同，如果要实现对象内容比较，需要重写equals()方法</li>
+<li>== 是一个操作符，可以应用于任何两个变量，而equals()是一个方法，需要被调用</li>
+<li>==比equals效率更高，因为它不需要比较对象的内容，而只需要比较对象的地址</li>
+</ul>
+<p>综上，**== 比较的是两个对象的地址，而equals()比较的是两个对象的内容**。对于基本数据类型，== 比较的是它们的值是否相等。在使用时，需要根据具体的需求选择使用哪种比较方式。如果要比较两个对象的内容，应该使用equals()方法。如果要比较两个对象是否为同一个对象，则应该使用==操作符。</p>
+<h3 id="Java的四种引用，强弱软虚"><a href="#Java的四种引用，强弱软虚" class="headerlink" title="Java的四种引用，强弱软虚"></a>Java的四种引用，强弱软虚</h3><h4 id="强引用"><a href="#强引用" class="headerlink" title="强引用"></a>强引用</h4><p>强引用是我们平常使用最多的引用，<strong>强引用在程序内存不足（OOM）的时候也不会被回收</strong>，使用方式：</p>
+<pre class=" language-java"><code class="language-java">String str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"str"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="弱引用"><a href="#弱引用" class="headerlink" title="弱引用"></a>弱引用</h4><p>弱引用就是只要JVM垃圾回收器发现了它，就会将之回收，使用方式：</p>
+<pre class=" language-java"><code class="language-java">WeakReference<span class="token operator">&lt;</span>String<span class="token operator">></span> wrf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WeakReference</span><span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="软引用"><a href="#软引用" class="headerlink" title="软引用"></a>软引用</h4><p>软引用在程序内存不足时，会被回收，使用方式：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 注意：wrf这个引用也是强引用，它是指向SoftReference这个对象的，</span>
+<span class="token comment" spellcheck="true">// 这里的软引用指的是指向new String("str")的引用，也就是SoftReference类中T</span>
+SoftReference<span class="token operator">&lt;</span>String<span class="token operator">></span> wrf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SoftReference</span><span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"str"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="虚引用"><a href="#虚引用" class="headerlink" title="虚引用"></a>虚引用</h4><p>虚引用的回收机制跟弱引用差不多，但是它被回收之前，会被放入 ReferenceQueue 中。注意</p>
+<p>哦，其它引用是被JVM回收后才被传入 ReferenceQueue 中的。由于这个机制，所以虚引用大多</p>
+<p>被用于引用销毁前的处理工作。还有就是，虚引用创建的时候，必须带有 ReferenceQueue ，</p>
+<p>使用例子：</p>
+<pre class=" language-java"><code class="language-java">PhantomReference<span class="token operator">&lt;</span>String<span class="token operator">></span> prf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PhantomReference</span><span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"str"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token keyword">new</span> <span class="token class-name">ReferenceQueue</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="深拷贝和浅拷贝的区别"><a href="#深拷贝和浅拷贝的区别" class="headerlink" title="深拷贝和浅拷贝的区别"></a>深拷贝和浅拷贝的区别</h3><ul>
+<li>浅拷贝:被复制对象的所有变量都含有与原来的对象相同的值,而所有的对其他对象的引用仍然指</li>
+</ul>
+<p>向原来的对象.换言之,<strong>浅拷贝仅仅复制所考虑的对象,而不复制它所引用的对象</strong>。</p>
+<ul>
+<li>深拷贝:被复制对象的所有变量都含有与原来的对象相同的值.而那些引用其他对象的变量将指向</li>
+</ul>
+<p>被复制过的新对象.而不再是原有的那些被引用的对象.换言之.<strong>深拷贝把要复制的对象所引用的</strong></p>
+<p><strong>对象都复制了一遍</strong>。</p>
+<h3 id="Java创建对象的方式"><a href="#Java创建对象的方式" class="headerlink" title="Java创建对象的方式"></a>Java创建对象的方式</h3><ul>
+<li>new创建对象</li>
+<li>通过反射机制</li>
+<li>采用clone机制</li>
+<li>通过序列化机制</li>
+</ul>
+<h3 id="接口和抽象类的区别"><a href="#接口和抽象类的区别" class="headerlink" title="接口和抽象类的区别"></a>接口和抽象类的区别</h3><ul>
+<li>实现方式不同：接口定义了一组公共的方法，但没有提供实现。类实现接口时，必须实现接口中定义的所有方法。抽象类是一个具有一些抽象方法的类，它可以有一些具体方法的实现</li>
+<li>继承限制不同：一个类只能继承一个类（包含抽象类），但一个类能实现多个接口</li>
+<li>抽象类可以包含成员变量、构造方法、非抽象方法，而接口只能包含公共静态常量和公共抽象方法</li>
+<li>接口中的方法默认是公共的、抽象的和不可变的，而抽象类可以定义任意类型的方法</li>
+<li>接口可以在不影响类结构的情况下增加新方法，而抽象类的修改可能会影响已有子类的实现。</li>
+</ul>
+<h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><p>泛型，即“<strong>参数化类型</strong>”，顾名思义就是将类型由原来的具体的类型参数化</p>
+<h4 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h4><p>泛型的好处是在<strong>编译时检查类型安全</strong>，并且所有的强制转换都是自动和隐式的，提高代码的重用率</p>
+<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><p>反射是在运行状态中，对于任意一个类，都能知道这个类的属性和方法，对于任意一个对象，都能调用它的任意一个方法和属性。这种动态获取信息、动态调用方法的功能叫做Java语言的反射机制</p>
+<h4 id="哪里用到反射"><a href="#哪里用到反射" class="headerlink" title="哪里用到反射"></a>哪里用到反射</h4><p>像JDBC就是典型的反射</p>
+<pre class=" language-java"><code class="language-java">Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">'com.mysql.jdbc.Driver.class'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//加载MySQL的驱动类</span>
+</code></pre>
+<h4 id="反射的优缺点"><a href="#反射的优缺点" class="headerlink" title="反射的优缺点"></a>反射的优缺点</h4><ul>
+<li>优点：<strong>可以动态执行，在运行期间根据业务功能动态执行方法、访问属性，最大限度发挥了Java的灵活性。</strong></li>
+<li>缺点：对性能有影响</li>
+</ul>
+<h3 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h3><ul>
+<li>序列化：将对象转换为字节序列的过程</li>
+<li>反序列化：将存储在磁盘或网络节点上的字节序列恢复为对象的过程</li>
+</ul>
+<h3 id="final、finally、finalize的区别"><a href="#final、finally、finalize的区别" class="headerlink" title="final、finally、finalize的区别"></a>final、finally、finalize的区别</h3><ul>
+<li>final用于声明类、变量、方法，分别表示类不可以继承，方法不可以被重写，变量不可以被重写赋值</li>
+<li>finally一般作用在try-catch代码块中，表示总是执行。在处理异常的时候，通常我们将一定要执行的代码方法放入finally代码块中，表示不管是否出现异常，该代码块都会执行，一般用来存放一些关闭资源的代码。</li>
+<li>finalize是一个方法，属于gect类的一个方法，而Object类是所有类的父类，该方法一般由垃圾回收器来调用，当我们调用System的gc()方法的时候，由垃圾回收器调用finalize(),回收垃圾。</li>
+</ul>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h3 id="Java集合概述"><a href="#Java集合概述" class="headerlink" title="Java集合概述"></a>Java集合概述</h3><p>Java 集合， 也叫作容器，主要是由两大接口派生而来：一个是 <code>Collection</code>接口，主要用于存放单一元素；另一个是 <code>Map</code> 接口，主要用于存放键值对。对于<code>Collection</code> 接口，下面又有三个主要的子接口：<code>List</code>、<code>Set</code> 和 <code>Queue</code>。</p>
+<h3 id="说说List、Set、Queue、Map四者的区别"><a href="#说说List、Set、Queue、Map四者的区别" class="headerlink" title="说说List、Set、Queue、Map四者的区别"></a>说说List、Set、Queue、Map四者的区别</h3><ul>
+<li><code>List</code>(对付顺序的好帮手): 存储的元素是有序的、可重复的。</li>
+<li><code>Set</code>(注重独一无二的性质): 存储的元素是无序的、不可重复的。</li>
+<li><code>Queue</code>(实现排队功能的叫号机): 按特定的排队规则来确定先后顺序，存储的元素是有序的、可重复的。</li>
+<li><code>Map</code>(用 key 来搜索的专家): 使用键值对（key-value）存储，类似于数学上的函数 y=f(x)，”x” 代表 key，”y” 代表 value，key 是无序的、不可重复的，value 是无序的、可重复的，每个键最多映射到一个值。</li>
+</ul>
+<h3 id="集合框架底层数据结构总结"><a href="#集合框架底层数据结构总结" class="headerlink" title="集合框架底层数据结构总结"></a>集合框架底层数据结构总结</h3><h4 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h4><h5 id="List"><a href="#List" class="headerlink" title="List"></a>List</h5><ul>
+<li><code>ArrayList</code>： <code>Object[]</code> 数组</li>
+<li><code>Vector</code>：<code>Object[]</code> 数组</li>
+<li><code>LinkedList</code>： 双向链表（JDK1.6 之前为循环链表，JDK1.7 取消了循环）</li>
+</ul>
+<h5 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h5><ul>
+<li><code>HashSet</code>(无序，唯一): 基于 <code>HashMap</code> 实现的，底层采用 <code>HashMap</code> 来保存元素</li>
+<li><code>LinkedHashSet</code>: <code>LinkedHashSet</code> 是 <code>HashSet</code> 的子类，并且其内部是通过 <code>LinkedHashMap</code> 来实现的。有点类似于我们之前说的 <code>LinkedHashMap</code> 其内部是基于 <code>HashMap</code> 实现一样，不过还是有一点点区别的</li>
+<li><code>TreeSet</code>(有序，唯一): 红黑树(自平衡的排序二叉树)</li>
+</ul>
+<h5 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h5><ul>
+<li><code>PriorityQueue</code>: <code>Object[]</code> 数组来实现二叉堆</li>
+<li><code>ArrayQueue</code>: <code>Object[]</code> 数组 + 双指针</li>
+</ul>
+<h5 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h5><ul>
+<li><code>HashMap</code>： JDK1.8 之前 <code>HashMap</code> 由数组+链表组成的，数组是 <code>HashMap</code> 的主体，链表则是主要为了解决哈希冲突而存在的（“拉链法”解决冲突）。JDK1.8 以后在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树）时，将链表转化为红黑树，以减少搜索时间、</li>
+<li><code>LinkedHashMap</code>： <code>LinkedHashMap</code> 继承自 <code>HashMap</code>，所以它的底层仍然是基于拉链式散列结构即由数组和链表或红黑树组成。另外，<code>LinkedHashMap</code> 在上面结构的基础上，<strong>增加了一条双向链表，使得上面的结构可以保持键值对的插入顺序</strong>。同时通过对链表进行相应的操作，实现了访问顺序相关逻辑。</li>
+<li><code>Hashtable</code>： 数组+链表组成的，数组是 <code>Hashtable</code> 的主体，链表则是主要为了解决哈希冲突而存在的</li>
+<li><code>TreeMap</code>： 红黑树（自平衡的排序二叉树）</li>
+</ul>
+<h4 id="如何选用集合"><a href="#如何选用集合" class="headerlink" title="如何选用集合"></a>如何选用集合</h4><p>主要根据集合的特点来选用，比如我们需要根据键值获取到元素值时就选用 <code>Map</code> 接口下的集合，需要排序时选择 <code>TreeMap</code>,不需要排序时就选择 <code>HashMap</code>,需要保证线程安全就选用 <code>ConcurrentHashMap</code>。</p>
+<p>当我们只需要存放元素值时，就选择实现<code>Collection</code> 接口的集合，需要保证元素唯一时选择实现 <code>Set</code> 接口的集合比如 <code>TreeSet</code> 或 <code>HashSet</code>，不需要就选择实现 <code>List</code> 接口的比如 <code>ArrayList</code> 或 <code>LinkedList</code>，然后再根据实现这些接口的集合的特点来选用。</p>
+<h4 id="为什么要使用集合"><a href="#为什么要使用集合" class="headerlink" title="为什么要使用集合"></a>为什么要使用集合</h4><p>集合提高了数据存储的灵活性，Java 集合不仅可以用来存储不同类型不同数量的对象，还可以保存具有映射关系的数据。</p>
+<h3 id="Collection子接口之List"><a href="#Collection子接口之List" class="headerlink" title="Collection子接口之List"></a>Collection子接口之List</h3><h4 id="ArrayList、LinkedList和Vector的区别"><a href="#ArrayList、LinkedList和Vector的区别" class="headerlink" title="ArrayList、LinkedList和Vector的区别"></a>ArrayList、LinkedList和Vector的区别</h4><ul>
+<li><p>同步性：Vector是同步的，而ArrayList和LinkedList是非同步的。因此，多个线程可以同时访问ArrayList和LinkedList，但是在访问Vector时需要进行同步。</p>
+</li>
+<li><p>性能：ArrayList在随机访问时性能更好，而LinkedList在插入和删除时性能更好。这是因为ArrayList使用数组实现，因此随机访问时的时间复杂度为O(1)，但在插入和删除时需要移动数组中的元素，时间复杂度为O(n)；而LinkedList使用链表实现，插入和删除时只需要修改节点的指针，时间复杂度为O(1)，但随机访问时需要遍历链表，时间复杂度为O(n)。</p>
+</li>
+<li><p>容量增长：当集合的大小超过其容量时，ArrayList会自动增加其容量的一半，而Vector会将容量翻倍。LinkedList没有固定的容量。</p>
+</li>
+<li><p>迭代器：ArrayList和Vector使用ListIterator迭代器，而LinkedList使用Iterator迭代器。</p>
+</li>
+</ul>
+<p>综上所述，如果需要在单线程环境下进行随机访问操作，应该选择ArrayList；如果需要频繁插入和删除操作，应该选择LinkedList；如果需要在多线程环境下进行访问操作，应该选择Vector。</p>
+<h4 id="ArrayList的扩容机制"><a href="#ArrayList的扩容机制" class="headerlink" title="ArrayList的扩容机制"></a>ArrayList的扩容机制</h4><p>ArrayList默认的分配大小为10的容量，超过10，容器会以1.5倍扩容</p>
+<p><img src="https://docimg1.docs.qq.com/image/AgAABd5wzU2HID9cmExN4rO68Tb7DWcG.png?w=791&amp;h=285" alt="img"></p>
+<p><img src="https://docimg2.docs.qq.com/image/AgAABd5wzU2Fouc2W65MdZgHdT3rGoRD.png?w=689&amp;h=61" alt="img"></p>
+<p>ArrayList是Java中的一个动态数组类，其内部使用一个Object类型的数组来存储元素。当数组不够大来容纳更多的元素时，ArrayList会触发扩容机制，将原有的数组复制到一个更大的新数组中，然后将新元素添加到新数组的尾部。</p>
+<p>具体的<strong>扩容机制</strong>如下：</p>
+<ul>
+<li><p>当ArrayList需要添加元素时，首先判断当前数组是否已满。如果数组未满，则直接将元素添加到数组尾部；如果数组已满，则触发扩容机制。</p>
+</li>
+<li><p>扩容机制会根据当前数组的大小和增量计算出新数组的大小，并创建一个新的更大的数组。</p>
+</li>
+<li><p>将原有数组中的元素复制到新数组中，同时将新元素添加到新数组的尾部。</p>
+</li>
+<li><p>将ArrayList的内部数组引用指向新数组，原有数组会被垃圾回收器回收。</p>
+</li>
+</ul>
+<p>默认情况下，ArrayList的增量为原来大小的一半，即每次扩容会将数组大小增加50%。可以通过构造函数指定增量大小，或通过set方法设置ArrayList的capacity属性来控制扩容时的数组增量。</p>
+<h3 id="Collection子接口之Set"><a href="#Collection子接口之Set" class="headerlink" title="Collection子接口之Set"></a>Collection子接口之Set</h3><h4 id="比较HashSet、LinkedHashSet、TreeSet三者的异同"><a href="#比较HashSet、LinkedHashSet、TreeSet三者的异同" class="headerlink" title="比较HashSet、LinkedHashSet、TreeSet三者的异同"></a>比较HashSet、LinkedHashSet、TreeSet三者的异同</h4><ul>
+<li><code>HashSet</code>、<code>LinkedHashSet</code> 和 <code>TreeSet</code> 都是 <code>Set</code> 接口的实现类，都能保证元素唯一，都不是线程安全的。</li>
+<li>主要区别在于底层数据结构不同。<code>HashSet</code> 的底层数据结构是<strong>哈希表</strong>（基于 <code>HashMap</code> 实现）。<code>LinkedHashSet</code> 的底层数据结构是<strong>链表</strong>和<strong>哈希表</strong>，元素的插入和取出顺序满足 FIFO。<code>TreeSet</code> 底层数据结构是<strong>红黑树</strong>，元素是有序的，排序的方式有自然排序和定制排序。</li>
+</ul>
+<h3 id="Collection-子接口之-Queue"><a href="#Collection-子接口之-Queue" class="headerlink" title="Collection 子接口之 Queue"></a>Collection 子接口之 Queue</h3><h3 id="Map-1"><a href="#Map-1" class="headerlink" title="Map"></a>Map</h3><h4 id="HashMap和Hashtable的区别"><a href="#HashMap和Hashtable的区别" class="headerlink" title="HashMap和Hashtable的区别"></a>HashMap和Hashtable的区别</h4><ul>
+<li><p><strong>线程是否安全：</strong><code>HashMap</code> 是非线程安全的，<code>Hashtable</code> 是线程安全的,因为 <code>Hashtable</code> 内部的方法基本都经过<code>synchronized</code> 修饰。（如果你要保证线程安全的话就使用 <code>ConcurrentHashMap</code> 吧！）；</p>
+</li>
+<li><p><strong>效率：</strong> 因为线程安全的问题，<code>HashMap</code> 要比 <code>Hashtable</code> 效率高一点。另外，<code>Hashtable</code> 基本被淘汰，不要在代码中使用它；</p>
+</li>
+<li><p><strong>对 Null key 和 Null value 的支持：</strong><code>HashMap</code> 可以存储 null 的 key 和 value，但 null 作为键只能有一个，null 作为值可以有多个；Hashtable 不允许有 null 键和 null 值，否则会抛出 <code>NullPointerException</code>。</p>
+</li>
+<li><p><strong>初始容量大小和每次扩充容量大小的不同 ：</strong></p>
+<ul>
+<li><p>① 创建时如果不指定容量初始值，<code>Hashtable</code> 默认的初始大小为 11，之后每次扩充，容量变为原来的 2n+1。<code>HashMap</code> 默认的初始化大小为 16。之后每次扩充，容量变为原来的 2 倍。</p>
+</li>
+<li><p>② 创建时如果给定了容量初始值，那么 <code>Hashtable</code> 会直接使用你给定的大小，而 <code>HashMap</code> 会将其扩充为 2 的幂次方大小。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>底层数据结构：</strong> JDK1.8 以后的 <code>HashMap</code> 在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）时，将链表转化为红黑树（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树），以减少搜索时间。<code>Hashtable</code> 没有这样的机制。</p>
+</li>
+</ul>
+<h4 id="HashMap和HashSet的区别"><a href="#HashMap和HashSet的区别" class="headerlink" title="HashMap和HashSet的区别"></a>HashMap和HashSet的区别</h4><p><code>HashSet</code> 底层就是基于 <code>HashMap</code> 实现的。</p>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202303022202724.png" alt="image-20230302220228672"></p>
+<h4 id="HashMap和TreeMap的区别"><a href="#HashMap和TreeMap的区别" class="headerlink" title="HashMap和TreeMap的区别"></a>HashMap和TreeMap的区别</h4><p><code>TreeMap</code> 和<code>HashMap</code> 都继承自<code>AbstractMap</code> ，但是需要注意的是<code>TreeMap</code>它还实现了<code>NavigableMap</code>接口和<code>SortedMap</code> 接口。</p>
+<p>实现 <code>NavigableMap</code> 接口让 <code>TreeMap</code> 有了对集合内元素的搜索的能力。</p>
+<p>实现<code>SortedMap</code>接口让 <code>TreeMap</code> 有了对集合中的元素根据键排序的能力。</p>
+<p><strong>综上，相比于<code>HashMap</code>来说 <code>TreeMap</code> 主要多了对集合中的元素根据键排序的能力以及对集合内元素的搜索的能力。</strong></p>
+<h4 id="HashSet如何检查重复"><a href="#HashSet如何检查重复" class="headerlink" title="HashSet如何检查重复"></a>HashSet如何检查重复</h4><p>在 JDK1.8 中，实际上无论<code>HashSet</code>中是否已经存在了某元素，<code>HashSet</code>都会直接插入，只是会在<code>add()</code>方法的返回值处告诉我们插入前是否存在相同元素。</p>
+<h4 id="HashMap的底层实现"><a href="#HashMap的底层实现" class="headerlink" title="HashMap的底层实现"></a>HashMap的底层实现</h4><h5 id="JDK7"><a href="#JDK7" class="headerlink" title="JDK7"></a>JDK7</h5><p>HashMap由数组+链表，使用头插法。使用头插法是为了提高插入效率，但容易出现循环链表</p>
+<p>默认容量是16，负载因子是0.75，一旦大于0.75*16，就会调用resize()进行扩容，将该链表扩大两倍，创建一个新的两倍长的链表</p>
+<h5 id="JDK8"><a href="#JDK8" class="headerlink" title="JDK8"></a>JDK8</h5><p>HashMap有数组+链表+红黑树，使用尾插法。相对于头插法，尾插法消耗小，避免循环链表</p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><ul>
+<li><p>数据结构：HashMap底层使用一个数组和链表或红黑树结构实现。数组用来存储元素，链表或红黑树用来解决哈希冲突。</p>
+</li>
+<li><p>哈希算法：在向HashMap中插入元素时，会先根据元素的键（Key）计算哈希值（Hash Value），通过哈希值得到数组下标，然后将元素插入到对应的数组位置。Java中默认使用的哈希算法是通过key的hashCode()方法计算哈希值，并对数组长度取模得到下标。</p>
+</li>
+<li><p>解决哈希冲突：由于哈希算法的限制，可能会出现不同元素的哈希值相同的情况，这就是哈希冲突。HashMap使用链表或红黑树来解决哈希冲突。当链表长度大于等于8时，链表会自动转化为红黑树，以提高查询效率。</p>
+</li>
+<li><p>初始容量和负载因子：在初始化HashMap时，可以指定初始容量和负载因子。初始容量指定了HashMap底层数组的长度，负载因子指定了HashMap何时需要扩容。当HashMap中元素的数量超过了容量和负载因子的乘积时，HashMap会自动进行扩容操作，即创建一个新的数组，将原数组中的元素重新哈希到新数组中，以此来提高HashMap的性能。</p>
+</li>
+<li><p>线程安全：HashMap不是线程安全的，如果多个线程同时对一个HashMap进行操作，可能会导致数据出现问题。可以使用ConcurrentHashMap来代替HashMap，它是线程安全的。</p>
+</li>
+</ul>
+<h4 id="HashMap的初始容量设置多少合适"><a href="#HashMap的初始容量设置多少合适" class="headerlink" title="HashMap的初始容量设置多少合适"></a>HashMap的初始容量设置多少合适</h4><p>计算公式：**(需要的容量/负载因子) + 1**</p>
+<p>eg.假如有6个元素，则HashMap的初始化容量为 (6/0.75) +1 = 9，即<code>new HashMap(9)</code></p>
+<h4 id="ConcurrentHashMap和Hashtable的区别"><a href="#ConcurrentHashMap和Hashtable的区别" class="headerlink" title="ConcurrentHashMap和Hashtable的区别"></a>ConcurrentHashMap和Hashtable的区别</h4><ul>
+<li><p><strong>底层数据结构：</strong> JDK1.7 的 <code>ConcurrentHashMap</code> 底层采用 <strong>分段的数组+链表</strong> 实现，JDK1.8 采用的数据结构跟 <code>HashMap1.8</code> 的结构一样，数组+链表/红黑二叉树。<code>Hashtable</code> 和 JDK1.8 之前的 <code>HashMap</code> 的底层数据结构类似都是采用 <strong>数组+链表</strong> 的形式，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的；</p>
+</li>
+<li><p><strong>实现线程安全的方式（重要）：</strong></p>
+</li>
+<li><ul>
+<li>在 JDK1.7 的时候，<code>ConcurrentHashMap</code> 对整个桶数组进行了分割分段(<code>Segment</code>，分段锁)，每一把锁只锁容器其中一部分数据（下面有示意图），多线程访问容器里不同数据段的数据，就不会存在锁竞争，提高并发访问率。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><ul>
+<li>到了 JDK1.8 的时候，<code>ConcurrentHashMap</code> 已经摒弃了 <code>Segment</code> 的概念，而是直接用 <code>Node</code> 数组+链表+红黑树的数据结构来实现，并发控制使用 <code>synchronized</code> 和 CAS 来操作。（JDK1.6 以后 <code>synchronized</code> 锁做了很多优化） 整个看起来就像是优化过且线程安全的 <code>HashMap</code>，虽然在 JDK1.8 中还能看到 <code>Segment</code> 的数据结构，但是已经简化了属性，只是为了兼容旧版本；</li>
+</ul>
+</li>
+<li><strong><code>Hashtable</code>(同一把锁)</strong> :使用 <code>synchronized</code> 来保证线程安全，效率非常低下。当一个线程访问同步方法时，其他线程也访问同步方法，可能会进入阻塞或轮询状态，如使用 put 添加元素，另一个线程不能使用 put 添加元素，也不能使用 get，竞争会越来越激烈效率越低。</li>
+</ul>
+<h4 id="JDK1-7和JDK1-8的ConcurrentHashMap实现有什么不同"><a href="#JDK1-7和JDK1-8的ConcurrentHashMap实现有什么不同" class="headerlink" title="JDK1.7和JDK1.8的ConcurrentHashMap实现有什么不同"></a>JDK1.7和JDK1.8的ConcurrentHashMap实现有什么不同</h4><ul>
+<li><strong>线程安全实现方式</strong> ：JDK 1.7 采用 <code>Segment</code> 分段锁来保证安全， <code>Segment</code> 是继承自 <code>ReentrantLock</code>。JDK1.8 放弃了 <code>Segment</code> 分段锁的设计，采用 <code>Node + CAS + synchronized</code> 保证线程安全，锁粒度更细，<code>synchronized</code> 只锁定当前链表或红黑二叉树的首节点。</li>
+<li><strong>Hash 碰撞解决方法</strong> : JDK 1.7 采用拉链法，JDK1.8 采用拉链法结合红黑树（链表长度超过一定阈值时，将链表转换为红黑树）。</li>
+<li><strong>并发度</strong> ：JDK 1.7 最大并发度是 Segment 的个数，默认是 16。JDK 1.8 最大并发度是 Node 数组的大小，并发度更大。</li>
+</ul>
+<h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h3 id="乐观锁与悲观锁"><a href="#乐观锁与悲观锁" class="headerlink" title="乐观锁与悲观锁"></a>乐观锁与悲观锁</h3><p>乐观锁与悲观锁是一种广义上的概念，体现了看待线程同步的不同角度。在Java和数据库中都有此概念对应的实际应用。</p>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/image-20230307154211319.png"></p>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/image-20230307154231120.png"></p>
+<ul>
+<li>悲观锁<ul>
+<li>悲观锁<strong>认为自己在使用数据的时候一定有别的线程来修改数据，因此在获取数据的时候会先加锁</strong>，确保数据不会被别的线程修改。</li>
+<li>Java中，synchronized关键字和Lock的实现类都是悲观锁。</li>
+</ul>
+</li>
+<li>乐观锁<ul>
+<li>乐观锁<strong>认为自己在使用数据时不会有别的线程修改数据，所以不会添加锁</strong>，只是在更新数据的时候去判断之前有没有别的线程更新了这个数据。</li>
+<li>如果这个数据没有被更新，当前线程将自己修改的数据成功写入。</li>
+<li>如果数据已经被其他线程更新，则根据不同的实现方式执行不同的操作（例如报错或者自动重试）。</li>
+<li>乐观锁在Java中是通过使用无锁编程来实现，最常采用的是CAS算法，Java原子类中的递增操作就通过CAS自旋实现的。</li>
+</ul>
+</li>
+</ul>
+<h4 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><ul>
+<li><strong>悲观锁适合写操作多的场景</strong>，先加锁可以保证写操作时数据正确</li>
+<li><strong>乐观锁适合读操作多的场景</strong>，不加锁的特点能够使其读操作的性能大幅提升</li>
+</ul>
+<h3 id="自旋锁与适应性自旋锁"><a href="#自旋锁与适应性自旋锁" class="headerlink" title="自旋锁与适应性自旋锁"></a>自旋锁与适应性自旋锁</h3><h2 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h2><h3 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h3><ul>
+<li>进程是操作系统资源分配的基本单位，而线程是任务调度和执行的基本单位</li>
+<li>一个线程只能属于一个进程，而一个进程可以有多个线程，但至少有一个线程</li>
+</ul>
+<h3 id="线程有哪些状态"><a href="#线程有哪些状态" class="headerlink" title="线程有哪些状态"></a>线程有哪些状态</h3><ul>
+<li>创建</li>
+<li>就绪</li>
+<li>运行</li>
+<li>堵塞</li>
+<li>死亡</li>
+</ul>
+<h3 id="线程安全与非线程安全"><a href="#线程安全与非线程安全" class="headerlink" title="线程安全与非线程安全"></a>线程安全与非线程安全</h3><p>线程安全和非线程安全是指在多线程并发执行是，程序的行为是否符合预期</p>
+<ul>
+<li><p>线程安全的程序在多线程并发执行时，可以保证每个线程的操作不会影响其他线程的结果，程序仍然可以正确地运行。线程安全的程序需要考虑线程间的同步和互斥，常用的方法有锁、信号量等。线程安全的程序通常会有更高的性能开销，因为线程间的同步需要消耗额外的时间和资源。Vector、StringBuffer、Hashtable是线程安全的</p>
+</li>
+<li><p>非线程安全的程序在多线程并发执行时，可能会导致不可预期的结果，例如数据竞争、死锁等。非线程安全的程序在多线程环境下使用时，需要开发者自己考虑线程安全的问题。非线程安全的程序通常会有更高的性能，因为不需要额外的同步和互斥开销。ArrayList、LinkedList、HashSet、LinkedSet、TreeSet、HashMap、TreeMap、StringBuilder都是非线程安全的</p>
+</li>
+</ul>
+<h4 id="如何防止死锁"><a href="#如何防止死锁" class="headerlink" title="如何防止死锁"></a>如何防止死锁</h4><ul>
+<li>避免使用多个锁：减少使用多个锁可以减少死锁的可能性。如果必须使用多个锁，则应该始终以相同的顺序获取锁，以避免死锁。</li>
+<li>使用超时机制：当一个进程等待太久时，可以设置一个超时机制，如果等待时间超过某个阈值，就会放弃等待并释放已获得的资源。</li>
+<li>避免循环等待：进程之间应该避免循环等待资源。如果需要多个资源，应该按照相同的顺序请求这些资源。</li>
+<li>预防性措施：在程序设计时，应该预先避免潜在的死锁情况。例如，使用单一的资源管理器，为每个资源分配唯一的标识符，等等。</li>
+<li>死锁检测：使用死锁检测算法可以检测到死锁并采取相应的措施，如回滚事务或强制释放资源。</li>
+</ul>
+<h3 id="多线程的实现方式"><a href="#多线程的实现方式" class="headerlink" title="多线程的实现方式"></a>多线程的实现方式</h3><ul>
+<li><p>继承Thread类</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"thread run ..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>实现Runnable接口</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyRunnable</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"thread run ..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyRunnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>实现Callable接口</p>
+<ul>
+<li>定义一个Callable的实现类并实现call方法。call方法是带返回值的</li>
+<li>通过FutureTask的构造方法，把这个Callable实现类传进去</li>
+<li>把FutureTask作为Thread类的target，创建Thread线程对象</li>
+<li>通过FutureTask的get方法获取线程的执行结果</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyCallable</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span><span class="token operator">&lt;</span>Integer<span class="token operator">></span> <span class="token punctuation">{</span>
+    
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> Integer <span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> ExecutionException<span class="token punctuation">,</span> InterruptedException <span class="token punctuation">{</span>
+        FutureTask<span class="token operator">&lt;</span>Integer<span class="token operator">></span> futureTask <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FutureTask</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyCallable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>futureTask<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Integer result <span class="token operator">=</span> futureTask<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>线程池方式创建</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"thread run ..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ExecutorService executorService <span class="token operator">=</span> Executors<span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            executorService<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        executorService<span class="token punctuation">.</span><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="Runnable、Callable的区别"><a href="#Runnable、Callable的区别" class="headerlink" title="Runnable、Callable的区别"></a>Runnable、Callable的区别</h3><ul>
+<li>Runnable中的run()方法的返回值是void</li>
+<li>Callable中的call()方法是有返回值的，是一个泛型，和Future、FutureTask配合可以用来获取异步执行的结果</li>
+</ul>
+<h3 id="Runnable、Callable接口实现的优缺点"><a href="#Runnable、Callable接口实现的优缺点" class="headerlink" title="Runnable、Callable接口实现的优缺点"></a>Runnable、Callable接口实现的优缺点</h3><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>线程类只是实现了Runnable或者Callable接口，还可以继承其他类。这种方式下，多个线程可以共享一个target对象，所以非常适合多个相同线程来处理同一份资源的情况，从而可以将CPU、代码和数据分开，形成清晰的模型，较好的体现了面向对象的思想。</p>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><p>编程稍微复杂一些，如果需要访问当前线程，则必须使用 Thread.currentThread() 方法</p>
+<h3 id="Thread类的方式创建线程的优缺点"><a href="#Thread类的方式创建线程的优缺点" class="headerlink" title="Thread类的方式创建线程的优缺点"></a>Thread类的方式创建线程的优缺点</h3><h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><p>编写简单，如果需要访问当前线程，则无需使用 Thread.currentThread() 方法，直接使用this即可获取当前线程</p>
+<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><p>因为线程类已经继承了Thread类，Java语言是单继承的，所以就不能再继承其他父类了。</p>
+<h3 id="notify-和notifyAll-的区别"><a href="#notify-和notifyAll-的区别" class="headerlink" title="notify()和notifyAll()的区别"></a>notify()和notifyAll()的区别</h3><ul>
+<li>notify可能导致死锁，而notifyAll()不会</li>
+<li>notifyAll是唤醒所有，notify是唤醒一个</li>
+<li></li>
+</ul>
+<h3 id="sleep-和wait-的区别"><a href="#sleep-和wait-的区别" class="headerlink" title="sleep()和wait()的区别"></a>sleep()和wait()的区别</h3><ul>
+<li>sleep()方法是线程类（Thread）的静态方法，让调用线程进入睡眠状态，让出执行机会给其他线程，等到休眠时间结束后，线程进入就绪状态和其他线程一起竞争cpu的执行时间。线程不会释放对象锁</li>
+<li>wait()方法是Object类的方法。当一个线程执行到wait方法时，它就进入到该对象的等待池中。线程会放弃对象锁，可以通过notify()和notifyAll()来唤醒，被唤醒的线程会进入该对象的锁池中，锁池中的线程会去竞争该对象锁。</li>
+</ul>
+<h3 id="Thread类中start-和run-的区别"><a href="#Thread类中start-和run-的区别" class="headerlink" title="Thread类中start()和run()的区别"></a>Thread类中start()和run()的区别</h3><p>start()方法被用来启动新创建的线程，而且start()内部调用了run()方法，这和直接调用run()方法的效果不一样。当你调用run()方法的时候，只会是在原来的线程中调用，没有新的线程启动，start()方法才会启动新线程。</p>
+<ul>
+<li>start 是让线程进入就绪状态；run是让线程运行起来</li>
+</ul>
+<h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><h4 id="什么是线程池"><a href="#什么是线程池" class="headerlink" title="什么是线程池"></a>什么是线程池</h4><p><strong>线程池就是管理一系列线程的资源池</strong>。当有任务要处理时，直接从线程池中获取线程来处理，处理完之后线程并不会立即被消耗，而是等待下一个任务。</p>
+<h4 id="为什么要用线程池"><a href="#为什么要用线程池" class="headerlink" title="为什么要用线程池"></a>为什么要用线程池</h4><ul>
+<li><strong>降低资源消耗。</strong>通过重复利用已创建的线程降低线程创建和消耗的消耗。</li>
+<li><strong>提高响应速度。</strong>当任务到达时，任务可以不需要等待线程创建就能立即执行。</li>
+<li><strong>提高线程的可管理性。</strong>线程是稀缺资源，如果无限制的创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一的分配，调优和监控。</li>
+</ul>
+<h4 id="如何创建线程池"><a href="#如何创建线程池" class="headerlink" title="如何创建线程池"></a>如何创建线程池</h4><h5 id="通过ThreadPoolExecutor构造函数来创建（推荐）"><a href="#通过ThreadPoolExecutor构造函数来创建（推荐）" class="headerlink" title="通过ThreadPoolExecutor构造函数来创建（推荐）"></a>通过<code>ThreadPoolExecutor</code>构造函数来创建（推荐）</h5><h5 id="通过Executor框架的工具类Executors来创建"><a href="#通过Executor框架的工具类Executors来创建" class="headerlink" title="通过Executor框架的工具类Executors来创建"></a>通过<code>Executor</code>框架的工具类<code>Executors</code>来创建</h5><p>我们可以创建多种类型的<code>ThreadPoolExecutor</code></p>
+<ul>
+<li><strong><code>FixedThreadPool</code></strong> ： 该方法返回一个固定线程数量的线程池。该线程池中的线程数量始终不变。当有一个新的任务提交时，线程池中若有空闲线程，则立即执行。若没有，则新的任务会被暂存在一个任务队列中，待有线程空闲时，便处理在任务队列中的任务。</li>
+<li><strong><code>SingleThreadExecutor</code>：</strong> 该方法返回一个只有一个线程的线程池。若多余一个任务被提交到该线程池，任务会被保存在一个任务队列中，待线程空闲，按先入先出的顺序执行队列中的任务。</li>
+<li><strong><code>CachedThreadPool</code>：</strong> 该方法返回一个可根据实际情况调整线程数量的线程池。线程池的线程数量不确定，但若有空闲线程可以复用，则会优先使用可复用的线程。若所有线程均在工作，又有新的任务提交，则会创建新的线程处理任务。所有线程在当前任务执行完毕后，将返回线程池进行复用。</li>
+<li><strong><code>ScheduledThreadPool</code></strong> ：该返回一个用来在给定的延迟后运行任务或者定期执行任务的线程池。</li>
+</ul>
+<h4 id="为什么不推荐使用内置线程池"><a href="#为什么不推荐使用内置线程池" class="headerlink" title="为什么不推荐使用内置线程池"></a>为什么不推荐使用内置线程池</h4><p>在《阿里巴巴Java开发手册》中明确指出线程资源必须通过线程池提供，不允许在应用中自行显式创建线程</p>
+<p><strong>为什么呢？</strong></p>
+<blockquote>
+<p>使用线程池的好处是减少在创建和销毁线程上所消耗的时间以及系统资源开销，解决资源不足的问题。如果不使用线程池，有可能会造成系统创建大量同类线程而导致消耗完内存或者“过度切换”的问题。</p>
+</blockquote>
+<p>另外，《阿里巴巴 Java 开发手册》中<strong>强制线程池不允许使用 <code>Executors</code> 去创建</strong>，而是通过 <code>ThreadPoolExecutor</code> 构造函数的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险</p>
+<ul>
+<li><strong><code>FixedThreadPool</code> 和 <code>SingleThreadExecutor</code></strong> ： 使用的是无界的 <code>LinkedBlockingQueue</code>，任务队列最大长度为 <code>Integer.MAX_VALUE</code>,可能堆积大量的请求，从而导致 OOM。</li>
+<li><strong><code>CachedThreadPool</code></strong> ：使用的是同步队列 <code>SynchronousQueue</code>, 允许创建的线程数量为 <code>Integer.MAX_VALUE</code> ，可能会创建大量线程，从而导致 OOM。</li>
+<li><strong><code>ScheduledThreadPool</code> 和 <code>SingleThreadScheduledExecutor</code></strong> : 使用的无界的延迟阻塞队列<code>DelayedWorkQueue</code>，任务队列最大长度为 <code>Integer.MAX_VALUE</code>,可能堆积大量的请求，从而导致 OOM。</li>
+</ul>
+<h4 id="ThreadPoolExecutor和ThreadPoolTaskExecutor的区别"><a href="#ThreadPoolExecutor和ThreadPoolTaskExecutor的区别" class="headerlink" title="ThreadPoolExecutor和ThreadPoolTaskExecutor的区别"></a><code>ThreadPoolExecutor</code>和<code>ThreadPoolTaskExecutor</code>的区别</h4><ul>
+<li><code>ThreadPoolExecutor</code>是JDK的一个线程池实现，而<code>ThreadPoolTaskExecutor</code>是Spring框架中的一个线程池实现，继承自<code>ThreadPoolExecutor</code>，并添加了一些扩展功能</li>
+</ul>
+<h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><h3 id="JVM是什么"><a href="#JVM是什么" class="headerlink" title="JVM是什么"></a>JVM是什么</h3><p>JVM（Java Virtual Machine），Java虚拟机，是JRE的一部分。JVM有自己完善的硬件架构，还具备相应的指令系统，是实现跨平台的关键</p>
+<h3 id="Java内存区域（运行时数据区）"><a href="#Java内存区域（运行时数据区）" class="headerlink" title="Java内存区域（运行时数据区）"></a>Java内存区域（运行时数据区）</h3><ul>
+<li>堆（Heap）</li>
+<li>方法区（Method Area）</li>
+<li>本地方法栈（Native Method Stack）</li>
+<li>虚拟机栈（VM Stack）</li>
+<li>程序计数器（Program Counter Register）</li>
+</ul>
+<h4 id="线程私有"><a href="#线程私有" class="headerlink" title="线程私有"></a>线程私有</h4><ul>
+<li>虚拟机栈</li>
+<li>本地方法栈</li>
+<li>程序计数器</li>
+</ul>
+<h4 id="线程共享"><a href="#线程共享" class="headerlink" title="线程共享"></a>线程共享</h4><ul>
+<li>堆</li>
+<li>方法区</li>
+<li>直接内存</li>
+</ul>
+<h3 id="StackOverFlowError"><a href="#StackOverFlowError" class="headerlink" title="StackOverFlowError"></a>StackOverFlowError</h3><p>若栈的内存大小<strong>不允许</strong>动态扩展，那么线程请求栈的深度超过Java虚拟机栈的最大深度时，就会抛出StackOverFlowError</p>
+<h4 id="导致原因"><a href="#导致原因" class="headerlink" title="导致原因"></a>导致原因</h4><ul>
+<li>无限递归、死循环</li>
+<li>执行大量方法导致线程栈空间耗尽</li>
+<li>方法声明海量的局部变量</li>
+</ul>
+<h3 id="OutOfMemoryError"><a href="#OutOfMemoryError" class="headerlink" title="OutOfMemoryError"></a>OutOfMemoryError</h3><p>简称OOM。如果栈内存允许动态扩展，如果虚拟机在动态扩展栈时无法申请到足够的内存空间，则会抛出OutOfMemory异常</p>
+<h4 id="出现原因"><a href="#出现原因" class="headerlink" title="出现原因"></a>出现原因</h4><ul>
+<li>Java堆溢出</li>
+</ul>
+<p>Java堆用于存储对象实例，只要不断创建对象，并保证GC Roots到对象之间有可达路径来避免垃圾回收机制清除这些对象，那么在对象数量到达最大堆的容量限制后就会产生内存溢出异常</p>
+<ul>
+<li>虚拟机栈、本地方法栈溢出</li>
+</ul>
+<p>如果线程请求的栈深度大于虚拟机所允许的最大深度，将抛出StackOverflowError异常。</p>
+<p>如果虚拟机在扩展栈时无法申请到足够的内存空间，则抛出OutOfMemoryError异常。</p>
+<ul>
+<li>方法区和运行时常量池溢出</li>
+<li>本地直接内存溢出</li>
+</ul>
+<h3 id="堆和栈的区别"><a href="#堆和栈的区别" class="headerlink" title="堆和栈的区别"></a>堆和栈的区别</h3><ul>
+<li>栈（stack）：内存空间小，存取效率高；常用于保存局部变量、方法帧、基本数据类型</li>
+<li>堆（Heap）：内存空间大，存取效率低；所有对象实例、数组都存在堆上</li>
+</ul>
+<h3 id="GC是什么？为什么要有GC？"><a href="#GC是什么？为什么要有GC？" class="headerlink" title="GC是什么？为什么要有GC？"></a>GC是什么？为什么要有GC？</h3><p>GC是垃圾收集的意思。<strong>内存处理是编程人员容易出现问题的地方，忘记或者错误的内存回收会导致程序或系统的不稳定甚至奔溃</strong>，<strong>Java提供的GC功能可以自动监测对象是否超过作用域从而达到自动回收内存的目的。</strong></p>
+<h3 id="垃圾回收的优点"><a href="#垃圾回收的优点" class="headerlink" title="垃圾回收的优点"></a>垃圾回收的优点</h3><ul>
+<li>Java引入垃圾回收机制，使开发时不需要考虑内存管理</li>
+<li>垃圾回收可以有效防止内存泄漏</li>
+</ul>
+<h3 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h3><p>Java的类加载机制是Java虚拟机<strong>（JVM）在运行时动态加载类的过程</strong>。</p>
+<ul>
+<li><strong>加载</strong>: 查找并加载类的二进制数据</li>
+<li><strong>连接</strong> <ul>
+<li><strong>验证</strong>: 确保被加载的类的正确性</li>
+<li><strong>准备</strong>: 为类的静态变量分配内存，并将其初始化为默认值</li>
+<li><strong>解析</strong>: 把类中的符号引用转换为直接引用</li>
+</ul>
+</li>
+<li><strong>初始化</strong>：为类的静态变量赋予正确的初始值，JVM负责对类进行初始化，主要对类变量进行初始化。</li>
+<li><strong>使用</strong>： 类访问方法区内的数据结构的接口， 对象是Heap区的数据</li>
+<li><strong>卸载</strong>： 结束生命周期</li>
+</ul>
+<h4 id="双亲委派"><a href="#双亲委派" class="headerlink" title="双亲委派"></a>双亲委派</h4><blockquote>
+<p>双亲委派机制是Java中的一种类加载机制，它是基于父子关系的，当一个类需要被加载时，首先会委派其父类加载器去加载该类，如果父类加载器无法加载该类，再由当前类加载器去加载。这样可以保证类的唯一性和安全性，避免重复加载和类的混乱。</p>
+</blockquote>
+<h5 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h5><ul>
+<li>当一个类需要被加载时，首先会委派其父类加载器去加载该类。</li>
+<li>如果父类加载器无法加载该类，再由当前类加载器去加载。</li>
+<li>如果当前类加载器也无法加载该类，再委派其父类加载器的父类加载器去加载，直到顶层的启动类加载器。</li>
+<li>如果顶层的启动类加载器也无法加载该类，就会抛出ClassNotFoundException异常。</li>
+</ul>
+<h2 id="JDK新特性"><a href="#JDK新特性" class="headerlink" title="JDK新特性"></a>JDK新特性</h2><h1 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h1><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h3 id="OSI模型"><a href="#OSI模型" class="headerlink" title="OSI模型"></a>OSI模型</h3><h4 id="1、OSI七层模型是什么？每一层的作用是什么？"><a href="#1、OSI七层模型是什么？每一层的作用是什么？" class="headerlink" title="1、OSI七层模型是什么？每一层的作用是什么？"></a>1、OSI七层模型是什么？每一层的作用是什么？</h4><h3 id="TCP-x2F-IP模型"><a href="#TCP-x2F-IP模型" class="headerlink" title="TCP/IP模型"></a>TCP/IP模型</h3><h4 id="ICP-x2F-IP四层模型是什么？每一层的作用是什么？"><a href="#ICP-x2F-IP四层模型是什么？每一层的作用是什么？" class="headerlink" title="ICP/IP四层模型是什么？每一层的作用是什么？"></a>ICP/IP四层模型是什么？每一层的作用是什么？</h4><h3 id="为什么网络需要分层？"><a href="#为什么网络需要分层？" class="headerlink" title="为什么网络需要分层？"></a>为什么网络需要分层？</h3><h1 id="算法与数据结构"><a href="#算法与数据结构" class="headerlink" title="算法与数据结构"></a>算法与数据结构</h1><h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="基础-1"><a href="#基础-1" class="headerlink" title="基础"></a>基础</h2><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h3 id="Redis的数据结构"><a href="#Redis的数据结构" class="headerlink" title="Redis的数据结构"></a>Redis的数据结构</h3><h3 id="Redis的线程模型"><a href="#Redis的线程模型" class="headerlink" title="Redis的线程模型"></a>Redis的线程模型</h3><h3 id="Redis的内存管理"><a href="#Redis的内存管理" class="headerlink" title="Redis的内存管理"></a>Redis的内存管理</h3><h3 id="Redis的持久化机制"><a href="#Redis的持久化机制" class="headerlink" title="Redis的持久化机制"></a>Redis的持久化机制</h3><h4 id="RDB"><a href="#RDB" class="headerlink" title="RDB"></a>RDB</h4><p>在指定时间间隔内将内存中的数据集快照（snapshot）到磁盘上，生成一个 RDB 文件。RDB 文件是一个经过压缩的二进制文件，包含了 Redis 在某个时间点上的数据集，可以用于数据备份和恢复。RDB 文件可以手动触发生成，也可以设置自动保存的时间间隔。使用 RDB 持久化机制，可以最大限度地保证数据的完整性和一致性，但会有一定的数据丢失风险，因为在数据快照之后发生的任何变化都不会被保存。</p>
+<h4 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h4><p>将 Redis 服务器执行的所有写命令追加到 AOF 文件的末尾，通过这种方式来记录 Redis 的所有写操作，这样在 Redis 重启的时候，可以通过重新执行 AOF 文件中的命令来重建数据库的原始状态。<strong>AOF 文件是一个文本文件</strong>，包含了 Redis 的所有写操作，可以通过配置文件设置 AOF 文件的同步方式和频率，以达到最大程度的数据保护。使用 AOF 持久化机制，可以最大限度地保证数据的安全性和可靠性，但会有一定的性能损失。</p>
+<h3 id="Redis的淘汰机制"><a href="#Redis的淘汰机制" class="headerlink" title="Redis的淘汰机制"></a>Redis的淘汰机制</h3><p>Redis 的内存是有限的，当内存不足时，Redis 会根据一定的淘汰策略来决定哪些数据需要被淘汰掉。Redis 目前支持 6 种淘汰策略：</p>
+<ol>
+<li>noeviction：不淘汰数据，当内存不足时，返回错误信息。</li>
+<li>volatile-lru：从已设置过期时间的数据集中选择最近最少使用的数据淘汰。</li>
+<li>volatile-ttl：从已设置过期时间的数据集中选择将要过期的数据淘汰。</li>
+<li>volatile-random：从已设置过期时间的数据集中随机选择数据淘汰。</li>
+<li>allkeys-lru：从所有数据集中选择最近最少使用的数据淘汰。</li>
+<li>allkeys-random：从所有数据集中随机选择数据淘汰。</li>
+</ol>
+<p>其中，noeviction 策略表示不淘汰数据，当内存不足时，返回错误信息；volatile-* 策略表示只淘汰已设置过期时间的数据；allkeys-* 策略表示从所有数据集中选择数据淘汰。在实际使用中，可以根据业务需求和数据特征来选择最合适的淘汰策略。</p>
+<p>此外，Redis 还提供了一种被动淘汰机制，即在 Redis 内存使用达到指定阈值时，Redis 会触发被动淘汰机制，根据已经设置的淘汰策略来淘汰一些数据，以释放内存空间。这种被动淘汰机制可以通过配置文件中的 <code>maxmemory-policy</code> 参数来设置。例如，当设置为 <code>volatile-lru</code> 时，Redis 会在内存使用达到 <code>maxmemory</code> 时，自动淘汰已设置过期时间的数据集中最近最少使用的数据，以释放内存空间。</p>
+<p>需要注意的是，淘汰机制可能会导致数据丢失，因此在生产环境中，需要根据业务需求和数据的重要性来选择最合适的淘汰策略，并进行数据备份和监控。</p>
+<h3 id="Redis的事务"><a href="#Redis的事务" class="headerlink" title="Redis的事务"></a>Redis的事务</h3><h3 id="Redis的性能优化"><a href="#Redis的性能优化" class="headerlink" title="Redis的性能优化"></a>Redis的性能优化</h3><h3 id="Redis的生产问题"><a href="#Redis的生产问题" class="headerlink" title="Redis的生产问题"></a>Redis的生产问题</h3><h4 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h4><p>大量请求的key是不合理的，根本不存在于缓存中，也不存在与数据库中。这就导致这些请求直接到了数据库上，根本没有经过缓存这一层，对数据库造成了巨大的压力，可能直接就被这么多请求弄宕机了。</p>
+<h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
+<li>缓存无效key并设置过期时间</li>
+<li>布隆过滤器：布隆过滤器说某个元素存在，小概率会误判。布隆过滤器说某个元素不存在，那么元素一定不存在</li>
+</ul>
+<h4 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h4><p>缓存击穿，请求的key是对应的热点数据，该数据存在于数据库中，但不存在于缓存中（通常是因为缓存中的那份数据已经过期）。这就可能会导致瞬时大量的请求直接打到了数据库上，对数据库造成了巨大的压力，可能直接就被这么多请求弄宕机了。</p>
+<h5 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
+<li>设置热点数据永不过期或者过期时间比较长</li>
+<li>针对热点数据提前预热，将其存入缓存中并设置合理的过期时间</li>
+<li>请求数据库写数据到缓存之前，先获取互斥锁，保证只有一个请求会落到数据库，减少数据库压力</li>
+</ul>
+<h4 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h4><p><strong>缓存在同一时间大面积的失效，导致大量的请求都直接落到了数据库上，对数据库造成了巨大的压力。</strong> 这就好比雪崩一样，摧枯拉朽之势，数据库的压力可想而知，可能直接就被这么多请求弄宕机了。</p>
+<h5 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
+<li><strong>针对 Redis 服务不可用的情况</strong><ul>
+<li>采用 Redis 集群，避免单机出现问题整个缓存服务都没办法使用。</li>
+<li>限流，避免同时处理大量的请求。</li>
+</ul>
+</li>
+<li><strong>针对热点缓存失效的情况</strong><ul>
+<li>设置不同的失效时间比如随机设置缓存的失效时间。</li>
+<li>缓存永不失效（不太推荐，实用性太差）。</li>
+<li>设置二级缓存。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Redis的四种模式"><a href="#Redis的四种模式" class="headerlink" title="Redis的四种模式"></a>Redis的四种模式</h3><h4 id="Redis的单机模式"><a href="#Redis的单机模式" class="headerlink" title="Redis的单机模式"></a>Redis的单机模式</h4><p>单机模式就是安装一个Redis，启动起来，业务调用即可。</p>
+<h5 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h5><ul>
+<li>部署简单，成本低（没有备用节点，不需要其他开支）</li>
+<li>高性能，单机不需要同步数据</li>
+</ul>
+<h5 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h5><ul>
+<li>可靠性不能保障，单节点有宕机的风险</li>
+<li>单机高性能受限于CPU的处理能力，redis是单线程的</li>
+<li>如果需要很高的性能、可靠性，单机就不合适</li>
+</ul>
+<h4 id="Redis的主从模式"><a href="#Redis的主从模式" class="headerlink" title="Redis的主从模式"></a>Redis的主从模式</h4><p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/image-20230301143030995.png" alt="image-20230301143030995"></p>
+<p>主从模式就是N个redis实例，可以是<strong>1主N从</strong>，也可以N主N从（N主N从则不是严格意义上的主从模式了，后续的集群模式会说到，N主N从就是N+N个redis实例。）</p>
+<p>主从模式的一个作用是<strong>备份数据</strong>，这样当一个节点损坏（指不可恢复的硬件损坏）时，数据因为有备份，可以方便恢复。另一个作用是负载均衡，所有客户端都访问一个节点肯定会影响Redis工作效率，有了主从以后，查询操作就可以通过查询从节点来完成。</p>
+<p>既然主从复制，意味着master和slave的数据都是一样的，有数据冗余问题。在程序设计上，为了高可用性和高性能，是允许有冗余存在的。对于追求极致用户体验的产品，是绝对不允许有宕机存在的。</p>
+<h5 id="优点-3"><a href="#优点-3" class="headerlink" title="优点"></a>优点</h5><ul>
+<li>一旦主节点宕机，从节点作为主节点的备份可以随时顶上来</li>
+<li>扩展主节点的读能力，分担主节点读压力</li>
+<li>主从复制还是哨兵模式和集群模式能够实施的基础</li>
+</ul>
+<h5 id="缺点-3"><a href="#缺点-3" class="headerlink" title="缺点"></a>缺点</h5><ul>
+<li>一旦主节点宕机，从节点晋升成主节点，同时需要修改应用方的主节点地址</li>
+<li>主节点的写能力受到单机的限制</li>
+<li>主节点的存储能力受到单机的限制</li>
+<li>数据冗余的问题</li>
+</ul>
+<h4 id="Redis的哨兵模式"><a href="#Redis的哨兵模式" class="headerlink" title="Redis的哨兵模式"></a>Redis的哨兵模式</h4><p>主从模式，当主节点宕机之后，从节点是可以作为主节点顶上来，继续提供服务的。但是有一个问题，<strong>主节点的IP已经变动了，此时应用服务还是拿着原主节点的地址去访问，此时就需要人工干预进行修改</strong>。哨兵恰恰就可以解决这个问题……</p>
+<p>访问redis集群的数据都是通过哨兵集群的，<strong>哨兵监控整个redis集群</strong>。一旦发现redis集群出现了问题，比如主节点挂了，从节点会顶上来。但是主节点地址变了，这时候应用服务无感知，也不用更改访问地址，因为哨兵才是和应用服务做交互的。Sentinel 很好的解决了故障转移，在高可用方面又上升了一个台阶，当然Sentinel还有其他功能。比如 主节点存活检测、主从运行情况检测、主从切换。Redis的Sentinel最小配置是 一主一从。</p>
+<p>Redis哨兵机制是Redis的一种高可用性解决方案，可以从主从复制架构中，实现自动故障检测和故障转移。</p>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/image-20230301145829496.png" alt="image-20230301145829496"></p>
+<h5 id="哨兵（sentinel）实现了什么功能"><a href="#哨兵（sentinel）实现了什么功能" class="headerlink" title="哨兵（sentinel）实现了什么功能"></a>哨兵（sentinel）实现了什么功能</h5><ul>
+<li><strong>监控</strong>：哨兵会不断地检查主节点和从节点是否运作正常</li>
+<li><strong>自动故障转移</strong>：当主节点不能正常工作时，哨兵会开始自动故障转移操作，它会将失效主节点的其中一个从节点升级为新的主节点，并让其他节点改为复制新的主节点</li>
+<li><strong>配置提供者</strong>：客户端初始化时，通过连接哨兵来获得当前Redis服务的主节点地址</li>
+<li><strong>通知</strong>：哨兵可以将故障转移的结果发送给客户端</li>
+</ul>
+<h5 id="Redis哨兵集群是通过什么方式组建的"><a href="#Redis哨兵集群是通过什么方式组建的" class="headerlink" title="Redis哨兵集群是通过什么方式组建的"></a>Redis哨兵集群是通过什么方式组建的</h5><p>哨兵实例之间的相互发现，要归功于Redis提供的<strong>pub/sub机制（发布/订阅机制）</strong>。</p>
+<p>在主从集群中，主库上有一个名为<code>__sentinel__:hello</code>的频道，不同的哨兵就是通过它来相互发现并实现通信的。如下图，哨兵1把自己的IP和端口发布在<code>__sentinel__:hello</code>频道上，哨兵2和3订阅了该频道。那此时，哨兵2和3就可以从这个频道直接获取哨兵1的ip地址和端口号。然后，哨兵2、3可以与哨兵1建立网络连接。</p>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/image-20230301150546228.png" alt="image-20230301150546228"></p>
+<h5 id="Redis哨兵是如何监控Redis集群的"><a href="#Redis哨兵是如何监控Redis集群的" class="headerlink" title="Redis哨兵是如何监控Redis集群的"></a>Redis哨兵是如何监控Redis集群的</h5><p>这是由<strong>哨兵向主库发送 INFO 命令来完成的</strong>。就像下图所示，哨兵 2 给主库发送 INFO 命令，主库接受到这个命令后，就会把从库列表返回给哨兵。接着，哨兵就可以根据从库列表中的连接信息，和每个从库建立连接，并在这个连接上持续地对从库进行监控。哨兵 1 和 3 可以通过相同的方法和从库建立连接。</p>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/image-20230301150755136.png" alt="image-20230301150755136"></p>
+<h5 id="哨兵如何判断主库已经下线"><a href="#哨兵如何判断主库已经下线" class="headerlink" title="哨兵如何判断主库已经下线"></a>哨兵如何判断主库已经下线</h5><p>主要分为<strong>主观下线</strong>和<strong>客观下线</strong></p>
+<ul>
+<li>主观下线：任何一个哨兵都是可以监控探测，并做出Redis节点下线的判断</li>
+<li>客观下线：由哨兵集群共同决定Redis节点是否下线</li>
+</ul>
+<p>当某个哨兵判断主库“主观下线”后，就会给其他哨兵发送<code>is-master-down-by-addr</code>命令。接着，其他哨兵会根据自己和主库的连接情况，做出Y或N的响应，Y相当于赞成票，N相当于反对票。</p>
+<p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/image-20230301152348469.png" alt="image-20230301152348469"></p>
+<p>如果赞成票数（这里是2）是大于等于哨兵配置文件中的 <code>quorum</code> 配置项（比如这里如果是quorum=2）, 则可以判定<strong>主库客观下线</strong>了。</p>
+<h5 id="Redis哨兵的选举机制是什么样的"><a href="#Redis哨兵的选举机制是什么样的" class="headerlink" title="Redis哨兵的选举机制是什么样的"></a>Redis哨兵的选举机制是什么样的</h5><ul>
+<li>为什么必然会出现选举/共识机制？</li>
+</ul>
+<p>为了避免哨兵的单点情况发生，所以需要一个哨兵的分布式集群。作为分布式集群，必然涉及共识（即选举问题）；同时故障的转移和通知都只需要一个主的哨兵节点就可以了</p>
+<ul>
+<li>哨兵的选举机制是什么样的？</li>
+</ul>
+<p>Raft选举算法：<strong>选举的票数大于等于num(sentinels)/2+1时，将成为领导者</strong>，如果没有超过，继续选举</p>
+<p><strong>任何一个想成为Leader的哨兵，要满足两个条件</strong>：</p>
+<ul>
+<li>第一，拿到半数以上的赞成票；</li>
+<li>第二，拿到的票数同时还需要大于等于哨兵配置文件中的quorum值</li>
+</ul>
+<p>以 3 个哨兵为例，假设此时的 quorum 设置为 2，那么，任何一个想成为 Leader 的哨兵只要拿到 2 张赞成票，就可以了。</p>
+<p><strong>主库判定客观下线了，那么如何从剩余的从库中选择一个新的主库呢？</strong></p>
+<ul>
+<li>过滤掉不健康的（下线或断线），没有回复过哨兵ping响应的从节点</li>
+<li>选择salve-priority从节点优先级最高的</li>
+<li>选择复制偏移量最大的，只复制最完整的从节点</li>
+</ul>
+<h4 id="Redis的集群模式"><a href="#Redis的集群模式" class="headerlink" title="Redis的集群模式"></a>Redis的集群模式</h4><h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><h1 id="常用框架"><a href="#常用框架" class="headerlink" title="常用框架"></a>常用框架</h1><h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><h3 id="Spring-1"><a href="#Spring-1" class="headerlink" title="Spring"></a>Spring</h3><h4 id="什么是Spring？"><a href="#什么是Spring？" class="headerlink" title="什么是Spring？"></a>什么是Spring？</h4><p>Spring是一种轻量级应用框架，旨在提高开发人员的开发效率以及系统的可维护性。</p>
+<h4 id="列举一些重要的Spring模块"><a href="#列举一些重要的Spring模块" class="headerlink" title="列举一些重要的Spring模块"></a>列举一些重要的Spring模块</h4><ul>
+<li>Spring Core：基础，可以说Spring其他所有的功能都依赖该类库，主要提供IOC和DI功能</li>
+<li>Spring Aspects：该模块为与AspectsJ的集成提供支持</li>
+<li>Spring AOP：提供面向切面的编程实现</li>
+<li>Spring JDBC：Java数据库连接</li>
+<li>Spring JMS：Java消息服务</li>
+<li>Spring ORM：用于支持Hibernate等ORM工具</li>
+<li>Spring Web：为创建Web应用程序提供支持</li>
+<li>Spring Test：提供了对JUnit和TestNG测试的支持</li>
+</ul>
+<h3 id="Spring-IOC"><a href="#Spring-IOC" class="headerlink" title="Spring IOC"></a>Spring IOC</h3><h4 id="什么是IOC"><a href="#什么是IOC" class="headerlink" title="什么是IOC"></a>什么是IOC</h4><p>IOC（Inversion Of Control，控制反转）是一种设计思想，而不是一个具体的技术实现。IOC并非Spring特有，在其他语言中也有应用。</p>
+<p>Spring IOC指的是：<strong>将原本在程序中手动创建对象的控制权，交给IOC容器来管理，并由IOC容器完成对象的注入</strong>。</p>
+<h5 id="为什么叫控制反转？"><a href="#为什么叫控制反转？" class="headerlink" title="为什么叫控制反转？"></a>为什么叫控制反转？</h5><ul>
+<li>控制：值的是对象创建（实例化、管理）的权利</li>
+<li>反转：控制权交给外部环境（Spring框架、IOC容器）</li>
+</ul>
+<h5 id="IOC的好处"><a href="#IOC的好处" class="headerlink" title="IOC的好处"></a>IOC的好处</h5><p>这样可以很大程度上简化应用的开发，把应用从复杂的依赖关系中解放出来。IOC容器就像是一个工厂一样，当我们需要创建一个对象的时候，只需要配置好配置文件/注解即可，完全不用考虑对象是如何被创建出来的。</p>
+<h5 id="IOC的实现"><a href="#IOC的实现" class="headerlink" title="IOC的实现"></a>IOC的实现</h5><p>Spring中的IOC的实现原理就是<strong>工厂模式+反射机制</strong></p>
+<h3 id="Bean"><a href="#Bean" class="headerlink" title="Bean"></a>Bean</h3><h4 id="什么是Spring-Bean？"><a href="#什么是Spring-Bean？" class="headerlink" title="什么是Spring Bean？"></a>什么是Spring Bean？</h4><p>简单来说，Bean代指的就是那些被IOC容器所管理的对象</p>
+<h4 id="将一个类声明为Bean的注解有哪些？"><a href="#将一个类声明为Bean的注解有哪些？" class="headerlink" title="将一个类声明为Bean的注解有哪些？"></a>将一个类声明为Bean的注解有哪些？</h4><ul>
+<li>@Component：通用的注解，可标注任意类为Spring组件，如果一个Bean不知道属于那一层，可以使用@Component注解标注</li>
+<li>@Repository：对应持久层，即Dao层，主要用于数据库相关操作</li>
+<li>@Service：对应服务层，主要涉及一些复杂的逻辑，需要用到Dao层</li>
+<li>@Controller：对应SpringMVC控制层，主要用于接受用户请求并调用Service层返回给前端页面</li>
+</ul>
+<h4 id="Component和-Bean的区别"><a href="#Component和-Bean的区别" class="headerlink" title="@Component和@Bean的区别"></a>@Component和@Bean的区别</h4><ul>
+<li>@Component注解作用于类，而@Bean注解作用于方法</li>
+<li>@Component通常是通过类路径扫描来自动侦测以及自动装配到Spring容器中（我们使用@ComponentScan注解定义要扫描的路径，从中找出标识了需要装配的类，并自动装配到Spring的Bean容器中）。<br>@Bean 注解通常是我们在标有该注解的方法中定义产生这个 bean,@Bean告诉了 Spring 这是某个类的实例，当我需要用它的时候还给我。</li>
+<li>@Bean 注解比 @Component 注解的自定义性更强，而且很多地方我们只能通过 @Bean 注解来注册 bean。比如当我们引用第三方库中的类需要装配到 Spring容器时，则只能通过 @Bean来实现。</li>
+</ul>
+<h4 id="注入Bean的注解有哪些"><a href="#注入Bean的注解有哪些" class="headerlink" title="注入Bean的注解有哪些"></a>注入Bean的注解有哪些</h4><p>Spring内置的@Autowired以及JDK内置的@Resource和@Inject都可以用于注入Bean</p>
+<h4 id="Autowired和-Resource的区别是什么？"><a href="#Autowired和-Resource的区别是什么？" class="headerlink" title="@Autowired和@Resource的区别是什么？"></a>@Autowired和@Resource的区别是什么？</h4><ul>
+<li>@Autowired是Spring提供的注解，@Resource是JDK提供的注解</li>
+<li>@Autowired默认的注入方式为byType（根据类型进行匹配），@Resource默认注入方式为byName（根据名称进行匹配）</li>
+<li>当一个接口存在多个实现类的情况下，@Autowired和@Resource都需要通过名称才能正确匹配到对应的Bean。@Autowired可以通过@Qualifier注解来显式指定名称，@Resource可以通过name属性来显式指定名称。</li>
+</ul>
+<h4 id="Bean的作用域有哪些？"><a href="#Bean的作用域有哪些？" class="headerlink" title="Bean的作用域有哪些？"></a>Bean的作用域有哪些？</h4><p>在Spring框架中，Bean的作用域是指在应用程序中创建和管理bean实例的生命周期和可见范围</p>
+<ul>
+<li>singleton：默认作用域。唯一bean实例，单例的；</li>
+<li>prototype：每次请求都会创建一个新的bean实例；</li>
+<li>request：每一次HTTP请求都会产生一个新的bean，该bean仅在当前HTTP request内有效；</li>
+<li>session：每一次HTTP请求都会产生一个新的bean，该bean仅在当前HTTP session内有效；</li>
+<li>global-session：这是一个不常用的作用域，它仅在使用基于portlet的Spring MVC时才有效。每个全局HTTP会话都会创建一个新的bean实例。</li>
+</ul>
+<h4 id="单例Bean的线程安全问题了解吗？"><a href="#单例Bean的线程安全问题了解吗？" class="headerlink" title="单例Bean的线程安全问题了解吗？"></a>单例Bean的线程安全问题了解吗？</h4><p>单例bean存在线程问题，主要是因为多个线程操作同一个对象的时候存在资源竞争</p>
+<h5 id="解决方案-3"><a href="#解决方案-3" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
+<li>在Bean中尽量避免定义可变的成员变量</li>
+<li>在类中定义一个ThreadLocal成员变量，将需要的可变成员变量保存在ThreadLocal中（推荐的一种方式）</li>
+</ul>
+<h4 id="Bean（JavaBean）的生命周期了解吗？"><a href="#Bean（JavaBean）的生命周期了解吗？" class="headerlink" title="Bean（JavaBean）的生命周期了解吗？"></a>Bean（JavaBean）的生命周期了解吗？</h4><p>Bean（即Java Bean）是Java语言中一种标准的可重用组件，它具有一些特定的属性和方法，可以在Java应用程序中重复使用。一个Bean的生命周期可以分为以下几个阶段：</p>
+<ul>
+<li>定义：在编写Java类的时候，可以将它定义为一个Bean。Bean通常具有一些特定的属性和方法，这些属性和方法可以通过JavaBean规范来定义。</li>
+<li>实例化：一旦Java类被定义为Bean，它就可以被实例化。在Java程序中，可以通过使用Bean的构造函数来创建Bean的实例。</li>
+<li>初始化：在Bean被实例化之后，需要对其进行初始化，以设置其属性和其他状态。这通常可以通过在Bean中定义初始化方法来完成，例如在Bean中定义一个名为“init”的方法。</li>
+<li>使用：一旦Bean被初始化，就可以在Java应用程序中使用它。在使用Bean时，可以调用其方法并访问其属性。</li>
+<li>销毁：当不再需要Bean时，需要将其销毁。在Java程序中，可以通过调用Bean的销毁方法来完成销毁操作，例如在Bean中定义一个名为“destroy”的方法。</li>
+</ul>
+<p><strong>总结：定义-&gt;实例化-&gt;初始化-&gt;使用-&gt;销毁</strong></p>
+<h4 id="Spring-Bean的生命周期"><a href="#Spring-Bean的生命周期" class="headerlink" title="Spring Bean的生命周期"></a>Spring Bean的生命周期</h4><ul>
+<li>实例化：在Spring容器中定义一个Bean之后，Spring会通过反射创建该Bean的实例</li>
+<li>属性注入：在实例化后，Spring会通过setter方法或者带有@Autowired注解的属性注入，将Bean所需的属性值注入到Bean实例中</li>
+<li>BeanPostProcessor处理：Spring容器会检查是否有实现了BeanPostProcessor接口的类，如果有，则会调用它们的postProcessBeforeInitialization()方法和postProcessAfterInitialization()方法，对Bean进行额外处理。</li>
+<li>初始化：在Bean实例化并注入属性值之后，Spring容器会调用Bean的初始化方法。Bean可以通过实现InitializingBean接口或者在配置文件中使用init-method属性来定义初始化方法。</li>
+<li>使用：初始化完成后，Spring容器会将Bean对象提供给应用程序使用</li>
+<li>销毁：当Spring容器关闭时，会销毁所有Bean实例。Bean可以通过实现DisposableBean接口或者在配置文件中使用destroy-method属性来定义销毁方法。</li>
+</ul>
+<p>在Bean的生命周期中，BeanPostProcessor是一个重要的环节。BeanPostProcessor接口中定义了两个方法：postProcessBeforeInitialization()和postProcessAfterInitialization()。<br><strong>实现BeanPostProcessor接口的类可以在Bean初始化前后进行额外处理，例如修改Bean属性值、校验Bean等</strong>。</p>
+<p><strong>总结：实例化-&gt;属性注入-&gt;BeanPostProcessor处理-&gt;初始化-&gt;使用-&gt;销毁</strong></p>
+<h4 id="什么是AOP"><a href="#什么是AOP" class="headerlink" title="什么是AOP"></a>什么是AOP</h4><p>AOP（面向切面编程），用于将那些与业务无关，但却对多个对象产生影响的公共行为和逻辑，抽取并封装为一个可重用的模块。可减少系统的重复代码，降低了模块间的耦合度，同时提高了系统的可维护性。可用于权限、日志、事务等。</p>
+<h4 id="AOP有哪些应用场景"><a href="#AOP有哪些应用场景" class="headerlink" title="AOP有哪些应用场景"></a>AOP有哪些应用场景</h4><ul>
+<li>记录日志（调用方法后记录日志）</li>
+<li>监控性能（统计方法运行时间）</li>
+<li>权限控制（调用方法前校验是否有权限）</li>
+<li>事务管理（调用方法前开启事务，调用方法后提交关闭事务）</li>
+</ul>
+<h4 id="AOP的实现方式"><a href="#AOP的实现方式" class="headerlink" title="AOP的实现方式"></a>AOP的实现方式</h4><p>AOP实现的关键在于<strong>代理模式</strong>，AOP代理主要分为<strong>静态代理</strong>和<strong>动态代理</strong>。静态代理的代表是AspectJ，动态代理的代表是Spring AOP</p>
+<h5 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h5><p><strong>在编译期间</strong>，通过手动编写代理类的方式将横切关注点嵌入到目标对象的方法中。缺点是需要手动编写代理类，增加了代码量和维护难度。</p>
+<h5 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h5><p><strong>在运行期间</strong>，通过Java提供的动态代理机制，生成代理对象并将横切逻辑织入到目标对象的方法中。动态代理分为<strong>JDK动态代理</strong>和<strong>CGLib动态代理</strong>两种方式</p>
+<h6 id="JDK动态代理和CGLib动态代理的区别"><a href="#JDK动态代理和CGLib动态代理的区别" class="headerlink" title="JDK动态代理和CGLib动态代理的区别"></a>JDK动态代理和CGLib动态代理的区别</h6><ul>
+<li>实现方式不同：<strong>JDK动态代理是基于接口的代理</strong>，它要求目标对象必须实现一个或多个接口。JDK动态代理通过反射机制在运行时动态地生成代理类，代理类实现了目标对象实现的所有接口，并将所有方法的调用都委托给InvocationHandler处理。而<strong>CGLIB动态代理则是基于继承的代理</strong>，它不要求目标对象实现任何接口。CGLIB动态代理通过继承目标对象，并重写其方法来实现代理，因此可以代理非接口类型的对象。</li>
+<li>性能不同：由于<strong>JDK动态代理</strong>是基于接口的代理，它<strong>需要反射调用目标对象的方法</strong>，而反射调用的<strong>效率相对较低</strong>。而<strong>CGLIB动态代理</strong>则是通过生成子类来实现代理，因此<strong>不需要反射调用目标对象的方法，可以获得更高的性能</strong>。但是由于生成子类需要消耗一定的时间和内存，因此在创建代理对象时会比JDK动态代理更慢。</li>
+<li>应用场景不同：由于<strong>JDK动态代理</strong>是基于接口的代理，因此<strong>适用于代理接口的场景</strong>。而<strong>CGLIB动态代理</strong>则<strong>适用于代理类的场景</strong>，比如代理Spring的Bean时，Spring默认使用CGLIB动态代理。另外，由于CGLIB动态代理可以代理非接口类型的对象，因此它还适用于需要代理的类没有实现接口的情况。</li>
+</ul>
+<h4 id="Spring-AOP和AspectJ-AOP的区别"><a href="#Spring-AOP和AspectJ-AOP的区别" class="headerlink" title="Spring AOP和AspectJ AOP的区别"></a>Spring AOP和AspectJ AOP的区别</h4><ul>
+<li>Spring AOP属于运行时增强，而AspectJ是编译时增强</li>
+<li>Spring AOP已经集成AspectJ，AspectJ相比于SpringAOP功能更加强大</li>
+<li>如果切面比较少，两者性能差异不大。如果切面太多，最好选择AspectJ，它比SpringAOP快的多</li>
+</ul>
+<h4 id="Spring框架中用到哪些设计模式"><a href="#Spring框架中用到哪些设计模式" class="headerlink" title="Spring框架中用到哪些设计模式"></a>Spring框架中用到哪些设计模式</h4><ul>
+<li>工厂模式：Spring使用工厂模式通过<code>BeanFactory</code>、<code>ApplicationContext</code>创建bean对象</li>
+<li>代理模式：SpringAOP功能的实现</li>
+<li>单例模式：Spring中Bean模式是单例模式的</li>
+<li>模板模式：Spring中<code>jdbcTemplate</code>、<code>HibernateTemplate</code>等以<code>Template</code>结尾的对数据库操作的类，它们就使用到了模板模式</li>
+<li>包装器设计模式 : 我们的项目需要连接多个数据库，而且不同的客户在每次访问中根据需要会去访问不同的数据库。这种模式让我们可以根据客户的需求能够动态切换不同的数据源。</li>
+<li>观察者模式: Spring 事件驱动模型就是观察者模式很经典的一个应用。</li>
+<li>适配器模式 : Spring AOP 的增强或通知(Advice)使用到了适配器模式、spring MVC 中也是用到了适配器模式适配<code>Controller</code>。</li>
+</ul>
+<h4 id="Spring的事务"><a href="#Spring的事务" class="headerlink" title="Spring的事务"></a>Spring的事务</h4><h5 id="Spring管理事务的方式有哪几种？"><a href="#Spring管理事务的方式有哪几种？" class="headerlink" title="Spring管理事务的方式有哪几种？"></a>Spring管理事务的方式有哪几种？</h5><ul>
+<li>编程式事务：在代码中硬编码（不推荐使用）</li>
+<li>声明式事务：在XML配置文件中配置或者直接基于注解（推荐使用）</li>
+</ul>
+<h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><h3 id="说说自己对SpringMVC的了解"><a href="#说说自己对SpringMVC的了解" class="headerlink" title="说说自己对SpringMVC的了解"></a>说说自己对SpringMVC的了解</h3><p><strong>SpringMVC是一个基于MVC架构、用来简化web应用开发的框架</strong>，通过把<strong>Model、View、Controller</strong>分离，将Web层进行<strong>职责解耦</strong>，把复杂的web应用分成逻辑清晰的几部分，简化开发，减少出错，方便组内开发人员之间的配合。</p>
+<h3 id="SpringMVC的核心组件有哪些"><a href="#SpringMVC的核心组件有哪些" class="headerlink" title="SpringMVC的核心组件有哪些"></a>SpringMVC的核心组件有哪些</h3><ul>
+<li>DispatcherServlet：<strong>中央处理器</strong>，负责接收请求、分发并给予客户端响应</li>
+<li>HandlerMapping：<strong>处理器映射器</strong>，根据uri去匹配查找能处理的Handler，并会将请求设计到的拦截器和Handler一起封装</li>
+<li>HandlerAdapter：<strong>处理器适配器</strong>，根据HandlerMapping找到的Handler，适配执行对应的Handler</li>
+<li>Handler：<strong>请求处理器</strong>，处理实际请求的处理器</li>
+<li>ViewResolver：<strong>视图解析器</strong>，根据Handler返回逻辑视图/视图，解析并渲染真正的视图，并传递给DispatcherServlet响应客户端</li>
+</ul>
+<h3 id="SpringMVC工作原理"><a href="#SpringMVC工作原理" class="headerlink" title="SpringMVC工作原理"></a>SpringMVC工作原理</h3><p>1、所有请求到达DispatcherServlet</p>
+<p>2、DispatcherServlet通过HandlerMapping确定请求所对应的Handler（也就是我们平常说的<code>Controller</code>控制器）</p>
+<p>3、DispatcherServlet通过HandlerAdapter执行Handler</p>
+<p>4、Handler会根据请求的信息执行相应的业务逻辑</p>
+<p>5、Handler执行完业务逻辑后返回ModelAndView</p>
+<p>6、DispatcherServlet会根据ViewResolver（视图解析器）将视图名称解析成视图对象</p>
+<p>7、视图对象会使用模型数据渲染视图并将最终渲染好的视图返回给客户端</p>
+<p>8、DispatcherServlet将渲染好的视图返回给客户端，请求处理完成</p>
+<h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><h3 id="什么是SpringBoot？"><a href="#什么是SpringBoot？" class="headerlink" title="什么是SpringBoot？"></a>什么是SpringBoot？</h3><p>SpringBoot是Spring开源组织下的子项目，是Spring组件一站式解决方案，旨在于简化Spring开发</p>
+<h3 id="为什么使用SpringBoot？"><a href="#为什么使用SpringBoot？" class="headerlink" title="为什么使用SpringBoot？"></a>为什么使用SpringBoot？</h3><ul>
+<li>独立运行：SpringBoot内嵌了各种Servlet容器，tomcat、jetty等，不需要打成war包部署到容器中，只需打成jar包就可以独立运行</li>
+<li>简化配置：不需要编写大量样板代码、XML配置和注释</li>
+<li>自动装配</li>
+<li>应用监控：提供了一系列端口可监控服务与应用</li>
+</ul>
+<h3 id="介绍一下-SpringBootApplication注解"><a href="#介绍一下-SpringBootApplication注解" class="headerlink" title="介绍一下@SpringBootApplication注解"></a>介绍一下@SpringBootApplication注解</h3><p><code>@SpringBootApplication</code>可看作是<code>@Configuration</code>、<code>@EnableAutoConfiguration</code>、<code>@ComponentScan</code>注解的集合</p>
+<ul>
+<li>@EnableAutoConfiguration：启用SpringBoot的自动装配机制</li>
+<li>@ComponentScan：扫描被@Component（@Service,@Controller）注解的bean，注解默认会扫描改类所在包下所有的类</li>
+<li>@Configuration：允许在上下文中注册额外的bean或导入其他配置类</li>
+</ul>
+<h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2><h3 id="什么是MyBatis"><a href="#什么是MyBatis" class="headerlink" title="什么是MyBatis"></a>什么是MyBatis</h3><ul>
+<li>MyBatis是一个开源的Java持久层框架（<strong>半ORM框架</strong>），它可以用来简化数据访问层的开发。</li>
+<li>它的主要功能是将Java对象和数据库中的数据进行映射，以及提供一系列的查询语句来操作数据。</li>
+<li>其优势在于它可以很好地支持定制化SQL语句，使得开发者可以根据实际需求自由地编写SQL语句。</li>
+<li>此外，Mybatis还提供了缓存机制来提高查询效率，并且可以与Spring框架很好地集成。</li>
+</ul>
+<h3 id="MyBatis的优缺点"><a href="#MyBatis的优缺点" class="headerlink" title="MyBatis的优缺点"></a>MyBatis的优缺点</h3><ul>
+<li>优点<ul>
+<li>基于SQL语句编程，灵活，不会对应用程序或数据库的现有设计造成任何影响；SQL写在XML里，解除sql与程序代码的耦合，便于统一管理；提供XML标签，支持编写动态SQL语句，并可重用</li>
+<li>与JDBC相比，减少了50%以上的代码量，消除了JDBC大量冗余的代码，不需要手动开关连接</li>
+<li>很好的与各种数据库兼容（因为MyBatis使用JDBC来连接数据库，所以只要JDBC支持的数据库MyBatis都支持）</li>
+<li>能够与Spring很好的集成</li>
+<li>提供映射标签，支持对象与数据库的ORM字段关系映射；提供对象关系映射标签，支持对象关系组件维护</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>SQL语句的编写工作量较大，尤其当字段多、关联表多时，对开发人员编写SQL语句的功底有一定要求</li>
+<li>SQL语句依赖于数据库，导致数据库移植性差，不能随意更换数据库</li>
+</ul>
+</li>
+</ul>
+<h3 id="为什么说MyBatis是半自动ORM框架？"><a href="#为什么说MyBatis是半自动ORM框架？" class="headerlink" title="为什么说MyBatis是半自动ORM框架？"></a>为什么说MyBatis是半自动ORM框架？</h3><p>因为相对于全自动ORM框架（如Hibernate）来说，<strong>需要开发者手动编写SQL语句，而不是完全由框架自动生成SQL语句</strong></p>
+<h3 id="和-的区别是什么"><a href="#和-的区别是什么" class="headerlink" title="#{}和${}的区别是什么"></a>#{}和${}的区别是什么</h3><ul>
+<li>#{}是预编译处理，${}是字符串替换</li>
+<li>MyBatis处理#{}时，会将sql中的#{}替换为?号，调用PreparedStatement的set方法来赋值</li>
+<li>MyBatis处理${}时，就是把其替换变量的值</li>
+</ul>
+<p>使用#{}可以有效防止SQL注入，提高系统安全性</p>
+<h3 id="MyBatis是如何分页的"><a href="#MyBatis是如何分页的" class="headerlink" title="MyBatis是如何分页的"></a>MyBatis是如何分页的</h3><ul>
+<li>MyBatis使用RowBounds对象进行分页，它是针对ResultSet结果集执行的内存分页，而非物理分页</li>
+<li>可以在sql内直接书写带有物理分页的参数来完成物理分页功能</li>
+<li>也可以使用分页插件来完成物理分页</li>
+</ul>
+<h3 id="MyBatis动态SQL的标签"><a href="#MyBatis动态SQL的标签" class="headerlink" title="MyBatis动态SQL的标签"></a>MyBatis动态SQL的标签</h3><ul>
+<li><code>&lt;if&gt;</code>标签：判断条件为真时，包含在标签内的SQL语句才会被包含在最终生成的SQL语句中。</li>
+<li><code>&lt;choose&gt;</code>标签：类似于Java语言中的switch语句，根据条件匹配相应的子元素。</li>
+<li><code>&lt;when&gt;</code>标签：<code>&lt;choose&gt;</code>标签的子标签，用于定义匹配的条件和生成的SQL语句。</li>
+<li><code>&lt;otherwise&gt;</code>标签：<code>&lt;choose&gt;</code>标签的默认分支，当所有条件不匹配时，会执行<code>&lt;otherwise&gt;</code>标签中的SQL语句。</li>
+<li><code>&lt;trim&gt;</code>标签：可以删除或包含在生成的SQL语句中的部分内容。</li>
+<li><code>&lt;where&gt;</code>标签：可以根据条件动态生成<code>where</code>语句。</li>
+<li><code>&lt;set&gt;</code>标签：用于根据条件动态生成<code>set</code>语句，主要用于更新操作。</li>
+<li><code>&lt;foreach&gt;</code>标签：可以将Java集合中的元素作为SQL语句中的参数值，用于批量插入、更新、删除等操作。</li>
+<li><code>&lt;bind&gt;</code>标签：可以从OGNL(对象图导航语言)表达式中创建一个变量并将其绑定到上下文。</li>
+</ul>
+<h3 id="MyBatis的一级缓存、二级缓存"><a href="#MyBatis的一级缓存、二级缓存" class="headerlink" title="MyBatis的一级缓存、二级缓存"></a>MyBatis的一级缓存、二级缓存</h3><ul>
+<li>一级缓存<ul>
+<li><strong>一级缓存是SqlSession级别的缓存，它是默认开启的，存储了查询结果对象的引用</strong>，避免了重复查询数据库的操作，从而提升了效率</li>
+<li>一级缓存的作用域为SqlSession，只在当前的SqlSession中有效，当SqlSession关闭时，缓存也就失效了。</li>
+<li>一级缓存的清除策略是默认的，即在执行任何写操作（插入、更新、删除）之后，会清空一级缓存中所有的查询结果对象</li>
+</ul>
+</li>
+<li>二级缓存<ul>
+<li><strong>二级缓存是Mapper级别的缓存，它需要手动开启，存储了查询结果对象的拷贝</strong>。</li>
+<li>二级缓存的作用域是Mapper，多个SqlSession可以共享同一个Mapper的二级缓存。</li>
+<li>当不同的SqlSession查询相同的Mapper和SQL语句时，如果二级缓存中有缓存结果，则直接返回缓存结果，否则查询数据库并将结果放入缓存中。二级缓存的清除策略有多种，可以根据时间、大小、刷新等条件进行清除。</li>
+</ul>
+</li>
+</ul>
+<h2 id="MyBatis-Plus"><a href="#MyBatis-Plus" class="headerlink" title="MyBatis-Plus"></a>MyBatis-Plus</h2><h3 id="什么是MyBatis-Plus"><a href="#什么是MyBatis-Plus" class="headerlink" title="什么是MyBatis-Plus"></a>什么是MyBatis-Plus</h3><p>MyBatis-Plus是一个MyBatis的增强工具，在MyBatis的基础上只做增强不做改变，为简化开发、提高效率而生</p>
+<h2 id="Netty"><a href="#Netty" class="headerlink" title="Netty"></a>Netty</h2><h3 id="BIO-x2F-NIO-x2F-AIO的区别"><a href="#BIO-x2F-NIO-x2F-AIO的区别" class="headerlink" title="BIO/NIO/AIO的区别"></a>BIO/NIO/AIO的区别</h3><ul>
+<li>BIO（Blocking I/O）：同步阻塞I/O模式</li>
+<li>NIO（Non-blocking/New I/O）：同步非阻塞I/O</li>
+<li>AIO（Asynchronous I/O）：异步非阻塞I/O，AIO也就是NIO 2</li>
+</ul>
+<h3 id="Netty是什么"><a href="#Netty是什么" class="headerlink" title="Netty是什么"></a>Netty是什么</h3><ul>
+<li>Netty是一个基于<strong>NIO</strong>的client-server（客户端服务器）框架，使用它可以简单快速地开发网络应用程序</li>
+<li>它极大低简化并优化了TCP和UDP套接字服务器等网络编程，并且性能以及安全性等很多方面甚至都要更好</li>
+<li>支持多种协议，如FTP、SMTP、HTTP以及各种二进制和基于文本的传统协议</li>
+</ul>
+<h3 id="为啥不直接用NIO"><a href="#为啥不直接用NIO" class="headerlink" title="为啥不直接用NIO"></a>为啥不直接用NIO</h3><ul>
+<li>NIO的编程模型复杂且存在一些BUG，并且对编程功底要求比较高</li>
+<li>NIO在面对断连、重连、包丢失、粘包等问题时处理过程非常复杂。</li>
+</ul>
+<h3 id="为啥用Netty"><a href="#为啥用Netty" class="headerlink" title="为啥用Netty"></a>为啥用Netty</h3><ul>
+<li>统一的API，支持多种传输类型，阻塞和非阻塞的</li>
+<li>简单强大的线程模型</li>
+<li>自带编解码器解决TCP粘包/拆包问题</li>
+<li>自带各种协议栈</li>
+<li>安全性不错、社区活跃、成熟稳定</li>
+</ul>
+<h4 id="Netty应用场景了解吗"><a href="#Netty应用场景了解吗" class="headerlink" title="Netty应用场景了解吗"></a>Netty应用场景了解吗</h4><p>从理论上来说，NIO可以做的事情，使用Netty都可以做并且更好，Netty主要用来做网络通信</p>
+<ul>
+<li>做为RPC框架的网络通信工具</li>
+<li>实现一个自己的HTTP服务器</li>
+<li>实现一个即时通讯系统</li>
+<li>实现消息推送系统</li>
+</ul>
+<h4 id="哪些项目用到Netty"><a href="#哪些项目用到Netty" class="headerlink" title="哪些项目用到Netty"></a>哪些项目用到Netty</h4><p>Dubbo、RocketMQ、ElasticSearch，gRPC等等</p>
+<h4 id="介绍一下Netty的核心组件"><a href="#介绍一下Netty的核心组件" class="headerlink" title="介绍一下Netty的核心组件"></a>介绍一下Netty的核心组件</h4><h1 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h1><h3 id="微服务与分布式的区别"><a href="#微服务与分布式的区别" class="headerlink" title="微服务与分布式的区别"></a>微服务与分布式的区别</h3><p>分布式系统（Distributed System）是一种由多个独立计算机组成的系统，这些计算机通过网络进行通信和协作，以共同完成任务。它们共享资源、数据和功能，使得系统更加灵活、可扩展和可靠。分布式系统的重点是处理系统的复杂性，以便能够更好地管理和协调各个计算机之间的通信和资源。</p>
+<p>微服务（Microservices）是一种软件开发模式，将应用程序分解为小型、松耦合的服务，每个服务运行在自己的进程中，并通过轻量级的通信机制进行交互。每个服务都可以单独部署、测试、维护和扩展。微服务的重点是提高软件开发的灵活性和可维护性，以便能够更快速地交付业务价值。</p>
+<h4 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h4><ul>
+<li>视角不同：分布式系统从整体上看待系统的构成和功能，而微服务从单个服务的角度来看待系统的构成和功能。</li>
+<li>粒度不同：分布式系统的粒度较大，涵盖整个系统，而微服务的粒度较小，每个服务都非常简单，只关注特定的业务逻辑。</li>
+<li>沟通机制不同：分布式系统通常使用消息传递或共享内存等机制进行通信，而微服务则使用轻量级的HTTP/REST API进行通信。</li>
+</ul>
+<h1 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h1><h2 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h2><h3 id="何为RPC"><a href="#何为RPC" class="headerlink" title="何为RPC"></a>何为RPC</h3><p>RPC（Remote Procedure Call）<strong>远程过程调用</strong>，为了让你调用远程方法像调用本地方法一样简单</p>
+<h3 id="RPC的原理"><a href="#RPC的原理" class="headerlink" title="RPC的原理"></a>RPC的原理</h3><p>RPC（Remote Procedure Call，远程过程调用）是一种计算机通信协议，用于在网络中的不同计算机上执行远程过程调用。它的基本原理是客户端应用程序通过网络调用服务端应用程序的函数或方法，并等待函数或方法的返回结果。</p>
+<ul>
+<li>客户端调用过程：客户端应用程序调用远程过程，就像调用本地函数一样。调用参数会被打包成网络可传输的格式，然后发送给服务端。</li>
+<li>网络传输：客户端通过网络把打包好的参数传输给服务端，使用HTTP、TCP/IP、UDP等网络协议进行传输。</li>
+<li>服务端接收请求：服务端接收到请求后，解包参数并调用本地的函数或方法。</li>
+<li>函数执行：服务端执行本地函数或方法，使用调用参数并生成结果。</li>
+<li>返回结果：服务端把函数的返回结果打包成网络可传输的格式，通过网络发送给客户端。</li>
+<li>客户端接收结果：客户端接收到服务端返回的结果，解包结果并使用它。</li>
+</ul>
+<p>总之，RPC使得分布式应用程序中的不同计算机之间的通信变得更加容易和可靠，通过将过程调用封装成网络通信，使得应用程序可以像调用本地函数一样调用远程函数。</p>
+<h3 id="常用的RPC框架"><a href="#常用的RPC框架" class="headerlink" title="常用的RPC框架"></a>常用的RPC框架</h3><ul>
+<li>Dubbo：是一款微服务框架，为大规模微服务实践提供高性能 RPC 通信、流量治理、可观测性等解决方案， 涵盖 Java、Golang 等多种语言 SDK 实现。</li>
+<li>Motan：是新浪微博开源的一款 RPC 框架，据说在新浪微博正支撑着千亿次调用。</li>
+<li>gRPC：Google 开源的一个高性能、通用的开源 RPC 框架。其由主要面向移动应用开发并基于 HTTP/2 协议标准而设计（支持双向流、消息头压缩等功能，更加节省带宽），基于 ProtoBuf 序列化协议开发，并且支持众多开发语言。</li>
+</ul>
+<h3 id="HTTP和RPC的区别"><a href="#HTTP和RPC的区别" class="headerlink" title="HTTP和RPC的区别"></a>HTTP和RPC的区别</h3><ul>
+<li>功能: HTTP旨在传输数据和文件，而RPC旨在在不同的计算机上调用远程过程。</li>
+<li>传输协议和编码格式: HTTP使用HTTP协议进行通信，而RPC可以使用不同的协议和编码格式（例如TCP、UDP、HTTP等，并且可以支持多种编码格式，如二进制、JSON等。RPC通常使用二进制编码格式，可以更高效地传输数据）</li>
+<li>性能: RPC通常比HTTP更高效，因为它可以使用二进制编码格式和更轻量级的传输协议。</li>
+</ul>
+<h2 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h2><h3 id="什么是Dubbo"><a href="#什么是Dubbo" class="headerlink" title="什么是Dubbo"></a>什么是Dubbo</h3><p>Apache Dubbo 是⼀个⾼性能，轻量级，基于Java的RPC框架。Dubbo提供三个关键功能，包括基 于接⼝的远程调⽤，容错和负载平衡以及⾃动服务注册和发现。</p>
+<h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h2 id="消息队列-1"><a href="#消息队列-1" class="headerlink" title="消息队列"></a>消息队列</h2><h3 id="消息队列的作用"><a href="#消息队列的作用" class="headerlink" title="消息队列的作用"></a>消息队列的作用</h3><ul>
+<li><strong>通过异步处理提高系统性能（减少响应所需时间）</strong></li>
+<li><strong>削峰/限流</strong></li>
+<li><strong>降低系统耦合性</strong></li>
+<li><strong>实现分布式事务</strong></li>
+</ul>
+<h3 id="使用消息队列会带来哪些问题"><a href="#使用消息队列会带来哪些问题" class="headerlink" title="使用消息队列会带来哪些问题"></a>使用消息队列会带来哪些问题</h3><ul>
+<li><strong>系统可用性降低：</strong> 系统可用性在某种程度上降低，为什么这样说呢？在加入 MQ 之前，你不用考虑消息丢失或者说 MQ 挂掉等等的情况，但是，引入 MQ 之后你就需要去考虑了！</li>
+<li><strong>系统复杂性提高：</strong> 加入 MQ 之后，你需要保证消息没有被重复消费、处理消息丢失的情况、保证消息传递的顺序性等等问题！</li>
+<li><strong>一致性问题：</strong> 我上面讲了消息队列可以实现异步，消息队列带来的异步确实可以提高系统响应速度。但是，万一消息的真正消费者并没有正确消费消息怎么办？这样就会导致数据不一致的情况了！</li>
+</ul>
+<h2 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h2><h3 id="Kafka是什么？"><a href="#Kafka是什么？" class="headerlink" title="Kafka是什么？"></a>Kafka是什么？</h3><p>Kafka是一个<strong>分布式的、基于发布/订阅模式</strong>的消息队列，主要应用于大数据实时处理领域</p>
+<p>流平台具有：</p>
+<ul>
+<li>消息队列：发布和订阅消息流</li>
+<li>容错的持久方式存储记录消息流：Kafka会将消息持久化到磁盘，有效避免了消息丢失的风险</li>
+<li>流式处理平台：在消息发布的时候进行处理，Kafka提供了一个完整的流式处理类库</li>
+</ul>
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><ul>
+<li><strong>消息队列</strong>：建立实时流数据管道，以可靠地在系统或应用程序之间获取数据。</li>
+<li><strong>数据处理</strong>：构建实时的流数据处理程序来转换或处理数据流。</li>
+</ul>
+<h4 id="Kafka的优势"><a href="#Kafka的优势" class="headerlink" title="Kafka的优势"></a>Kafka的优势</h4><p>Kafka相比于其他消息队列，主要的优势如下：</p>
+<ul>
+<li><strong>极致的性能</strong>：基于Scala和Java语言开发，设计中大量使用了批量处理和异步的思想，最高可以每秒处理千万级别的消息</li>
+<li><strong>生态系统兼容性无可匹敌</strong>：Kakfa于周边生态系统的兼容性是最好的，没有之一，尤其在大数据和流计算领域</li>
+</ul>
+<h2 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h2><h3 id="RabbitMQ的工作模式"><a href="#RabbitMQ的工作模式" class="headerlink" title="RabbitMQ的工作模式"></a>RabbitMQ的工作模式</h3><ul>
+<li>简单模式</li>
+<li>work工作模式</li>
+<li>pub/sub发布订阅模式</li>
+<li>routing路由模式</li>
+<li>topic主题模式</li>
+</ul>
+<h3 id="什么是死信队列？如何导致的？"><a href="#什么是死信队列？如何导致的？" class="headerlink" title="什么是死信队列？如何导致的？"></a>什么是死信队列？如何导致的？</h3><p>DLX，全称为 <code>Dead-Letter-Exchange</code>，死信交换器，死信邮箱。当消息在一个队列中变成死信 (<code>dead message</code>) 之后，它能被重新被发送到DLX，与DLX绑定  的队列就称之为死信队列。</p>
+<h4 id="导致死信的原因"><a href="#导致死信的原因" class="headerlink" title="导致死信的原因"></a>导致死信的原因</h4><ul>
+<li>消息被拒</li>
+<li>消息TTL过期</li>
+<li>队列满了，无法再添加</li>
+</ul>
+<h3 id="什么是延迟队列？RabbitMQ怎么实现延迟队列"><a href="#什么是延迟队列？RabbitMQ怎么实现延迟队列" class="headerlink" title="什么是延迟队列？RabbitMQ怎么实现延迟队列?"></a>什么是延迟队列？RabbitMQ怎么实现延迟队列?</h3><p>延迟队列指的是存储对应的延迟信息，消息被发送之后，并不想让消费者立即拿到消息，而是等待特定时间后，消费者才能拿到这个消息进行消费</p>
+<p>RabbitMQ本身是没有延迟队列的，要实现延迟队列，需要使用RabbitMQ的死信交换机（DLX）和消息的存活时间TTL（Time to Live）。模拟延迟队列的功能</p>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p>单例模式：保证一个类只有一个实例并提供一个访问它的全局访问点</p>
+<h4 id="懒汉模式"><a href="#懒汉模式" class="headerlink" title="懒汉模式"></a>懒汉模式</h4><p>线程不安全，延迟初始化</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//    懒汉模式</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton singleton<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            singleton <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> singleton<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="饿汉模式"><a href="#饿汉模式" class="headerlink" title="饿汉模式"></a>饿汉模式</h4><p>线程安全，比较常用，但容易产生垃圾，因为一开始就初始化</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton singleton <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token function">Singleton</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> singleton<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h4><p>只有第一次调用getInstance方法时，虚拟机才加载 Inner 并初始化instance ，只有一个线程可以获得对象的初始化锁，其他线程无法进行初始化，保证对象的唯一性。目前此方式是所有单例模式中最推荐的模式，但具体还是根据项目选择。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">private</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+      <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+        <span class="token keyword">return</span> Inner<span class="token punctuation">.</span>instance<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Inner</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Singleton instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span> 
+</code></pre>
+<h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> Singleton <span class="token punctuation">{</span>
+    INSTANCE<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">whateverMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="双重锁模式"><a href="#双重锁模式" class="headerlink" title="双重锁模式"></a>双重锁模式</h4><p>双重检查模式，进行了两次的判断，第一次是为了避免不要的实例，第二次是为了进行同步，避免多线程问题</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">private</span> <span class="token keyword">volatile</span> <span class="token keyword">static</span> Singleton singleton<span class="token punctuation">;</span>  
+    <span class="token keyword">private</span> <span class="token function">Singleton</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>  
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton <span class="token function">getSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">synchronized</span> <span class="token punctuation">(</span>Singleton<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            singleton <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+        <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span>  
+    <span class="token keyword">return</span> singleton<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="单例模式的懒汉和饿汉的区别"><a href="#单例模式的懒汉和饿汉的区别" class="headerlink" title="单例模式的懒汉和饿汉的区别"></a>单例模式的懒汉和饿汉的区别</h4><ul>
+<li>懒汉：在类加载的时候不会被初始化，非线程安全</li>
+<li>饿汉：在类加载时时候就完成初始化，线程安全</li>
+</ul>
+<h3 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h3><p>策略模式是一种<strong>行为型</strong>设计模式，它允许在运行时动态选择算法或行为，而不必在编译时硬编码这些选择。使用策略模式可以使代码更具有可拓展性、可维护性和可重用性。</p>
+<p>在策略模式中，一个对象或方法将根据需要选择一种算法或行为，而不必知道该算法或行为的实现细节。通常，这些算法或行为被定义为一个接口或抽象类，并且可以有多个不同的实现，称为策略类。然后，一个上下文类使用这些策略类，并根据需要动态选择一个策略来执行相应的算法或行为。</p>
+<h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><h3 id="为啥使用Postgresql而不用MySQL"><a href="#为啥使用Postgresql而不用MySQL" class="headerlink" title="为啥使用Postgresql而不用MySQL"></a>为啥使用Postgresql而不用MySQL</h3><p>PostgreSQL (pgsql) 和 MySQL 都是常用的关系型数据库管理系统 (RDBMS)。虽然它们都是开源软件，但在一些方面有着不同的设计和实现。</p>
+<p>以下是一些可能使人们选择使用 PostgreSQL 而不是 MySQL 的原因：</p>
+<ol>
+<li>数据类型支持：PostgreSQL 提供了更多的数据类型，如数组、范围类型、JSON 等，这些数据类型对于一些应用程序可能非常有用，而 MySQL 则支持较少的数据类型。</li>
+<li>事务支持：PostgreSQL 在事务处理方面非常强大，支持完全的 ACID 属性，而 MySQL 在这方面的支持则有限。</li>
+<li>外键约束：PostgreSQL 对于外键约束的支持更加强大和灵活，可以进行更多的操作和限制，而 MySQL 则相对简单。</li>
+<li>扩展性：PostgreSQL 支持更多的扩展，如自定义类型、自定义函数、存储过程等，这些扩展对于一些特殊需求的应用程序可能非常有用。</li>
+<li>性能：PostgreSQL 在某些方面的性能可能会优于 MySQL，例如复杂查询和并发读取。</li>
+</ol>
+<p>当然，选择 PostgreSQL 还是 MySQL 还要考虑到具体的应用场景和需求。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">YoonaDa</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.yoonada.cn/2022/11/16/zhi-shi-zong-jie/">https://blog.yoonada.cn/2022/11/16/zhi-shi-zong-jie/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">YoonaDa</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">知识总结</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/11/17/shu-ju-jie-gou/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://images.yoonada.cn/featureimages/7.jpg" class="responsive-img" alt="数据结构">
+                        
+                        <span class="card-title">数据结构</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            <a href="/categories/Java/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            <a href="/categories/Java/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/11/15/pai-xu-mou-pao-pai-xu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://images.yoonada.cn/featureimages/20.jpg" class="responsive-img" alt="排序-冒泡排序">
+                        
+                        <span class="card-title">排序-冒泡排序</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            <a href="/categories/Java/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            <a href="/categories/Java/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/" class="post-category">
+                                    排序
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                        <span class="chip bg-color">排序</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2023</span>
+            
+            <a href="/about" target="_blank">YoonaDa</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">38.8k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/YoonaDa" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+        data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+    
+
+        
+            <a href="mailto:m15602498163@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+                data-position="top" data-delay="50">
+                <i class="fas fa-envelope-open"></i>
+            </a>
+            
+
+                
+
+                        
+
+                                
+                                    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=970757399"
+                                        class="tooltipped" target="_blank"
+                                        data-tooltip="QQ联系我: 970757399" data-position="top"
+                                        data-delay="50">
+                                        <i class="fab fa-qq"></i>
+                                    </a>
+                                    
+
+                                        
+
+                                                
+
+                                                        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+
+</html>

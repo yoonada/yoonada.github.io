@@ -20,7 +20,7 @@
     
 
     <title>分类: PicGo | YoonaDa Blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -109,6 +109,17 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -188,6 +199,17 @@
           
         </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
         
     </ul>
 </div>
@@ -207,30 +229,13 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                     
                 
             </div>
 
             <div class="description center-align">
                 
-                    <span id="subtitle"></span>
-                    <script src="/libs/typed/typed.js"></script>
-                    <script>
-                        var typed = new Typed("#subtitle", {
-                            strings: [
-                                
-                                "为天地立心\，为生民立命\，为往圣继绝学\，为万世开太平",
-                                
-                                "To ordain conscience for Heaven and Earth\, To secure life and fortune for the people\, To continue lost teachings for past sages\, To establish peace for all future generations.",
-                                
-                            ],
-                            startDelay: 300,
-                            typeSpeed: 100,
-                            loop: true,
-                            backSpeed: 80,
-                            showCursor: true
-                        });
-                    </script>
+                    
                 
             </div>
         </div>
@@ -239,7 +244,8 @@
 
 
     <script>
-        $('.bg-cover').css('background-image', 'url(/medias/banner/1.jpg)');
+        <!--$('.bg-cover').css('background-image', 'url(/medias/banner/9.jpg)');-->
+        $('.bg-cover').css('background-image', 'url(https://images.yoonada.cn/featureimages/0.jpg)');
     </script>
 
 
@@ -260,20 +266,38 @@
                 
                 
                 
-                <a href="/categories/Java/" title="Java: 4">
+                <a href="/categories/Hadoop/" title="Hadoop: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">Java
-                        <span class="tag-length">4</span>
+                            style="background-color: #F9EBEA;">Hadoop
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/centos/" title="centos: 8">
+                <a href="/categories/Java/" title="Java: 7">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">centos
-                        <span class="tag-length">8</span>
+                            style="background-color: #F5EEF8;">Java
+                        <span class="tag-length">7</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/MySQL/" title="MySQL: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D5F5E3;">MySQL
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Hadoop/centos/" title="centos: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #E8F8F5;">centos
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -281,7 +305,16 @@
                 <a href="/categories/PicGo/" title="PicGo: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            style="background-color: #D5F5E3;">PicGo
+                            style="background-color: #FEF9E7;">PicGo
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/redis/" title="redis: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">redis
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -290,7 +323,7 @@
                 <a href="/categories/Java/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" title="日常随笔: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #E8F8F5;">日常随笔
+                            style="background-color: #82E0AA;">日常随笔
                         <span class="tag-length">4</span>
                     </span>
                 </a>
@@ -299,8 +332,35 @@
                 <a href="/categories/SpringBoot/" title="SpringBoot: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">SpringBoot
+                            style="background-color: #D7BDE2;">SpringBoot
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/MySQL/%E9%9D%A2%E8%AF%95/" title="面试: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #A3E4D7;">面试
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/centos/" title="centos: 9">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #85C1E9;">centos
+                        <span class="tag-length">9</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Hadoop/centos/%E9%9B%86%E7%BE%A4/" title="集群: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8C471;">集群
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -308,8 +368,17 @@
                 <a href="/categories/%E5%91%BD%E4%BB%A4/" title="命令: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">命令
+                            style="background-color: #F9E79F;">命令
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/redis/centos/" title="centos: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D7BDE2;">centos
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -317,7 +386,7 @@
                 <a href="/categories/SpringBoot/RabbitMQ/" title="RabbitMQ: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #82E0AA;">RabbitMQ
+                            style="background-color: #E8F8F5;">RabbitMQ
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -326,7 +395,34 @@
                 <a href="/categories/SpringBoot/redis/" title="redis: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D7BDE2;">redis
+                            style="background-color: #82E0AA;">redis
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/centos/k8s/" title="k8s: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D5F5E3;">k8s
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/redis/centos/%E9%9B%86%E7%BE%A4/" title="集群: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FFF;">集群
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/centos/docker/" title="docker: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">docker
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -335,35 +431,8 @@
                 <a href="/categories/centos/ssh/" title="ssh: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #A3E4D7;">ssh
+                            style="background-color: #F8F9F9;">ssh
                         <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/centos/docker/" title="docker: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #85C1E9;">docker
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/%E8%A3%85%E6%9C%BA%E8%BD%AF%E4%BB%B6/" title="装机软件: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F8C471;">装机软件
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/centos/ssh/frp/" title="frp: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F9E79F;">frp
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -372,6 +441,78 @@
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">MySQL
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/centos/ssh/frp/" title="frp: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #A3E4D7;">frp
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/window/" title="window: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">window
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E8%A3%85%E6%9C%BA%E8%BD%AF%E4%BB%B6/" title="装机软件: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">装机软件
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Java/%E7%AE%97%E6%B3%95/" title="算法: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">算法
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/window/mysql/" title="mysql: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8C471;">mysql
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="知识总结: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">知识总结
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Java/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/" title="排序: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FFF;">排序
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Java/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">数据结构
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -394,7 +535,7 @@
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="PicGo配置图床">
+                            <img src="https://images.yoonada.cn/featureimages/7.jpg" class="responsive-img" alt="PicGo配置图床">
                             
                             <span class="card-title">PicGo配置图床</span>
                         </div>
@@ -510,7 +651,7 @@ Typora配置PicGo
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <a href="/about" target="_blank">YoonaDa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -518,7 +659,7 @@ Typora配置PicGo
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">10.8k</span>
+                        class="white-color">38.8k</span>
             
             
             

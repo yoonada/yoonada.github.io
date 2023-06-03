@@ -20,7 +20,7 @@
     
 
     <title>关于 | YoonaDa Blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -109,6 +109,17 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -188,6 +199,17 @@
           
         </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
         
     </ul>
 </div>
@@ -214,30 +236,13 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                     
                 
             </div>
 
             <div class="description center-align">
                 
-                    <span id="subtitle"></span>
-                    <script src="/libs/typed/typed.js"></script>
-                    <script>
-                        var typed = new Typed("#subtitle", {
-                            strings: [
-                                
-                                "为天地立心\，为生民立命\，为往圣继绝学\，为万世开太平",
-                                
-                                "To ordain conscience for Heaven and Earth\, To secure life and fortune for the people\, To continue lost teachings for past sages\, To establish peace for all future generations.",
-                                
-                            ],
-                            startDelay: 300,
-                            typeSpeed: 100,
-                            loop: true,
-                            backSpeed: 80,
-                            showCursor: true
-                        });
-                    </script>
+                    
                 
             </div>
         </div>
@@ -246,7 +251,8 @@
 
 
     <script>
-        $('.bg-cover').css('background-image', 'url(/medias/banner/1.jpg)');
+        <!--$('.bg-cover').css('background-image', 'url(/medias/banner/9.jpg)');-->
+        $('.bg-cover').css('background-image', 'url(https://images.yoonada.cn/featureimages/0.jpg)');
     </script>
 
 
@@ -262,21 +268,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">27</a></span>
+    <span class="count"><a href="/">37</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">13</a></span>
+    <span class="count"><a href="/categories">28</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">28</a></span>
+    <span class="count"><a href="/tags">38</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -285,28 +291,28 @@
                     <div class="col s12 m12 l4">
                         <div class="profile center-align">
                             <div class="avatar">
-                                <img src="/medias/avatar.jpg" alt="YoonaDa"
+                                <img src="https://images.yoonada.cn/featureimages/avatar.jpg" alt="YoonaDa"
                                      class="circle responsive-img avatar-img">
                             </div>
                             <div class="author">
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">27</a></span>
+    <span class="count"><a href="/">37</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">13</a></span>
+    <span class="count"><a href="/categories">28</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">28</a></span>
+    <span class="count"><a href="/tags">38</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -440,7 +446,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05","2022-06","2022-07","2022-08","2022-09","2022-10","2022-11"]
+            data: ["2022-06","2022-07","2022-08","2022-09","2022-10","2022-11","2022-12","2023-01","2023-02","2023-03","2023-04","2023-05","2023-06"]
         },
         yAxis: {
             type: 'value',
@@ -450,7 +456,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,11,3,7,2,4],
+                data: [0,11,3,7,2,8,0,0,1,4,0,1,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -492,7 +498,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Java","value":4},{"name":"centos","value":8},{"name":"PicGo","value":1},{"name":"日常随笔","value":4},{"name":"SpringBoot","value":2},{"name":"命令","value":2},{"name":"RabbitMQ","value":1},{"name":"redis","value":1},{"name":"ssh","value":2},{"name":"docker","value":1},{"name":"装机软件","value":1},{"name":"frp","value":1},{"name":"MySQL","value":1}],
+                data: [{"name":"Hadoop","value":1},{"name":"Java","value":7},{"name":"MySQL","value":1},{"name":"centos","value":1},{"name":"PicGo","value":1},{"name":"redis","value":1},{"name":"日常随笔","value":4},{"name":"SpringBoot","value":2},{"name":"面试","value":1},{"name":"centos","value":9},{"name":"集群","value":1},{"name":"命令","value":2},{"name":"centos","value":1},{"name":"RabbitMQ","value":1},{"name":"redis","value":1},{"name":"k8s","value":1},{"name":"集群","value":1},{"name":"docker","value":1},{"name":"ssh","value":2},{"name":"MySQL","value":1},{"name":"frp","value":1},{"name":"window","value":1},{"name":"装机软件","value":1},{"name":"算法","value":3},{"name":"mysql","value":1},{"name":"知识总结","value":1},{"name":"排序","value":2},{"name":"数据结构","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -516,7 +522,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["centos","docker","Java","日常随笔","命令","ssh","MyBatis-Plus","docker-compose","SpringBoot","RabbitMQ"]
+                data: ["centos","Java","docker","日常随笔","MySQL","redis","命令","ssh","算法","集群"]
             }
         ],
         yAxis: [
@@ -529,7 +535,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [9,7,4,4,3,3,2,2,2,2],
+                data: [12,7,7,4,3,3,3,3,3,2],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -635,7 +641,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <a href="/about" target="_blank">YoonaDa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -643,7 +649,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">10.8k</span>
+                        class="white-color">38.8k</span>
             
             
             

@@ -20,7 +20,7 @@
     
 
     <title>YoonaDa Blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -109,6 +109,17 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -188,6 +199,17 @@
           
         </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
         
     </ul>
 </div>
@@ -208,30 +230,13 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                     
                 
             </div>
 
             <div class="description center-align">
                 
-                    <span id="subtitle"></span>
-                    <script src="/libs/typed/typed.js"></script>
-                    <script>
-                        var typed = new Typed("#subtitle", {
-                            strings: [
-                                
-                                "为天地立心\，为生民立命\，为往圣继绝学\，为万世开太平",
-                                
-                                "To ordain conscience for Heaven and Earth\, To secure life and fortune for the people\, To continue lost teachings for past sages\, To establish peace for all future generations.",
-                                
-                            ],
-                            startDelay: 300,
-                            typeSpeed: 100,
-                            loop: true,
-                            backSpeed: 80,
-                            showCursor: true
-                        });
-                    </script>
+                    
                 
             </div>
         </div>
@@ -240,7 +245,8 @@
 
 
     <script>
-        $('.bg-cover').css('background-image', 'url(/medias/banner/1.jpg)');
+        <!--$('.bg-cover').css('background-image', 'url(/medias/banner/9.jpg)');-->
+        $('.bg-cover').css('background-image', 'url(https://images.yoonada.cn/featureimages/0.jpg)');
     </script>
 
 
@@ -261,28 +267,144 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/09/20/ssh-mian-mi-deng-lu-san-tai-xu-ni-ji-zhi-jian-liang-liang-mian-mi-deng-lu/">
+                    <a href="/2022/11/01/springboot-zheng-he-redis/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="ssh免密登录（三台虚拟机之间两两免密登录）">
+                            <img src="https://images.yoonada.cn/featureimages/0.jpg" class="responsive-img" alt="SpringBoot整合redis">
                             
-                            <span class="card-title">ssh免密登录（三台虚拟机之间两两免密登录）</span>
+                            <span class="card-title">SpringBoot整合redis</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                现有三台centos的虚拟机，要求两两之间实现免密登录192.168.118.128192.168.118.129192.168.118.130
-1、三台虚拟机都执行以下命令：ssh-keygen -t rsa
-
-2、三台虚拟机都进入/.s
+                                引入maven依赖    &lt;dependency>
+        &lt;groupId>org.springframework.boot&lt;/groupId>
+        &lt;artifactId>spring-boo
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/SpringBoot/" class="post-category">
+                                    SpringBoot
+                                </a>
+                                
+                                <a href="/categories/SpringBoot/redis/" class="post-category">
+                                    redis
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/redis/">
+                            <span class="chip bg-color">redis</span>
+                        </a>
+                        
+                        <a href="/tags/SpringBoot/">
+                            <span class="chip bg-color">SpringBoot</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/11/01/picgo-pei-zhi-tu-chuang/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="https://images.yoonada.cn/featureimages/7.jpg" class="responsive-img" alt="PicGo配置图床">
+                            
+                            <span class="card-title">PicGo配置图床</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                官网下载最新正式版并安装https://github.com/Molunerfinn/PicGo/releases
+配置阿里云OSS
+Typora配置PicGo
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/PicGo/" class="post-category">
+                                    PicGo
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/PicGo/">
+                            <span class="chip bg-color">PicGo</span>
+                        </a>
+                        
+                        <a href="/tags/%E5%9B%BE%E5%BA%8A/">
+                            <span class="chip bg-color">图床</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/10/31/docker-da-jian-mysql-de-zhu-cong-fu-zhi/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="https://images.yoonada.cn/featureimages/3.jpg" class="responsive-img" alt="docker搭建MySQL的主从复制">
+                            
+                            <span class="card-title">docker搭建MySQL的主从复制</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                docker拉取MySQL5.7的镜像docker pull mysql:5.7
+
+创建主库的数据目录mkdir -p /usr/local/mysql/mysql-master/{data,conf,log}
+
+创建主库配置文件my.cn
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-31
                             </span>
                             <span class="publish-author">
                                 
@@ -292,8 +414,12 @@
                                     centos
                                 </a>
                                 
-                                <a href="/categories/centos/ssh/" class="post-category">
-                                    ssh
+                                <a href="/categories/centos/docker/" class="post-category">
+                                    docker
+                                </a>
+                                
+                                <a href="/categories/centos/docker/MySQL/" class="post-category">
+                                    MySQL
                                 </a>
                                 
                                 
@@ -308,282 +434,185 @@
                             <span class="chip bg-color">centos</span>
                         </a>
                         
-                        <a href="/tags/ssh/">
-                            <span class="chip bg-color">ssh</span>
+                        <a href="/tags/MySQL/">
+                            <span class="chip bg-color">MySQL</span>
                         </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/08/04/centos-an-zhuang-jdk/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="centos安装jdk">
-                            
-                            <span class="card-title">centos安装jdk</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/centos/" class="post-category">
-                                    centos
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/centos/">
-                            <span class="chip bg-color">centos</span>
-                        </a>
-                        
-                        <a href="/tags/jdk/">
-                            <span class="chip bg-color">jdk</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/08/04/centos-an-zhuang-maven/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="centos安装maven">
-                            
-                            <span class="card-title">centos安装maven</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                进入目录cd /usr/local
-
-下载mavenwget https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.g
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/centos/" class="post-category">
-                                    centos
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/centos/">
-                            <span class="chip bg-color">centos</span>
-                        </a>
-                        
-                        <a href="/tags/maven/">
-                            <span class="chip bg-color">maven</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/08/04/docker-compose-ming-ling/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="docker-compose命令">
-                            
-                            <span class="card-title">docker-compose命令</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                停掉服务，删除容器，不删除镜像docker-compose down
-
-重启/开始/停止服务docker-compose restart/start/stop [服务名称]
-
-运行某个服务docker-compose run [服务名称]
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%91%BD%E4%BB%A4/" class="post-category">
-                                    命令
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/docker-compose/">
-                            <span class="chip bg-color">docker-compose</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%91%BD%E4%BB%A4/">
-                            <span class="chip bg-color">命令</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/07/01/hexo-an-zhuang-yu-da-jian/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="hexo安装与搭建">
-                            
-                            <span class="card-title">hexo安装与搭建</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                安装hexonpm install -g hexo-cli
-
-建站hexo init blog
-
-cd blog
-
-npm install
-
-启动hexo s
-
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                YoonaDa
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/hexo/">
-                            <span class="chip bg-color">hexo</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/07/01/docker-chang-yong-ming-ling/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="docker常用命令">
-                            
-                            <span class="card-title">docker常用命令</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                docker启动docker服务systemctl start docker
-
-关闭docker服务systemctl stop docker
-
-重启docker服务systemctl restart docker
-
-搜索镜像docker 
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                YoonaDa
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
                         
                         <a href="/tags/docker/">
                             <span class="chip bg-color">docker</span>
                         </a>
                         
-                        <a href="/tags/%E5%91%BD%E4%BB%A4/">
-                            <span class="chip bg-color">命令</span>
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/10/26/doris-1-1-3-de-bian-yi/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="https://images.yoonada.cn/featureimages/6.jpg" class="responsive-img" alt="doris-1.1.3的编译">
+                            
+                            <span class="card-title">doris-1.1.3的编译</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                1、创建存放doris的目录/home/software/doris-1.1.3
+
+2、下载doris-1.1.3源码cd /home/software/doris-1.1.3
+
+wget https://mirrors.tuna.tsin
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                YoonaDa
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/doris/">
+                            <span class="chip bg-color">doris</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/09/26/springboot-zheng-he-rabbitmq/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="https://images.yoonada.cn/featureimages/7.jpg" class="responsive-img" alt="SpringBoot整合RabbitMQ">
+                            
+                            <span class="card-title">SpringBoot整合RabbitMQ</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                1、引入依赖    &lt;dependency>
+        &lt;groupId>org.springframework.boot&lt;/groupId>
+        &lt;artifactId>spring-boot-s
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/SpringBoot/" class="post-category">
+                                    SpringBoot
+                                </a>
+                                
+                                <a href="/categories/SpringBoot/RabbitMQ/" class="post-category">
+                                    RabbitMQ
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/SpringBoot/">
+                            <span class="chip bg-color">SpringBoot</span>
+                        </a>
+                        
+                        <a href="/tags/RabbitMQ/">
+                            <span class="chip bg-color">RabbitMQ</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/09/23/mybatis-plus-yin-ru-p6spy-da-yin-zhi-xing-sql/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="https://images.yoonada.cn/featureimages/6.jpg" class="responsive-img" alt="MyBatis-Plus引入p6spy打印执行SQL">
+                            
+                            <span class="card-title">MyBatis-Plus引入p6spy打印执行SQL</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                引入p6spy方便查看执行日志，MyBatis-Plus3.2.1以上使用
+官方文档地址
+1、引入依赖&lt;dependency>
+  &lt;groupId>p6spy&lt;/groupId>
+  &lt;artifactId>p6s
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                                
+                                <a href="/categories/Java/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" class="post-category">
+                                    日常随笔
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Java/">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
+                        <a href="/tags/MyBatis-Plus/">
+                            <span class="chip bg-color">MyBatis-Plus</span>
+                        </a>
+                        
+                        <a href="/tags/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/">
+                            <span class="chip bg-color">日常随笔</span>
                         </a>
                         
                     </div>
@@ -609,7 +638,7 @@ npm install
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">3 / 5</div>
+            <div class="center-align b-text-gray">3 / 7</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -687,7 +716,7 @@ npm install
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <a href="/about" target="_blank">YoonaDa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -695,7 +724,7 @@ npm install
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">10.8k</span>
+                        class="white-color">38.8k</span>
             
             
             
