@@ -736,9 +736,9 @@
       
         <tags>
             
-            <tag> SpringBoot </tag>
-            
             <tag> redis </tag>
+            
+            <tag> SpringBoot </tag>
             
         </tags>
       
@@ -908,9 +908,9 @@
             
             <tag> MyBatis-Plus </tag>
             
-            <tag> 日常随笔 </tag>
-            
             <tag> 多数据源 </tag>
+            
+            <tag> 日常随笔 </tag>
             
         </tags>
       
@@ -1115,9 +1115,9 @@
       
         <tags>
             
-            <tag> 命令 </tag>
-            
             <tag> docker-compose </tag>
+            
+            <tag> 命令 </tag>
             
         </tags>
       
@@ -1203,9 +1203,9 @@
       
         <tags>
             
-            <tag> ssh </tag>
-            
             <tag> git </tag>
+            
+            <tag> ssh </tag>
             
         </tags>
       
