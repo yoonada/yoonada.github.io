@@ -4,6 +4,77 @@
   
     
     <entry>
+      <title>CentOS7多服务器间互相免密SSH</title>
+      <link href="/2025/08/08/centos7-duo-fu-wu-qi-jian-hu-xiang-mian-mi-ssh/"/>
+      <url>/2025/08/08/centos7-duo-fu-wu-qi-jian-hu-xiang-mian-mi-ssh/</url>
+      
+        <content type="html"><![CDATA[<h1 id="CentOS7多服务器间互相免密SSH"><a href="#CentOS7多服务器间互相免密SSH" class="headerlink" title="CentOS7多服务器间互相免密SSH"></a>CentOS7多服务器间互相免密SSH</h1><h2 id="场景说明"><a href="#场景说明" class="headerlink" title="场景说明"></a>场景说明</h2><p>三台服务器之间需要互相免密登录。服务器信息如下：</p><ul><li><strong>10</strong> → <code>10.18.12.10</code></li><li><strong>11</strong> → <code>10.18.12.11</code></li><li><strong>12</strong> → <code>10.18.12.12</code></li></ul><hr><h2 id="一、生成-SSH-密钥对"><a href="#一、生成-SSH-密钥对" class="headerlink" title="一、生成 SSH 密钥对"></a>一、生成 SSH 密钥对</h2><p>在三台服务器上分别执行以下命令：</p><pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -b 4096 -N <span class="token string">""</span> -f ~/.ssh/id_rsa</code></pre><h2 id="二、分发公钥到目标服务器"><a href="#二、分发公钥到目标服务器" class="headerlink" title="二、分发公钥到目标服务器"></a>二、分发公钥到目标服务器</h2><ol><li>在 10 服务器上执行</li></ol><pre class=" language-bash"><code class="language-bash">   ssh-copy-id -i ~/.ssh/id_rsa.pub root@10.18.12.11   ssh-copy-id -i ~/.ssh/id_rsa.pub root@10.18.12.12</code></pre><ol start="2"><li>在 11 服务器上执行</li></ol><pre class=" language-bash"><code class="language-bash">   ssh-copy-id -i ~/.ssh/id_rsa.pub root@10.18.12.10   ssh-copy-id -i ~/.ssh/id_rsa.pub root@10.18.12.12</code></pre><ol start="3"><li>在 12 服务器上执行</li></ol><pre class=" language-bash"><code class="language-bash">   ssh-copy-id -i ~/.ssh/id_rsa.pub root@10.18.12.10   ssh-copy-id -i ~/.ssh/id_rsa.pub root@10.18.12.11</code></pre><p>这样，三台服务器就完成了互相免密登录的配置。</p><h2 id="三、检查-SSH-目录和文件权限"><a href="#三、检查-SSH-目录和文件权限" class="headerlink" title="三、检查 SSH 目录和文件权限"></a>三、检查 SSH 目录和文件权限</h2><p>在三台服务器上分别执行以下命令，确保权限正确：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">chmod</span> 700 ~/.ssh<span class="token function">chmod</span> 600 ~/.ssh/authorized_keys<span class="token function">chmod</span> 600 ~/.ssh/id_rsa<span class="token function">chmod</span> 644 ~/.ssh/id_rsa.pub</code></pre><h2 id="四、验证免密登录"><a href="#四、验证免密登录" class="headerlink" title="四、验证免密登录"></a>四、验证免密登录</h2><p>以 10 服务器 为例，测试免密登录到其他服务器：</p><h3 id="登录到-11"><a href="#登录到-11" class="headerlink" title="登录到 11"></a>登录到 11</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> root@10.18.12.11</code></pre><h3 id="登录到-12"><a href="#登录到-12" class="headerlink" title="登录到 12"></a>登录到 12</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> root@10.18.12.12</code></pre><p>如果能直接进入对方服务器，而无需输入密码，即表示配置成功。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CentOS7 </category>
+          
+          <category> SSH </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CentOS7 </tag>
+            
+            <tag> SSH </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CentOS7安装Gitlab并还原历史数据</title>
+      <link href="/2025/05/20/centos7-an-zhuang-gitlab-bing-huan-yuan-li-shi-shu-ju/"/>
+      <url>/2025/05/20/centos7-an-zhuang-gitlab-bing-huan-yuan-li-shi-shu-ju/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-安装-GitLab"><a href="#1-安装-GitLab" class="headerlink" title="1. 安装 GitLab"></a>1. <strong>安装 GitLab</strong></h3><h4 id="1-1-更新并安装依赖包"><a href="#1-1-更新并安装依赖包" class="headerlink" title="1.1 更新并安装依赖包"></a>1.1 更新并安装依赖包</h4><p>在新服务器上执行以下命令，更新系统并安装必要的依赖包：</p><pre class=" language-shell"><code class="language-shell">sudo yum update -ysudo yum install -y curl policycoreutils perl</code></pre><h4 id="1-2-安装-OpenSSH-服务"><a href="#1-2-安装-OpenSSH-服务" class="headerlink" title="1.2 安装 OpenSSH 服务"></a>1.2 安装 OpenSSH 服务</h4><p>安装并启动 SSH 服务，以便远程管理：</p><pre class=" language-shell"><code class="language-shell">sudo yum install -y openssh-serversudo systemctl enable sshdsudo systemctl start sshd</code></pre><h4 id="1-3-安装-Postfix（可选）"><a href="#1-3-安装-Postfix（可选）" class="headerlink" title="1.3 安装 Postfix（可选）"></a>1.3 安装 Postfix（可选）</h4><p>安装并启用 Postfix 邮件服务（如果 GitLab 需要发送邮件）：</p><pre class=" language-shell"><code class="language-shell">sudo yum install -y postfixsudo systemctl enable postfixsudo systemctl start postfix</code></pre><h4 id="1-4-添加-GitLab-仓库并安装-GitLab"><a href="#1-4-添加-GitLab-仓库并安装-GitLab" class="headerlink" title="1.4 添加 GitLab 仓库并安装 GitLab"></a>1.4 添加 GitLab 仓库并安装 GitLab</h4><p>从 GitLab 官方仓库下载并安装 GitLab CE（社区版）：</p><pre class=" language-shell"><code class="language-shell">wget https://packages.gitlab.com/gitlab/gitlab-ce/packages/el/7/gitlab-ce-16.5.1-ce.0.el7.x86_64.rpmsudo yum install gitlab-ce-16.5.1-ce.0.el7.x86_64.rpm</code></pre><h4 id="1-5-配置-GitLab"><a href="#1-5-配置-GitLab" class="headerlink" title="1.5 配置 GitLab"></a>1.5 配置 GitLab</h4><p>编辑配置文件：</p><pre class=" language-shell"><code class="language-shell">sudo vi /etc/gitlab/gitlab.rb</code></pre><p>找到：</p><pre class=" language-shell"><code class="language-shell">external_url 'http://gitlab.example.com'</code></pre><p>修改为你的 <strong>IP+端口</strong>，例如：</p><pre class=" language-shell"><code class="language-shell">external_url 'http://xxx.xxx.xxx.xxx:xxxx'</code></pre><p>保存后执行：</p><pre class=" language-shell"><code class="language-shell">sudo gitlab-ctl reconfigure</code></pre><h4 id="1-6-开放防火墙端口（如果有防火墙）"><a href="#1-6-开放防火墙端口（如果有防火墙）" class="headerlink" title="1.6 开放防火墙端口（如果有防火墙）"></a>1.6 开放防火墙端口（如果有防火墙）</h4><p>如果需要，开放 GitLab 服务的端口（例如 2701）：</p><pre class=" language-shell"><code class="language-shell">sudo firewall-cmd --permanent --add-port=2701/tcpsudo firewall-cmd --reload</code></pre><h3 id="2-恢复关键配置文件"><a href="#2-恢复关键配置文件" class="headerlink" title="2. 恢复关键配置文件"></a>2. 恢复关键配置文件</h3><p><strong>必须从旧服务器拷贝过来的两个文件：</strong></p><ul><li><code>/etc/gitlab/gitlab.rb</code></li><li><code>/etc/gitlab/gitlab-secrets.json</code></li></ul><p>假设它们在新服务器 <code>/usr/local/gitlab/old/</code> 目录：</p><pre class=" language-shell"><code class="language-shell"># 替换文件sudo cp /usr/local/gitlab/old/gitlab.rb /etc/gitlab/gitlab.rbsudo cp /usr/local/gitlab/old/gitlab-secrets.json /etc/gitlab/gitlab-secrets.json# 设置权限sudo chown root:root /etc/gitlab/gitlab.rbsudo chown root:root /etc/gitlab/gitlab-secrets.jsonsudo chmod 600 /etc/gitlab/gitlab.rbsudo chmod 600 /etc/gitlab/gitlab-secrets.json</code></pre><h3 id="3-重新配置-GitLab（应用配置文件）"><a href="#3-重新配置-GitLab（应用配置文件）" class="headerlink" title="3. 重新配置 GitLab（应用配置文件）"></a>3. 重新配置 GitLab（应用配置文件）</h3><pre class=" language-shell"><code class="language-shell">sudo gitlab-ctl reconfigure</code></pre><h3 id="4-启动-PostgreSQL（如果未自动启动）"><a href="#4-启动-PostgreSQL（如果未自动启动）" class="headerlink" title="4. 启动 PostgreSQL（如果未自动启动）"></a>4. <strong>启动 PostgreSQL（如果未自动启动）</strong></h3><p>确认数据库服务是否启动：</p><pre class=" language-shell"><code class="language-shell">sudo gitlab-ctl status</code></pre><p>如果 PostgreSQL 没启动，可以执行：</p><pre class=" language-shell"><code class="language-shell">sudo gitlab-ctl start postgresql</code></pre><hr><h3 id="5-准备备份文件"><a href="#5-准备备份文件" class="headerlink" title="5. 准备备份文件"></a>5. 准备备份文件</h3><p>将旧服务器的备份文件复制到新服务器：</p><p>默认存放目录是：</p><pre class=" language-shell"><code class="language-shell">/var/opt/gitlab/backups/</code></pre><p>例如：</p><pre class=" language-shell"><code class="language-shell">1754527017_2025_08_07_16.5.1_gitlab_backup.tar</code></pre><p>确认文件已存在：</p><pre class=" language-shell"><code class="language-shell">ls -lh /var/opt/gitlab/backups/</code></pre><hr><h3 id="6-执行还原"><a href="#6-执行还原" class="headerlink" title="6. 执行还原"></a>6. 执行还原</h3><ol><li><strong>停止相关服务（避免数据写入冲突）</strong></li></ol><pre class=" language-shell"><code class="language-shell">sudo gitlab-ctl stop unicornsudo gitlab-ctl stop pumasudo gitlab-ctl stop sidekiq</code></pre><ol><li><strong>执行还原命令</strong></li></ol><pre class=" language-shell"><code class="language-shell">sudo gitlab-rake gitlab:backup:restore BACKUP=1754527017_2025_08_07_16.5.1</code></pre><blockquote><p>注意：只写数字时间戳部分即可（不要带 <code>.tar</code> 后缀）。</p></blockquote><ol><li><strong>还原完成后重启服务</strong></li></ol><pre class=" language-shell"><code class="language-shell">sudo gitlab-ctl start</code></pre><hr><h3 id="7-验证-GitLab"><a href="#7-验证-GitLab" class="headerlink" title="7. 验证 GitLab"></a>7. 验证 GitLab</h3><ol><li>打开浏览器访问：</li></ol><pre class=" language-shell"><code class="language-shell">http://xxx.xxx.xxx.xxx:2701</code></pre><ol><li>登录并确认项目、用户、代码仓库等是否恢复正常。</li></ol><hr><h3 id="8-额外提示"><a href="#8-额外提示" class="headerlink" title="8. 额外提示"></a>8. 额外提示</h3><ul><li>如果 GitLab 页面打不开，可以看日志：</li></ul><pre class=" language-shell"><code class="language-shell">  sudo gitlab-ctl tail</code></pre><ul><li><p>如果数据库连接错误，先确认 PostgreSQL 服务启动。</p></li><li><p>如果上传文件、头像、CI 缓存等缺失，需要确认 <strong>uploads、artifacts、packages</strong> 等目录是否随备份恢复。</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> CentOS7 </category>
+          
+          <category> Gitlab </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CentOS7 </tag>
+            
+            <tag> Gitlab </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CentOS7安装多版本JDK</title>
+      <link href="/2025/01/26/centos7-an-zhuang-duo-ban-ben-jdk/"/>
+      <url>/2025/01/26/centos7-an-zhuang-duo-ban-ben-jdk/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Linux-离线安装-JDK（多版本）"><a href="#Linux-离线安装-JDK（多版本）" class="headerlink" title="Linux 离线安装 JDK（多版本）"></a>Linux 离线安装 JDK（多版本）</h1><h2 id="1-准备-JDK-安装包"><a href="#1-准备-JDK-安装包" class="headerlink" title="1. 准备 JDK 安装包"></a>1. 准备 JDK 安装包</h2><ul><li>前往 <a href="https://www.oracle.com/cn/java/technologies/downloads/#java8">Oracle 官网</a> 或 OpenJDK 官网，下载所需版本的 JDK（例如 JDK8、JDK11、JDK17）。</li><li>将下载好的压缩包上传到目标服务器。例如：<ul><li><code>jdk-8u421-linux-x64.tar.gz</code></li><li><code>jdk-11.0.26_linux-x64_bin.tar.gz</code></li><li><code>jdk-17.0.14_linux-x64_bin.tar.gz</code></li></ul></li></ul><hr><h2 id="2-解压-JDK"><a href="#2-解压-JDK" class="headerlink" title="2. 解压 JDK"></a>2. 解压 JDK</h2><p>在服务器上执行以下步骤：</p><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 创建目录，存放 JDK</span><span class="token function">mkdir</span> -p /usr/local/java<span class="token comment" spellcheck="true"># 解压 JDK 到指定目录</span><span class="token function">tar</span> -zxvf jdk-8u421-linux-x64.tar.gz -C /usr/local/java<span class="token function">tar</span> -zxvf jdk-11.0.26_linux-x64_bin.tar.gz -C /usr/local/java<span class="token function">tar</span> -zxvf jdk-17.0.14_linux-x64_bin.tar.gz -C /usr/local/java</code></pre><p>解压完成后目录结构大致如下：</p><pre class=" language-bash"><code class="language-bash">/usr/local/java/├── jdk1.8.0_421├── jdk-11.0.26└── jdk-17.0.14</code></pre><h2 id="3-解压-JDK"><a href="#3-解压-JDK" class="headerlink" title="3. 解压 JDK"></a>3. 解压 JDK</h2><p>编辑配置文件：</p><pre class=" language-bash"><code class="language-bash">vim /etc/profile</code></pre><p>在文件末尾添加以下内容：</p><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 默认 JDK（例如 JDK8）</span><span class="token function">export</span> JAVA_HOME<span class="token operator">=</span>/usr/local/java/jdk1.8.0_421<span class="token function">export</span> CLASSPATH<span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/lib<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token variable">$PATH</span><span class="token comment" spellcheck="true"># 多版本 JDK 快捷切换</span><span class="token function">alias</span> java8<span class="token operator">=</span><span class="token string">'export JAVA_HOME=/usr/local/java/jdk1.8.0_421 &amp;&amp; export CLASSPATH=.:<span class="token variable">${JAVA_HOME}</span>/lib &amp;&amp; export PATH=<span class="token variable">${JAVA_HOME}</span>/bin:<span class="token variable">$PATH</span> &amp;&amp; java -version'</span><span class="token function">alias</span> java11<span class="token operator">=</span><span class="token string">'export JAVA_HOME=/usr/local/java/jdk-11.0.26 &amp;&amp; export CLASSPATH=.:<span class="token variable">${JAVA_HOME}</span>/lib &amp;&amp; export PATH=<span class="token variable">${JAVA_HOME}</span>/bin:<span class="token variable">$PATH</span> &amp;&amp; java -version'</span><span class="token function">alias</span> java17<span class="token operator">=</span><span class="token string">'export JAVA_HOME=/usr/local/java/jdk-17.0.14 &amp;&amp; export CLASSPATH=.:<span class="token variable">${JAVA_HOME}</span>/lib &amp;&amp; export PATH=<span class="token variable">${JAVA_HOME}</span>/bin:<span class="token variable">$PATH</span> &amp;&amp; java -version'</span></code></pre><ol start="4"><li>使配置生效</li></ol><pre class=" language-bash"><code class="language-bash">   <span class="token function">source</span> /etc/profile</code></pre><ol start="5"><li>验证安装</li></ol><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看默认版本</span>java -version<span class="token comment" spellcheck="true"># 切换到 JDK11</span>java11<span class="token comment" spellcheck="true"># 切换到 JDK17</span>java17</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>监控系统的搭建与应用</title>
       <link href="/2024/09/16/jian-kong-xi-tong-de-da-jian-yu-ying-yong/"/>
       <url>/2024/09/16/jian-kong-xi-tong-de-da-jian-yu-ying-yong/</url>
@@ -796,9 +867,9 @@
             
             <tag> CentOS7 </tag>
             
-            <tag> MySQL </tag>
-            
             <tag> docker </tag>
+            
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -1203,9 +1274,9 @@
       
         <tags>
             
-            <tag> ssh </tag>
-            
             <tag> git </tag>
+            
+            <tag> ssh </tag>
             
         </tags>
       
@@ -1287,9 +1358,9 @@
       
         <tags>
             
-            <tag> MySQL </tag>
-            
             <tag> docker </tag>
+            
+            <tag> MySQL </tag>
             
         </tags>
       
