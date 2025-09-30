@@ -807,9 +807,9 @@
       
         <tags>
             
-            <tag> SpringBoot </tag>
-            
             <tag> redis </tag>
+            
+            <tag> SpringBoot </tag>
             
         </tags>
       
@@ -979,9 +979,9 @@
             
             <tag> MyBatis-Plus </tag>
             
-            <tag> 日常随笔 </tag>
-            
             <tag> 多数据源 </tag>
+            
+            <tag> 日常随笔 </tag>
             
         </tags>
       
