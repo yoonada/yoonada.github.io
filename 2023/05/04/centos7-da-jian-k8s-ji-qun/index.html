@@ -38,9 +38,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -417,7 +417,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    118
+                    120
                 </div>
                 
 
@@ -459,37 +459,19 @@ sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 </code></pre>
 <pre class=" language-shell"><code class="language-shell">#关闭swap
 swapoff -a  
-sed -ri 's/.*swap.*/#&/' /etc/fstab
+sed -ri 's/.*swap.*/#&amp;/' /etc/fstab
 </code></pre>
 <pre class=" language-shell"><code class="language-shell">#允许 iptables 检查桥接流量
-cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
-br_netfilter
-EOF
-</code></pre>
-<pre class=" language-shell"><code class="language-shell">cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
-net.bridge.bridge-nf-call-ip6tables = 1
-net.bridge.bridge-nf-call-iptables = 1
-EOF
-</code></pre>
+cat &lt;<eof |="" sudo="" tee="" etc="" modules-load.d="" k8s.conf="" br_netfilter="" eof="" <="" code=""></eof></code></pre><code class="language-shell">
+<pre class=" language-shell"><code class="language-shell">cat &lt;<eof |="" sudo="" tee="" etc="" sysctl.d="" k8s.conf="" net.bridge.bridge-nf-call-ip6tables="1" net.bridge.bridge-nf-call-iptables="1" eof="" <="" code=""></eof></code></pre><code class="language-shell">
 <pre class=" language-shell"><code class="language-shell">sudo sysctl --system
 </code></pre>
-<pre class=" language-shell"><code class="language-shell">cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
-[kubernetes]
-name=Kubernetes
-baseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
-enabled=1
-gpgcheck=0
-repo_gpgcheck=0
-gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
-   http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
-exclude=kubelet kubeadm kubectl
-EOF
-</code></pre>
+<pre class=" language-shell"><code class="language-shell">cat &lt;<eof |="" sudo="" tee="" etc="" yum.repos.d="" kubernetes.repo="" [kubernetes]="" name="Kubernetes" baseurl="http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64" enabled="1" gpgcheck="0" repo_gpgcheck="0" gpgkey="http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg" http:="" mirrors.aliyun.com="" kubernetes="" yum="" doc="" rpm-package-key.gpg="" exclude="kubelet" kubeadm="" kubectl="" eof="" <="" code=""></eof></code></pre><code class="language-shell">
 <pre class=" language-shell"><code class="language-shell">sudo yum install -y kubelet-1.20.9 kubeadm-1.20.9 kubectl-1.20.9 --disableexcludes=kubernetes
 </code></pre>
 <pre class=" language-shell"><code class="language-shell">sudo systemctl enable --now kubelet
 </code></pre>
-<pre class=" language-shell"><code class="language-shell">sudo tee ./images.sh <<-'EOF'
+<pre class=" language-shell"><code class="language-shell">sudo tee ./images.sh &lt;&lt;-'EOF'
 #!/bin/bash
 images=(
 kube-apiserver:v1.20.9
@@ -505,13 +487,13 @@ docker pull registry.cn-hangzhou.aliyuncs.com/lfy_k8s_images/$imageName
 done
 EOF
 </code></pre>
-<pre class=" language-shell"><code class="language-shell">chmod +x ./images.sh && ./images.sh
+<pre class=" language-shell"><code class="language-shell">chmod +x ./images.sh &amp;&amp; ./images.sh
 </code></pre>
 <h3 id="初始化主节点"><a href="#初始化主节点" class="headerlink" title="初始化主节点"></a>初始化主节点</h3><pre class=" language-shell"><code class="language-shell">ip a
 </code></pre>
 <p>获取到主节点的ip，并在所有机器执行如下命令：</p>
 <pre class=" language-shell"><code class="language-shell">#所有机器添加master域名映射，以下需要修改为自己的
-echo "192.168.118.128  cluster-endpoint" >> /etc/hosts
+echo "192.168.118.128  cluster-endpoint" &gt;&gt; /etc/hosts
 </code></pre>
 <p>开始初始化主节点，<strong>注意要替换主节点的ip（apiserver-advertise-address的值）</strong></p>
 <pre class=" language-shell"><code class="language-shell">#主节点初始化
@@ -596,7 +578,7 @@ kubectl get nodes
 <p><a target="_blank" rel="noopener" href="https://192.168.118.128:30125/#/login">https://192.168.118.128:30125/#/login</a></p>
 <p>密码为刚才生成的token</p>
 <p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/image-20230504171753281.png"></p>
-
+</code></code></code>
                 
             </div>
             <hr/>
@@ -1067,7 +1049,7 @@ kubectl get nodes
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2025</span>
+                <span id="year">2021-2026</span>
             
             <a href="/about" target="_blank">YoonaDa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1075,7 +1057,7 @@ kubectl get nodes
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">29.6k</span>
+                        class="white-color">30.7k</span>
             
             
             

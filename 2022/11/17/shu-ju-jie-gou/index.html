@@ -33,9 +33,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -420,7 +420,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    822
+                    856
                 </div>
                 
 
@@ -466,11 +466,11 @@ array<span class="token punctuation">[</span><span class="token number">3</span>
 array<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 </code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 方式二：使用直接赋值的初始化方式</span>
-<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
 </code></pre>
 <p><strong>可变数组</strong>是经常使用的数据结构，基于数组和扩容机制实现，相比普通数组更加灵活。</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 初始化可变数组</span>
-List<span class="token operator">&lt;</span>Integer<span class="token operator">></span> array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+List<span class="token operator">&lt;</span>Integer<span class="token operator">&gt;</span> array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 向尾部添加元素</span>
 array<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 array<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -480,16 +480,16 @@ array<span class="token punctuation">.</span><span class="token function">add</s
 </code></pre>
 <h4 id="链表-Linked-List"><a href="#链表-Linked-List" class="headerlink" title="链表 (Linked List)"></a>链表 (Linked List)</h4><p>链表以节点为单位，每个元素都是一个独立的对象，在内存空间的存储是非连续的。<br>链表的节点对象具有两个成员变量： <strong>值（val）</strong>、<strong>后继节点引用（next）</strong></p>
 <p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211171458499.png"></p>
-<pre class=" language-java"><code class="language-java">    <span class="token keyword">class</span> <span class="token class-name">ListNode</span> <span class="token punctuation">{</span>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">class</span> <span class="token class-name">ListNode</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 节点值</span>
         <span class="token keyword">int</span> val<span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 后继节点引用</span>
         ListNode next<span class="token punctuation">;</span>
 
-        <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
             val <span class="token operator">=</span> x<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
     
     <span class="token comment" spellcheck="true">// 实例化节点</span>
 
@@ -504,32 +504,32 @@ array<span class="token punctuation">.</span><span class="token function">add</s
 </code></pre>
 <h4 id="栈（stack）"><a href="#栈（stack）" class="headerlink" title="栈（stack）"></a>栈（stack）</h4><p>栈是一种具有 <strong>“先入后出”</strong> 特点的抽象数据结构，可使用数组或链表实现</p>
 <p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211171504650.png"></p>
-<pre class=" language-java"><code class="language-java">    Stack<span class="token operator">&lt;</span>Integer<span class="token operator">></span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java">    Stack<span class="token operator">&lt;</span>Integer<span class="token operator">&gt;</span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">// 元素1进栈</span>
     stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">// 元素2进栈</span>
     stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     
-    <span class="token comment" spellcheck="true">// 出栈 -> 元素2</span>
+    <span class="token comment" spellcheck="true">// 出栈 -&gt; 元素2</span>
     stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 出栈 -> 元素1</span>
+    <span class="token comment" spellcheck="true">// 出栈 -&gt; 元素1</span>
     stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>注意：通常情况下，<strong>不推荐使用Java的Vector以及其子类Stack</strong>，而<strong>一般将LinkedList作为栈</strong>来使用。实现如下：</p>
-<pre class=" language-java"><code class="language-java">    LinkedList<span class="token operator">&lt;</span>Integer<span class="token operator">></span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java">    LinkedList<span class="token operator">&lt;</span>Integer<span class="token operator">&gt;</span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">// 元素1入栈</span>
     stack<span class="token punctuation">.</span><span class="token function">addLast</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">// 元素2入栈</span>
     stack<span class="token punctuation">.</span><span class="token function">addLast</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token comment" spellcheck="true">// 出栈 -> 元素2</span>
+    <span class="token comment" spellcheck="true">// 出栈 -&gt; 元素2</span>
     stack<span class="token punctuation">.</span><span class="token function">removeLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 出栈 -> 元素1</span>
+    <span class="token comment" spellcheck="true">// 出栈 -&gt; 元素1</span>
     stack<span class="token punctuation">.</span><span class="token function">removeLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h4 id="队列（Queue）"><a href="#队列（Queue）" class="headerlink" title="队列（Queue）"></a>队列（Queue）</h4><p>队列是一种具有 <strong>“先入先出”</strong> 特点的抽象数据结构，可使用链表实现</p>
 <p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211171518429.png"></p>
-<pre class=" language-java"><code class="language-java">    Queue<span class="token operator">&lt;</span>Integer<span class="token operator">></span> queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java">    Queue<span class="token operator">&lt;</span>Integer<span class="token operator">&gt;</span> queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token comment" spellcheck="true">// 元素1入队</span>
     queue<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -537,9 +537,9 @@ array<span class="token punctuation">.</span><span class="token function">add</s
     queue<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     
     <span class="token comment" spellcheck="true">// 删除第一个</span>
-    <span class="token comment" spellcheck="true">// 出队 -> 元素1</span>
+    <span class="token comment" spellcheck="true">// 出队 -&gt; 元素1</span>
     queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 出队 -> 元素2</span>
+    <span class="token comment" spellcheck="true">// 出队 -&gt; 元素2</span>
     queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 id="非线性数据结构"><a href="#非线性数据结构" class="headerlink" title="非线性数据结构"></a>非线性数据结构</h3><ul>
@@ -550,7 +550,7 @@ array<span class="token punctuation">.</span><span class="token function">add</s
 </ul>
 <h4 id="树（Tree）"><a href="#树（Tree）" class="headerlink" title="树（Tree）"></a>树（Tree）</h4><p>树是一种非线性数据结构，根据子节点数量可分为 「二叉树」 和 「多叉树」，最顶层的节点称为「根节点 root」。<br>以二叉树为例，每个节点包含三个成员变量：<strong>「值 val」、「左子节点 left」、「右子节点 right」</strong> 。</p>
 <p><img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/images/202211171533713.png"></p>
-<pre class=" language-java"><code class="language-java">    <span class="token keyword">class</span> <span class="token class-name">TreeNode</span> <span class="token punctuation">{</span>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">class</span> <span class="token class-name">TreeNode</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 节点值</span>
         <span class="token keyword">int</span> val<span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 左子节点</span>
@@ -558,10 +558,10 @@ array<span class="token punctuation">.</span><span class="token function">add</s
         <span class="token comment" spellcheck="true">// 右子节点</span>
         TreeNode right<span class="token punctuation">;</span>
 
-        <span class="token function">TreeNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">TreeNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
             val <span class="token operator">=</span> x<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
     
     <span class="token comment" spellcheck="true">// 初始化节点</span>
 
@@ -1053,7 +1053,7 @@ array<span class="token punctuation">.</span><span class="token function">add</s
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2025</span>
+                <span id="year">2021-2026</span>
             
             <a href="/about" target="_blank">YoonaDa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1061,7 +1061,7 @@ array<span class="token punctuation">.</span><span class="token function">add</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">29.6k</span>
+                        class="white-color">30.7k</span>
             
             
             

@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="MyBatis-Plus多数据源切换, YoonaDa Blog">
     <meta name="description" content="官方文档地址
-1、引入依赖&amp;lt;dependency&gt;
-  &amp;lt;groupId&gt;com.baomidou&amp;lt;/groupId&gt;
-  &amp;lt;artifactId&gt;dynamic-datasource-spring-boot-sta">
+1、引入依赖&amp;lt;dependency&amp;gt;
+  &amp;lt;groupId&amp;gt;com.baomidou&amp;lt;/groupId&amp;gt;
+  &amp;lt;artifactId&amp;gt;dynamic-datasource-spr">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,9 +35,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -422,7 +422,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    315
+                    340
                 </div>
                 
 
@@ -450,11 +450,11 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><a target="_blank" rel="noopener" href="https://baomidou.com/pages/a61e1b/#%E6%96%87%E6%A1%A3-documentation">官方文档地址</a></p>
-<h4 id="1、引入依赖"><a href="#1、引入依赖" class="headerlink" title="1、引入依赖"></a>1、引入依赖</h4><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-  <span class="token operator">&lt;</span>groupId<span class="token operator">></span>com<span class="token punctuation">.</span>baomidou<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-  <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>dynamic<span class="token operator">-</span>datasource<span class="token operator">-</span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-  <span class="token operator">&lt;</span>version<span class="token operator">></span>$<span class="token punctuation">{</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+<h4 id="1、引入依赖"><a href="#1、引入依赖" class="headerlink" title="1、引入依赖"></a>1、引入依赖</h4><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>com<span class="token punctuation">.</span>baomidou<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>dynamic<span class="token operator">-</span>datasource<span class="token operator">-</span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span>$<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>version<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span>
 </code></pre>
 <p>具体版本号，可以去maven仓库去查询。<a target="_blank" rel="noopener" href="https://mvnrepository.com/artifact/com.baomidou/dynamic-datasource-spring-boot-starter">地址</a></p>
 <h4 id="2、配置数据源"><a href="#2、配置数据源" class="headerlink" title="2、配置数据源"></a>2、配置数据源</h4><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
@@ -494,21 +494,21 @@
 </code></pre>
 <h4 id="3、使用-DS切换数据源"><a href="#3、使用-DS切换数据源" class="headerlink" title="3、使用@DS切换数据源"></a>3、使用@DS切换数据源</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
 <span class="token annotation punctuation">@DS</span><span class="token punctuation">(</span><span class="token string">"slave"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 
   <span class="token annotation punctuation">@Autowired</span>
   <span class="token keyword">private</span> JdbcTemplate jdbcTemplate<span class="token punctuation">;</span>
 
-  <span class="token keyword">public</span> List <span class="token function">selectAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> List <span class="token function">selectAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span>  jdbcTemplate<span class="token punctuation">.</span><span class="token function">queryForList</span><span class="token punctuation">(</span><span class="token string">"select * from user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   
   <span class="token annotation punctuation">@Override</span>
   <span class="token annotation punctuation">@DS</span><span class="token punctuation">(</span><span class="token string">"slave_1"</span><span class="token punctuation">)</span>
-  <span class="token keyword">public</span> List <span class="token function">selectByCondition</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span>  jdbcTemplate<span class="token punctuation">.</span><span class="token function">queryForList</span><span class="token punctuation">(</span><span class="token string">"select * from user where age >10"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token keyword">public</span> List <span class="token function">selectByCondition</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span>  jdbcTemplate<span class="token punctuation">.</span><span class="token function">queryForList</span><span class="token punctuation">(</span><span class="token string">"select * from user where age &gt;10"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 
                 
@@ -1005,7 +1005,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2025</span>
+                <span id="year">2021-2026</span>
             
             <a href="/about" target="_blank">YoonaDa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1013,7 +1013,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">29.6k</span>
+                        class="white-color">30.7k</span>
             
             
             

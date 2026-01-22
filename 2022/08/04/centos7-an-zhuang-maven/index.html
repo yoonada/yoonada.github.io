@@ -34,9 +34,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -409,7 +409,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    166
+                    178
                 </div>
                 
 
@@ -460,14 +460,14 @@
 </code></pre>
 <pre class=" language-shell"><code class="language-shell">vim settings.xml
 </code></pre>
-<h2 id="配置依赖存储路径"><a href="#配置依赖存储路径" class="headerlink" title="配置依赖存储路径"></a>配置依赖存储路径</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>localRepository<span class="token operator">></span><span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>maven<span class="token operator">/</span>repository<span class="token operator">&lt;</span><span class="token operator">/</span>localRepository<span class="token operator">></span>
+<h2 id="配置依赖存储路径"><a href="#配置依赖存储路径" class="headerlink" title="配置依赖存储路径"></a>配置依赖存储路径</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>localRepository<span class="token operator">&gt;</span><span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>maven<span class="token operator">/</span>repository<span class="token operator">&lt;</span><span class="token operator">/</span>localRepository<span class="token operator">&gt;</span>
 </code></pre>
-<h2 id="配置阿里云镜像加速"><a href="#配置阿里云镜像加速" class="headerlink" title="配置阿里云镜像加速"></a>配置阿里云镜像加速</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>mirror<span class="token operator">></span>
-    <span class="token operator">&lt;</span>id<span class="token operator">></span>nexus<span class="token operator">-</span>aliyun<span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">></span>
-    <span class="token operator">&lt;</span>mirrorOf<span class="token operator">></span>central<span class="token operator">&lt;</span><span class="token operator">/</span>mirrorOf<span class="token operator">></span>
-    <span class="token operator">&lt;</span>name<span class="token operator">></span>nexus<span class="token operator">-</span>aliyun<span class="token operator">&lt;</span><span class="token operator">/</span>name<span class="token operator">></span>
-    <span class="token operator">&lt;</span>url<span class="token operator">></span>http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>maven<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>nexus<span class="token operator">/</span>content<span class="token operator">/</span>groups<span class="token operator">/</span><span class="token keyword">public</span><span class="token operator">&lt;</span><span class="token operator">/</span>url<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>mirror<span class="token operator">></span>
+<h2 id="配置阿里云镜像加速"><a href="#配置阿里云镜像加速" class="headerlink" title="配置阿里云镜像加速"></a>配置阿里云镜像加速</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>mirror<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>nexus<span class="token operator">-</span>aliyun<span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>mirrorOf<span class="token operator">&gt;</span>central<span class="token operator">&lt;</span><span class="token operator">/</span>mirrorOf<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>nexus<span class="token operator">-</span>aliyun<span class="token operator">&lt;</span><span class="token operator">/</span>name<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>maven<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>nexus<span class="token operator">/</span>content<span class="token operator">/</span>groups<span class="token operator">/</span><span class="token keyword">public</span><span class="token operator">&lt;</span><span class="token operator">/</span>url<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>mirror<span class="token operator">&gt;</span>
 </code></pre>
 
                 
@@ -944,7 +944,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2025</span>
+                <span id="year">2021-2026</span>
             
             <a href="/about" target="_blank">YoonaDa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -952,7 +952,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">29.6k</span>
+                        class="white-color">30.7k</span>
             
             
             
