@@ -867,9 +867,9 @@
             
             <tag> CentOS7 </tag>
             
-            <tag> MySQL </tag>
-            
             <tag> docker </tag>
+            
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -1274,9 +1274,9 @@
       
         <tags>
             
-            <tag> ssh </tag>
-            
             <tag> git </tag>
+            
+            <tag> ssh </tag>
             
         </tags>
       
@@ -1358,9 +1358,9 @@
       
         <tags>
             
-            <tag> MySQL </tag>
-            
             <tag> docker </tag>
+            
+            <tag> MySQL </tag>
             
         </tags>
       
