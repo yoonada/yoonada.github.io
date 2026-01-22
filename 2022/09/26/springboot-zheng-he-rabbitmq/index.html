@@ -5,9 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="SpringBoot整合RabbitMQ, YoonaDa Blog">
-    <meta name="description" content="1、引入依赖    &amp;lt;dependency&amp;gt;
-        &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
-        &amp;lt;artifactId&amp;gt;s">
+    <meta name="description" content="1、引入依赖    &amp;lt;dependency&gt;
+        &amp;lt;groupId&gt;org.springframework.boot&amp;lt;/groupId&gt;
+        &amp;lt;artifactId&gt;spring-boot-s">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -34,9 +34,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<meta name="generator" content="Hexo 6.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -413,14 +413,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    939
+                    825
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
 
@@ -440,10 +440,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="1、引入依赖"><a href="#1、引入依赖" class="headerlink" title="1、引入依赖"></a>1、引入依赖</h4><pre class=" language-xml"><code class="language-xml">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-amqp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+                <h4 id="1、引入依赖"><a href="#1、引入依赖" class="headerlink" title="1、引入依赖"></a>1、引入依赖</h4><pre class=" language-xml"><code class="language-xml">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-amqp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 </code></pre>
 <h4 id="2、application-yml配置如下："><a href="#2、application-yml配置如下：" class="headerlink" title="2、application.yml配置如下："></a>2、application.yml配置如下：</h4><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
   <span class="token key atrule">rabbitmq</span><span class="token punctuation">:</span>
@@ -465,7 +465,7 @@
  */</span>
 <span class="token annotation punctuation">@Getter</span>
 <span class="token annotation punctuation">@AllArgsConstructor</span>
-<span class="token keyword">public</span> <span class="token keyword">enum</span> RabbitMqQueueEnum <span class="token keyword">implements</span> <span class="token class-name">IBaseEnum</span><span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> RabbitMqQueueEnum <span class="token keyword">implements</span> <span class="token class-name">IBaseEnum</span><span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">/**
      * 枚举所有队列
@@ -476,7 +476,7 @@
     <span class="token keyword">private</span> <span class="token keyword">final</span> String value<span class="token punctuation">;</span>
 
     <span class="token keyword">private</span> <span class="token keyword">final</span> String description<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> com<span class="token punctuation">.</span>yoona<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>common<span class="token punctuation">.</span>core<span class="token punctuation">.</span>base<span class="token punctuation">.</span>IBaseEnum<span class="token punctuation">;</span>
 <span class="token keyword">import</span> lombok<span class="token punctuation">.</span>AllArgsConstructor<span class="token punctuation">;</span>
@@ -490,7 +490,7 @@
  */</span>
 <span class="token annotation punctuation">@Getter</span>
 <span class="token annotation punctuation">@AllArgsConstructor</span>
-<span class="token keyword">public</span> <span class="token keyword">enum</span> RabbitMqExchangeEnum <span class="token keyword">implements</span> <span class="token class-name">IBaseEnum</span><span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> RabbitMqExchangeEnum <span class="token keyword">implements</span> <span class="token class-name">IBaseEnum</span><span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">/**
      * 枚举所有交换机
@@ -501,7 +501,7 @@
     <span class="token keyword">private</span> <span class="token keyword">final</span> String value<span class="token punctuation">;</span>
 
     <span class="token keyword">private</span> <span class="token keyword">final</span> String description<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> com<span class="token punctuation">.</span>yoona<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>common<span class="token punctuation">.</span>core<span class="token punctuation">.</span>base<span class="token punctuation">.</span>IBaseEnum<span class="token punctuation">;</span>
 <span class="token keyword">import</span> lombok<span class="token punctuation">.</span>AllArgsConstructor<span class="token punctuation">;</span>
@@ -515,7 +515,7 @@
  */</span>
 <span class="token annotation punctuation">@Getter</span>
 <span class="token annotation punctuation">@AllArgsConstructor</span>
-<span class="token keyword">public</span> <span class="token keyword">enum</span> RabbitMqRoutingKeyEnum <span class="token keyword">implements</span> <span class="token class-name">IBaseEnum</span><span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> RabbitMqRoutingKeyEnum <span class="token keyword">implements</span> <span class="token class-name">IBaseEnum</span><span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">/**
      * 枚举所有路由
@@ -527,7 +527,7 @@
     <span class="token keyword">private</span> <span class="token keyword">final</span> String value<span class="token punctuation">;</span>
 
     <span class="token keyword">private</span> <span class="token keyword">final</span> String description<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> com<span class="token punctuation">.</span>yoona<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>common<span class="token punctuation">.</span>core<span class="token punctuation">.</span>base<span class="token punctuation">.</span>IBaseEnum<span class="token punctuation">;</span>
 <span class="token keyword">import</span> lombok<span class="token punctuation">.</span>AllArgsConstructor<span class="token punctuation">;</span>
@@ -541,7 +541,7 @@
  */</span>
 <span class="token annotation punctuation">@Getter</span>
 <span class="token annotation punctuation">@AllArgsConstructor</span>
-<span class="token keyword">public</span> <span class="token keyword">enum</span> RabbitMqBindEnum <span class="token keyword">implements</span> <span class="token class-name">IBaseEnum</span><span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> RabbitMqBindEnum <span class="token keyword">implements</span> <span class="token class-name">IBaseEnum</span><span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">/**
      * 枚举所有绑定关系
@@ -563,7 +563,7 @@
 
     <span class="token keyword">private</span> <span class="token keyword">final</span> String description<span class="token punctuation">;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <pre class=" language-java"><code class="language-java">
 <span class="token keyword">import</span> lombok<span class="token punctuation">.</span>Getter<span class="token punctuation">;</span>
@@ -580,38 +580,38 @@
  * @date 2022-06-17 11:54
  */</span>
 <span class="token annotation punctuation">@Getter</span>
-<span class="token keyword">public</span> <span class="token keyword">enum</span> RabbitMqExchangeTypeEnum <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> RabbitMqExchangeTypeEnum <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">/**
      * 根据交换机的类型，创建对应的交换机
      */</span>
 
-    <span class="token function">DIRECT</span><span class="token punctuation">(</span><span class="token string">"direct"</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token function">DIRECT</span><span class="token punctuation">(</span><span class="token string">"direct"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token annotation punctuation">@Override</span>
-        <span class="token keyword">public</span> Exchange <span class="token function">createExchange</span><span class="token punctuation">(</span>String exchangeName<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">public</span> Exchange <span class="token function">createExchange</span><span class="token punctuation">(</span>String exchangeName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">DirectExchange</span><span class="token punctuation">(</span>exchangeName<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
 
-    <span class="token function">TOPIC</span><span class="token punctuation">(</span><span class="token string">"topic"</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token function">TOPIC</span><span class="token punctuation">(</span><span class="token string">"topic"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token annotation punctuation">@Override</span>
-        <span class="token keyword">public</span> Exchange <span class="token function">createExchange</span><span class="token punctuation">(</span>String exchangeName<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">public</span> Exchange <span class="token function">createExchange</span><span class="token punctuation">(</span>String exchangeName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">TopicExchange</span><span class="token punctuation">(</span>exchangeName<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> RabbitMqExchangeTypeEnum <span class="token function">getInstanceByType</span><span class="token punctuation">(</span>String type<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> Arrays<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span>RabbitMqExchangeTypeEnum<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>e <span class="token operator">-</span><span class="token operator">&gt;</span> e<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> RabbitMqExchangeTypeEnum <span class="token function">getInstanceByType</span><span class="token punctuation">(</span>String type<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Arrays<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span>RabbitMqExchangeTypeEnum<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>e <span class="token operator">-</span><span class="token operator">></span> e<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">)</span>
                 <span class="token punctuation">.</span><span class="token function">findAny</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">orElseThrow</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string">"无效的exchange type"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+                <span class="token punctuation">.</span><span class="token function">orElseThrow</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string">"无效的exchange type"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token keyword">private</span> <span class="token keyword">final</span> String type<span class="token punctuation">;</span>
 
 
-    <span class="token function">RabbitMqExchangeTypeEnum</span><span class="token punctuation">(</span>String type<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token function">RabbitMqExchangeTypeEnum</span><span class="token punctuation">(</span>String type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>type <span class="token operator">=</span> type<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">/**
      * 创建交换机
@@ -620,7 +620,7 @@
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">abstract</span> Exchange <span class="token function">createExchange</span><span class="token punctuation">(</span>String exchangeName<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h4 id="4、配置"><a href="#4、配置" class="headerlink" title="4、配置"></a>4、配置</h4><pre class=" language-java"><code class="language-java">
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>yoona<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>common<span class="token punctuation">.</span>rabbitmq<span class="token punctuation">.</span>enums<span class="token punctuation">.</span>RabbitMqBindEnum<span class="token punctuation">;</span>
@@ -654,7 +654,7 @@
 <span class="token annotation punctuation">@Slf4j</span>
 <span class="token annotation punctuation">@Configuration</span>
 <span class="token annotation punctuation">@ConditionalOnClass</span><span class="token punctuation">(</span>EnableRabbit<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RabbitMqConfiguration</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RabbitMqConfiguration</span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@Resource</span>
 
@@ -664,49 +664,49 @@
 
     <span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span><span class="token string">"customContainerFactory"</span><span class="token punctuation">)</span>
     <span class="token keyword">public</span> SimpleRabbitListenerContainerFactory <span class="token function">containerFactory</span><span class="token punctuation">(</span>SimpleRabbitListenerContainerFactoryConfigurer configurer<span class="token punctuation">,</span>
-                                                                 ConnectionFactory connectionFactory<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                                                                 ConnectionFactory connectionFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         SimpleRabbitListenerContainerFactory factory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleRabbitListenerContainerFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         factory<span class="token punctuation">.</span><span class="token function">setConcurrentConsumers</span><span class="token punctuation">(</span>DEFAULT_CONCURRENT<span class="token punctuation">)</span><span class="token punctuation">;</span>
         factory<span class="token punctuation">.</span><span class="token function">setMaxConcurrentConsumers</span><span class="token punctuation">(</span>DEFAULT_CONCURRENT<span class="token punctuation">)</span><span class="token punctuation">;</span>
         configurer<span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span>factory<span class="token punctuation">,</span> connectionFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> factory<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token annotation punctuation">@Bean</span>
     <span class="token annotation punctuation">@ConditionalOnMissingBean</span>
-    <span class="token keyword">public</span> RabbitTransactionManager <span class="token function">rabbitTransactionManager</span><span class="token punctuation">(</span>ConnectionFactory connectionFactory<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> RabbitTransactionManager <span class="token function">rabbitTransactionManager</span><span class="token punctuation">(</span>ConnectionFactory connectionFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RabbitTransactionManager</span><span class="token punctuation">(</span>connectionFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token annotation punctuation">@Bean</span>
     <span class="token annotation punctuation">@ConditionalOnMissingBean</span>
-    <span class="token keyword">public</span> RabbitAdmin <span class="token function">rabbitAdmin</span><span class="token punctuation">(</span>ConnectionFactory connectionFactory<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> RabbitAdmin <span class="token function">rabbitAdmin</span><span class="token punctuation">(</span>ConnectionFactory connectionFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RabbitAdmin</span><span class="token punctuation">(</span>connectionFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">/**
      * 初始化
      */</span>
     <span class="token annotation punctuation">@PostConstruct</span>
-    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">// 创建交换机</span>
         Arrays<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span>RabbitMqExchangeEnum<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>rabbitMqExchangeEnum <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    <span class="token keyword">try</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>rabbitMqExchangeEnum <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                    <span class="token keyword">try</span> <span class="token punctuation">{</span>
                         Exchange exchange <span class="token operator">=</span> RabbitMqExchangeTypeEnum
                                 <span class="token punctuation">.</span><span class="token function">getInstanceByType</span><span class="token punctuation">(</span>rabbitMqExchangeEnum<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
                                 <span class="token punctuation">.</span><span class="token function">createExchange</span><span class="token punctuation">(</span>rabbitMqExchangeEnum<span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                         rabbitAdmin<span class="token punctuation">.</span><span class="token function">declareExchange</span><span class="token punctuation">(</span>exchange<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"创建交换机时发生异常:&amp;#123;&amp;#125;"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"创建交换机时发生异常:{}"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 创建队列并绑定exchange</span>
-        Arrays<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span>RabbitMqBindEnum<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>rabbitMqBindEnum <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rabbitMqBindEnum<span class="token punctuation">.</span><span class="token function">getIsBind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        Arrays<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span>RabbitMqBindEnum<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>rabbitMqBindEnum <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rabbitMqBindEnum<span class="token punctuation">.</span><span class="token function">getIsBind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 <span class="token comment" spellcheck="true">// 无需绑定</span>
                 <span class="token keyword">return</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
             rabbitAdmin<span class="token punctuation">.</span><span class="token function">declareQueue</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Queue</span><span class="token punctuation">(</span>rabbitMqBindEnum<span class="token punctuation">.</span><span class="token function">getRabbitMqQueueEnum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             rabbitAdmin<span class="token punctuation">.</span><span class="token function">declareBinding</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Binding</span><span class="token punctuation">(</span>
                     rabbitMqBindEnum<span class="token punctuation">.</span><span class="token function">getRabbitMqQueueEnum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -714,10 +714,10 @@
                     rabbitMqBindEnum<span class="token punctuation">.</span><span class="token function">getRabbitMqExchangeEnum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
                     rabbitMqBindEnum<span class="token punctuation">.</span><span class="token function">getRabbitMqRoutingKeyEnum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
                     null<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h4 id="5、实际应用例子"><a href="#5、实际应用例子" class="headerlink" title="5、实际应用例子"></a>5、实际应用例子</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>
 <span class="token keyword">private</span> RabbitTemplate rabbitTemplate<span class="token punctuation">;</span>
@@ -730,14 +730,14 @@ rabbitTemplate<span class="token punctuation">.</span><span class="token functio
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Slf4j</span>
 <span class="token annotation punctuation">@Component</span>
 <span class="token annotation punctuation">@RequiredArgsConstructor</span><span class="token punctuation">(</span>onConstructor <span class="token operator">=</span> <span class="token annotation punctuation">@__</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Autowired</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token annotation punctuation">@RabbitListener</span><span class="token punctuation">(</span>queues <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"Q_MAIL_SEND"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MailSendListener</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token annotation punctuation">@RabbitListener</span><span class="token punctuation">(</span>queues <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Q_MAIL_SEND"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MailSendListener</span><span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@RabbitHandler</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">receive</span><span class="token punctuation">(</span>String msg<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">receive</span><span class="token punctuation">(</span>String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">// 处理监到消息逻辑xxx...</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
                 
@@ -1218,7 +1218,7 @@ rabbitTemplate<span class="token punctuation">.</span><span class="token functio
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.7k</span>
+                        class="white-color">29.6k</span>
             
             
             

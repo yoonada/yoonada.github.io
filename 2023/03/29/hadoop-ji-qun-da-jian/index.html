@@ -45,9 +45,9 @@ CentOS7-132
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<meta name="generator" content="Hexo 6.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -432,7 +432,7 @@ CentOS7-132
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    867
+                    801
                 </div>
                 
 
@@ -516,63 +516,63 @@ export YARN_NODEMANAGER_USER=root
 </code></pre>
 <h4 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h4><pre class=" language-shell"><code class="language-shell">vim core-site.xml
 </code></pre>
-<pre class=" language-yaml"><code class="language-yaml">&lt;configuration<span class="token punctuation">&gt;</span>
-    &lt;property<span class="token punctuation">&gt;</span>
-        &lt;name<span class="token punctuation">&gt;</span>fs.defaultFS&lt;/name<span class="token punctuation">&gt;</span>
-        &lt;value<span class="token punctuation">&gt;</span>hdfs<span class="token punctuation">:</span>//CentOS7<span class="token punctuation">-</span>130<span class="token punctuation">:</span>8020&lt;/value<span class="token punctuation">&gt;</span>
-    &lt;/property<span class="token punctuation">&gt;</span>
-    &lt;property<span class="token punctuation">&gt;</span>
-        &lt;name<span class="token punctuation">&gt;</span>hadoop.tmp.dir&lt;/name<span class="token punctuation">&gt;</span>
-        &lt;value<span class="token punctuation">&gt;</span>/usr/local/hadoop<span class="token punctuation">-</span>3.3.5/dfs/tmp&lt;/value<span class="token punctuation">&gt;</span>
-    &lt;/property<span class="token punctuation">&gt;</span>
-    &lt;property<span class="token punctuation">&gt;</span>
-        &lt;name<span class="token punctuation">&gt;</span>hadoop.http.staticuser.user&lt;/name<span class="token punctuation">&gt;</span>
-        &lt;value<span class="token punctuation">&gt;</span>root&lt;/value<span class="token punctuation">&gt;</span>
-    &lt;/property<span class="token punctuation">&gt;</span>
-&lt;/configuration<span class="token punctuation">&gt;</span>
+<pre class=" language-yaml"><code class="language-yaml">&lt;configuration<span class="token punctuation">></span>
+    &lt;property<span class="token punctuation">></span>
+        &lt;name<span class="token punctuation">></span>fs.defaultFS&lt;/name<span class="token punctuation">></span>
+        &lt;value<span class="token punctuation">></span>hdfs<span class="token punctuation">:</span>//CentOS7<span class="token punctuation">-</span>130<span class="token punctuation">:</span>8020&lt;/value<span class="token punctuation">></span>
+    &lt;/property<span class="token punctuation">></span>
+    &lt;property<span class="token punctuation">></span>
+        &lt;name<span class="token punctuation">></span>hadoop.tmp.dir&lt;/name<span class="token punctuation">></span>
+        &lt;value<span class="token punctuation">></span>/usr/local/hadoop<span class="token punctuation">-</span>3.3.5/dfs/tmp&lt;/value<span class="token punctuation">></span>
+    &lt;/property<span class="token punctuation">></span>
+    &lt;property<span class="token punctuation">></span>
+        &lt;name<span class="token punctuation">></span>hadoop.http.staticuser.user&lt;/name<span class="token punctuation">></span>
+        &lt;value<span class="token punctuation">></span>root&lt;/value<span class="token punctuation">></span>
+    &lt;/property<span class="token punctuation">></span>
+&lt;/configuration<span class="token punctuation">></span>
 </code></pre>
 <h4 id="hdfs-site-xml"><a href="#hdfs-site-xml" class="headerlink" title="hdfs-site.xml"></a>hdfs-site.xml</h4><pre class=" language-shell"><code class="language-shell">vim hdfs-site.xml
 </code></pre>
-<pre class=" language-yaml"><code class="language-yaml">&lt;configuration<span class="token punctuation">&gt;</span>
-  &lt;property<span class="token punctuation">&gt;</span>
-    &lt;name<span class="token punctuation">&gt;</span>dfs.namenode.http<span class="token punctuation">-</span>address&lt;/name<span class="token punctuation">&gt;</span>
-    &lt;value<span class="token punctuation">&gt;</span>CentOS7<span class="token punctuation">-</span>130<span class="token punctuation">:</span>9870&lt;/value<span class="token punctuation">&gt;</span>
-  &lt;/property<span class="token punctuation">&gt;</span>
-  &lt;property<span class="token punctuation">&gt;</span>
-    &lt;name<span class="token punctuation">&gt;</span>dfs.namenode.secondary.http<span class="token punctuation">-</span>address&lt;/name<span class="token punctuation">&gt;</span>
-    &lt;value<span class="token punctuation">&gt;</span>CentOS7<span class="token punctuation">-</span>132<span class="token punctuation">:</span>9868&lt;/value<span class="token punctuation">&gt;</span>
-  &lt;/property<span class="token punctuation">&gt;</span>
-&lt;/configuration<span class="token punctuation">&gt;</span>
+<pre class=" language-yaml"><code class="language-yaml">&lt;configuration<span class="token punctuation">></span>
+  &lt;property<span class="token punctuation">></span>
+    &lt;name<span class="token punctuation">></span>dfs.namenode.http<span class="token punctuation">-</span>address&lt;/name<span class="token punctuation">></span>
+    &lt;value<span class="token punctuation">></span>CentOS7<span class="token punctuation">-</span>130<span class="token punctuation">:</span>9870&lt;/value<span class="token punctuation">></span>
+  &lt;/property<span class="token punctuation">></span>
+  &lt;property<span class="token punctuation">></span>
+    &lt;name<span class="token punctuation">></span>dfs.namenode.secondary.http<span class="token punctuation">-</span>address&lt;/name<span class="token punctuation">></span>
+    &lt;value<span class="token punctuation">></span>CentOS7<span class="token punctuation">-</span>132<span class="token punctuation">:</span>9868&lt;/value<span class="token punctuation">></span>
+  &lt;/property<span class="token punctuation">></span>
+&lt;/configuration<span class="token punctuation">></span>
 </code></pre>
 <h4 id="yarn-site-xml"><a href="#yarn-site-xml" class="headerlink" title="yarn-site.xml"></a>yarn-site.xml</h4><pre class=" language-shell"><code class="language-shell">vim yarn-site.xml
 </code></pre>
-<pre class=" language-yaml"><code class="language-yaml">&lt;configuration<span class="token punctuation">&gt;</span>
-  &lt;<span class="token tag">!--</span> 指定MR走shuffle <span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">&gt;</span><span class="token scalar string">
-  &lt;property&gt;
-    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
-    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
-  &lt;/property&gt;
-  &lt;!-- 指定ResourceManager的地址--&gt;
-  &lt;property&gt;
-    &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
-    &lt;value&gt;CentOS7-131&lt;/value&gt;
-  &lt;/property&gt;
-  &lt;!-- 环境变量的继承 --&gt;
-  &lt;property&gt;
-    &lt;name&gt;yarn.nodemanager.env-whitelist&lt;/name&gt; 		
-    &lt;value&gt;JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME&lt;/value&gt;
-  &lt;/property&gt;</span>
-&lt;/configuration<span class="token punctuation">&gt;</span>
+<pre class=" language-yaml"><code class="language-yaml">&lt;configuration<span class="token punctuation">></span>
+  &lt;<span class="token tag">!--</span> 指定MR走shuffle <span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span><span class="token scalar string">
+  &lt;property>
+    &lt;name>yarn.nodemanager.aux-services&lt;/name>
+    &lt;value>mapreduce_shuffle&lt;/value>
+  &lt;/property>
+  &lt;!-- 指定ResourceManager的地址-->
+  &lt;property>
+    &lt;name>yarn.resourcemanager.hostname&lt;/name>
+    &lt;value>CentOS7-131&lt;/value>
+  &lt;/property>
+  &lt;!-- 环境变量的继承 -->
+  &lt;property>
+    &lt;name>yarn.nodemanager.env-whitelist&lt;/name> 		
+    &lt;value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME&lt;/value>
+  &lt;/property></span>
+&lt;/configuration<span class="token punctuation">></span>
 </code></pre>
 <h4 id="mapred-site-xml"><a href="#mapred-site-xml" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h4><pre class=" language-shell"><code class="language-shell">vim mapred-site.xml
 </code></pre>
-<pre class=" language-yaml"><code class="language-yaml">&lt;configuration<span class="token punctuation">&gt;</span>
-  &lt;<span class="token tag">!--</span> 指定MapReduce程序运行在Yarn上 <span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">&gt;</span><span class="token scalar string">
-  &lt;property&gt;
-    &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
-    &lt;value&gt;yarn&lt;/value&gt;
-  &lt;/property&gt;</span>
-&lt;/configuration<span class="token punctuation">&gt;</span>
+<pre class=" language-yaml"><code class="language-yaml">&lt;configuration<span class="token punctuation">></span>
+  &lt;<span class="token tag">!--</span> 指定MapReduce程序运行在Yarn上 <span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span><span class="token scalar string">
+  &lt;property>
+    &lt;name>mapreduce.framework.name&lt;/name>
+    &lt;value>yarn&lt;/value>
+  &lt;/property></span>
+&lt;/configuration<span class="token punctuation">></span>
 </code></pre>
 <pre class=" language-shell"><code class="language-shell">vim /usr/local/hadoop-3.3.5/etc/hadoop/workers
 </code></pre>
@@ -1174,7 +1174,7 @@ done
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.7k</span>
+                        class="white-color">29.6k</span>
             
             
             

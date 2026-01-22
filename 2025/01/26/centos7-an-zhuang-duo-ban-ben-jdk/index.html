@@ -35,9 +35,9 @@ jdk-8u">
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<meta name="generator" content="Hexo 6.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -393,7 +393,7 @@ jdk-8u">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    368
+                    344
                 </div>
                 
 
@@ -455,9 +455,9 @@ jdk-8u">
 <span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token variable">$PATH</span>
 
 <span class="token comment" spellcheck="true"># 多版本 JDK 快捷切换</span>
-<span class="token function">alias</span> java8<span class="token operator">=</span><span class="token string">'export JAVA_HOME=/usr/local/java/jdk1.8.0_421 &amp;&amp; export CLASSPATH=.:$&amp;#123;JAVA_HOME&amp;#125;/lib &amp;&amp; export PATH=$&amp;#123;JAVA_HOME&amp;#125;/bin:<span class="token variable">$PATH</span> &amp;&amp; java -version'</span>
-<span class="token function">alias</span> java11<span class="token operator">=</span><span class="token string">'export JAVA_HOME=/usr/local/java/jdk-11.0.26 &amp;&amp; export CLASSPATH=.:$&amp;#123;JAVA_HOME&amp;#125;/lib &amp;&amp; export PATH=$&amp;#123;JAVA_HOME&amp;#125;/bin:<span class="token variable">$PATH</span> &amp;&amp; java -version'</span>
-<span class="token function">alias</span> java17<span class="token operator">=</span><span class="token string">'export JAVA_HOME=/usr/local/java/jdk-17.0.14 &amp;&amp; export CLASSPATH=.:$&amp;#123;JAVA_HOME&amp;#125;/lib &amp;&amp; export PATH=$&amp;#123;JAVA_HOME&amp;#125;/bin:<span class="token variable">$PATH</span> &amp;&amp; java -version'</span>
+<span class="token function">alias</span> java8<span class="token operator">=</span><span class="token string">'export JAVA_HOME=/usr/local/java/jdk1.8.0_421 &amp;&amp; export CLASSPATH=.:<span class="token variable">${JAVA_HOME}</span>/lib &amp;&amp; export PATH=<span class="token variable">${JAVA_HOME}</span>/bin:<span class="token variable">$PATH</span> &amp;&amp; java -version'</span>
+<span class="token function">alias</span> java11<span class="token operator">=</span><span class="token string">'export JAVA_HOME=/usr/local/java/jdk-11.0.26 &amp;&amp; export CLASSPATH=.:<span class="token variable">${JAVA_HOME}</span>/lib &amp;&amp; export PATH=<span class="token variable">${JAVA_HOME}</span>/bin:<span class="token variable">$PATH</span> &amp;&amp; java -version'</span>
+<span class="token function">alias</span> java17<span class="token operator">=</span><span class="token string">'export JAVA_HOME=/usr/local/java/jdk-17.0.14 &amp;&amp; export CLASSPATH=.:<span class="token variable">${JAVA_HOME}</span>/lib &amp;&amp; export PATH=<span class="token variable">${JAVA_HOME}</span>/bin:<span class="token variable">$PATH</span> &amp;&amp; java -version'</span>
 </code></pre>
 <ol start="4">
 <li>使配置生效</li>
@@ -963,7 +963,7 @@ java17
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.7k</span>
+                        class="white-color">29.6k</span>
             
             
             
