@@ -320,7 +320,6 @@
     }
     .photo {
         padding: 0 16px 32px!important;
-        display: inline-block;
         position: relative;
         width: 100%;
         transition: transform .4s ease, box-shadow .4s ease;
@@ -387,8 +386,9 @@
     .my-gallery .photo img {
         border-radius: 14px;
         width: 100%;
-        height: auto;
+        height: 230px;
         object-fit: cover;
+        display: block;
     }
     .card .card-content {
         padding: 24px 24px 24px 24px;
@@ -446,6 +446,25 @@
         max-width: 1200px;
         padding: 0 10px;
     }
+    .my-gallery-grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -16px;
+    }
+    .my-gallery-grid .photo {
+        box-sizing: border-box;
+        width: 33.3333%;
+    }
+    @media only screen and (max-width: 992px) {
+        .my-gallery-grid .photo {
+            width: 50%;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        .my-gallery-grid .photo {
+            width: 100%;
+        }
+    }
      /*大屏幕下(桌面类)的样式*/
     @media only screen and (min-width: 993px) {
         .text_des h3{
@@ -479,7 +498,7 @@
                     </div>
                 </div>
                 <div class="my-gallery">
-                    <div class="row">
+                    <div class="my-gallery-grid">
                     
                         
                         
@@ -501,11 +520,27 @@
                         
                             
                             
+                            <div class="photo col s12 m6 l4" data-spmid="./领证">
+                                <div class="img-item">
+                                    <a href="./领证">
+
+                                        <img src="/medias/loading.svg" data-src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15821.jpg" class="responsive-img" alt="img"+1 style="width: 100%; height: auto; object-fit: cover;" />
+                                        <div class="biaotiss">
+                                            <div class="album-name">“ 领证 ”</div>
+                                            <div class="album-date">“ 2025.09.20 ”</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                            
                             <div class="photo col s12 m6 l4" data-spmid="./婚纱照">
                                 <div class="img-item">
                                     <a href="./婚纱照">
 
-                                        <img src="/medias/loading.svg" data-src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/wedding-photos/7198154.jpg" class="responsive-img" alt="img"+1 style="width: 100%; height: auto; object-fit: cover;" />
+                                        <img src="/medias/loading.svg" data-src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/wedding-photos/7198154.jpg" class="responsive-img" alt="img"+2 style="width: 100%; height: auto; object-fit: cover;" />
                                         <div class="biaotiss">
                                             <div class="album-name">“ 婚纱照 ”</div>
                                             <div class="album-date">“ 2025.07.19 ”</div>
@@ -521,7 +556,7 @@
                                 <div class="img-item">
                                     <a href="./Love">
 
-                                        <img src="/medias/loading.svg" data-src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/gallery/Love/1.jpg" class="responsive-img" alt="img"+2 style="width: 100%; height: auto; object-fit: cover;" />
+                                        <img src="/medias/loading.svg" data-src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/gallery/Love/1.jpg" class="responsive-img" alt="img"+3 style="width: 100%; height: auto; object-fit: cover;" />
                                         <div class="biaotiss">
                                             <div class="album-name">“ Love ”</div>
                                             <div class="album-date">“ 2024.09 ”</div>
@@ -537,7 +572,7 @@
                                 <div class="img-item">
                                     <a href="./下川岛">
 
-                                        <img src="/medias/loading.svg" data-src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/gallery/%E4%B8%8B%E5%B7%9D%E5%B2%9B/1.jpg" class="responsive-img" alt="img"+3 style="width: 100%; height: auto; object-fit: cover;" />
+                                        <img src="/medias/loading.svg" data-src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/gallery/%E4%B8%8B%E5%B7%9D%E5%B2%9B/1.jpg" class="responsive-img" alt="img"+4 style="width: 100%; height: auto; object-fit: cover;" />
                                         <div class="biaotiss">
                                             <div class="album-name">“ 下川岛 ”</div>
                                             <div class="album-date">“ 2023.05 ”</div>
@@ -553,7 +588,7 @@
                                 <div class="img-item">
                                     <a href="./厦门">
 
-                                        <img src="/medias/loading.svg" data-src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/gallery/Amoy/2.jpg" class="responsive-img" alt="img"+4 style="width: 100%; height: auto; object-fit: cover;" />
+                                        <img src="/medias/loading.svg" data-src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/gallery/Amoy/2.jpg" class="responsive-img" alt="img"+5 style="width: 100%; height: auto; object-fit: cover;" />
                                         <div class="biaotiss">
                                             <div class="album-name">“ 厦门 ”</div>
                                             <div class="album-date">“ 2023.04 ”</div>
@@ -569,7 +604,7 @@
                                 <div class="img-item">
                                     <a href="./香港">
 
-                                        <img src="/medias/loading.svg" data-src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/gallery/HongKong/1.jpg" class="responsive-img" alt="img"+5 style="width: 100%; height: auto; object-fit: cover;" />
+                                        <img src="/medias/loading.svg" data-src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/gallery/HongKong/1.jpg" class="responsive-img" alt="img"+6 style="width: 100%; height: auto; object-fit: cover;" />
                                         <div class="biaotiss">
                                             <div class="album-name">“ 香港 ”</div>
                                             <div class="album-date">“ 2023.03 ”</div>
@@ -585,7 +620,7 @@
                                 <div class="img-item">
                                     <a href="./YoonaDa">
 
-                                        <img src="/medias/loading.svg" data-src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/gallery/YoonaDa/1.jpg" class="responsive-img" alt="img"+6 style="width: 100%; height: auto; object-fit: cover;" />
+                                        <img src="/medias/loading.svg" data-src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/gallery/YoonaDa/1.jpg" class="responsive-img" alt="img"+7 style="width: 100%; height: auto; object-fit: cover;" />
                                         <div class="biaotiss">
                                             <div class="album-name">“ YoonaDa ”</div>
                                             <div class="album-date">“ 1999.09.15 ”</div>
