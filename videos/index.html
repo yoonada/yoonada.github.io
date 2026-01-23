@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="YoonaDa Blog">
+    <meta name="keywords" content="视频, YoonaDa Blog">
     <meta name="description" content="YoonaDa Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -19,7 +19,7 @@
 
     
 
-    <title>YoonaDa Blog</title>
+    <title>视频 | YoonaDa Blog</title>
     <link rel="icon" type="images/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -266,7 +266,6 @@
 
 </header>
 
-    
     <div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
@@ -312,443 +311,152 @@
 
     </div>
 </div>
-
+<style>
+    .video-page-miaoshus {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 95%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+        font-size: 16px;
+        margin: 12px auto;
+    }
+    body.dark .video-page-miaoshus {
+        background: 0 0;
+        border: 1px dashed #888;
+    }
+    .video-gallery {
+        margin: 3.5rem auto 1.5rem;
+        max-width: 1200px;
+        padding: 0 10px;
+    }
+    .video-gallery-grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -16px;
+    }
+    .video-gallery-grid .video-item {
+        box-sizing: border-box;
+        width: 33.3333%;
+        padding: 0 16px 32px;
+        position: relative;
+        transition: transform .4s ease, box-shadow .4s ease;
+    }
+    @media only screen and (max-width: 992px) {
+        .video-gallery-grid .video-item {
+            width: 50%;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        .video-gallery-grid .video-item {
+            width: 100%;
+        }
+    }
+    .video-card {
+        padding: .2rem;
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        transition: all .4s cubic-bezier(.63,.15,.03,1.12);
+        margin-bottom: 12px;
+        overflow: hidden;
+    }
+    .video-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    }
+    .video-cover {
+        width: 100%;
+        height: 230px;
+        border-radius: 14px;
+        object-fit: cover;
+        display: block;
+    }
+    .video-biaotiss {
+        padding: 12px 14px 16px;
+        color: #444;
+        text-align: center;
+        line-height: 1.6;
+        font-family: -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    }
+    .video-biaotiss .video-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 4px;
+    }
+    .video-biaotiss .video-desc {
+        font-size: 14px;
+        color: #888;
+    }
+</style>
 
 <main class="content">
-
-    
-
-    
-
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/05/04/centos7-da-jian-k8s-ji-qun/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/featureimages/000005.jpg" class="responsive-img" alt="CentOS7搭建k8s集群">
-                            
-                            <span class="card-title">CentOS7搭建k8s集群</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                环境准备至少准备三台服务器，其中一台作为master，另外两台作为worker
-
-192.168.118.128（master）
-192.168.118.129（worker）
-192.168.118.130（worker）
-
-在所有机器执
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CentOS7/" class="post-category">
-                                    CentOS7
-                                </a>
-                                
-                                <a href="/categories/CentOS7/k8s/" class="post-category">
-                                    k8s
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
+    <div class="container chip-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <div class="video-page-miaoshus">
+                        <div class="title center-align">“ 视频 ”</div>
+                        “ 想重复回看的瞬间，都在这里。 ”
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CentOS7/">
-                            <span class="chip bg-color">CentOS7</span>
-                        </a>
-                        
-                        <a href="/tags/k8s/">
-                            <span class="chip bg-color">k8s</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/03/30/window-an-zhuang-mysql/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/featureimages/000003.jpg" class="responsive-img" alt="window安装mysql">
-                            
-                            <span class="card-title">window安装mysql</span>
-                        </div>
-                    </a>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                下载安装包我已经将其存在oss上了
-https://yoondada.oss-cn-shenzhen.aliyuncs.com/software/window/mysql-5.7.41-winx64.zip
-移动解压重命名E:\softwa
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/window/" class="post-category">
-                                    window
-                                </a>
-                                
-                                <a href="/categories/window/mysql/" class="post-category">
-                                    mysql
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
+                
+                <div class="video-gallery">
+                    <div class="video-gallery-grid">
                         
-                        <a href="/tags/window/">
-                            <span class="chip bg-color">window</span>
-                        </a>
                         
-                        <a href="/tags/mysql/">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
+                            
+                            <div class="video-item col s12 m6 l4">
+                                <div class="video-card">
+                                    <a href="./婚礼视频">
+                                        <img src="/medias/loading.svg"
+                                             data-src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/wedding/IRIS1428.jpg"
+                                             class="video-cover responsive-img"
+                                             alt="video-cover-"+0 />
+                                    </a>
+                                    <div class="video-biaotiss">
+                                        <div class="video-title">“ 婚礼视频 ”</div>
+                                        
+                                        <div class="video-desc">“ 2025.12.31 ”</div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
                         
                     </div>
-                    
                 </div>
+                
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/03/29/hadoop-ji-qun-da-jian/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/featureimages/000001.jpg" class="responsive-img" alt="Hadoop集群搭建">
-                            
-                            <span class="card-title">Hadoop集群搭建</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                必备
-三台CentOS7服务器：
-192.168.253.130
-192.168.253.131
-192.168.253.132
-
-
-主机名修改对应为：
-CentOS7-130 (主)
-CentOS7-131 
-CentOS7-132
-
-
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Hadoop/" class="post-category">
-                                    Hadoop
-                                </a>
-                                
-                                <a href="/categories/Hadoop/CentOS7/" class="post-category">
-                                    CentOS7
-                                </a>
-                                
-                                <a href="/categories/Hadoop/CentOS7/%E9%9B%86%E7%BE%A4/" class="post-category">
-                                    集群
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CentOS7/">
-                            <span class="chip bg-color">CentOS7</span>
-                        </a>
-                        
-                        <a href="/tags/Hadoop/">
-                            <span class="chip bg-color">Hadoop</span>
-                        </a>
-                        
-                        <a href="/tags/%E9%9B%86%E7%BE%A4/">
-                            <span class="chip bg-color">集群</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/03/24/redis-ji-qun-da-jian/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/featureimages/000008.jpg" class="responsive-img" alt="Redis集群搭建">
-                            
-                            <span class="card-title">Redis集群搭建</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Redis集群搭建参考文章https://cloud.tencent.com/developer/article/2124382?areaSource=&amp;traceId=
-基础环境安装
-CentOS7服务器三台
-192.168.25
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-24
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/redis/" class="post-category">
-                                    redis
-                                </a>
-                                
-                                <a href="/categories/redis/CentOS7/" class="post-category">
-                                    CentOS7
-                                </a>
-                                
-                                <a href="/categories/redis/CentOS7/%E9%9B%86%E7%BE%A4/" class="post-category">
-                                    集群
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CentOS7/">
-                            <span class="chip bg-color">CentOS7</span>
-                        </a>
-                        
-                        <a href="/tags/%E9%9B%86%E7%BE%A4/">
-                            <span class="chip bg-color">集群</span>
-                        </a>
-                        
-                        <a href="/tags/redis/">
-                            <span class="chip bg-color">redis</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/02/01/mysql-xue-xi-bi-ji-zong-jie/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/featureimages/000001.jpg" class="responsive-img" alt="MySQL学习笔记总结">
-                            
-                            <span class="card-title">MySQL学习笔记总结</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                MySQL的存储引擎比较常用的：MyISAM、InnoDB
-
-MyISAM：拥有较高的插入查询速度，但不支持事务，使用表级锁，并发性差，灾难恢复性不佳。MySQL 5.5.5 之前，MyISAM 是 MySQL 的默认存储引擎。
-InnoD
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/MySQL/" class="post-category">
-                                    MySQL
-                                </a>
-                                
-                                <a href="/categories/MySQL/%E9%9D%A2%E8%AF%95/" class="post-category">
-                                    面试
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/MySQL/">
-                            <span class="chip bg-color">MySQL</span>
-                        </a>
-                        
-                        <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                            <span class="chip bg-color">面试</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/11/17/shu-ju-jie-gou/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/featureimages/000009.jpg" class="responsive-img" alt="数据结构">
-                            
-                            <span class="card-title">数据结构</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                数据结构是为实现对计算机数据有效使用的各种数据组织形式，服务于各类计算机操作。不同的数据结构具有各自对应的适用场景，旨在降低各种算法计算的时间与空间复杂度，达到最佳的任务执行效率
-常见的数据结构常见的数据结构可以分为 线性数据结构 与 非线
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-17
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                                
-                                <a href="/categories/Java/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                                
-                                <a href="/categories/Java/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                    数据结构
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Java/">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
-                        <a href="/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
-                        </a>
-                        
-                        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                            <span class="chip bg-color">数据结构</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-        </div>
-    </article>
-
-</main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/3/"
-               class="left btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">4 / 10</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/5/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
         </div>
     </div>
-</div>
 
-
+    <script>
+        startVideoCovers()
+        $(window).on('scroll', function(){
+            startVideoCovers()
+        })
+        function startVideoCovers(){
+            $('.video-gallery img').not('[data-isLoaded]').each(function(){
+                var $node = $(this)
+                if(isShowVideo($node)){
+                    loadVideoImg($node)
+                }
+            })
+        }
+        function isShowVideo($node){
+            return $node.offset().top <= $(window).height() + $(window).scrollTop()
+        }
+        function loadVideoImg($img){
+            $img.attr('src', $img.attr('data-src'))
+            $img.attr('data-isLoaded', 1)
+        }
+    </script>
+</main>
 
 
     <footer class="page-footer bg-color">
