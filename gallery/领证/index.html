@@ -327,34 +327,25 @@
         font-family: MV Boli;
     }
     
-    /* iOS风格瀑布流布局 */
+    /* 相册详情页：规则网格布局，保证从左到右从上到下 */
     .ios-gallery {
-        column-count: 4;
-        column-gap: 8px;
-        padding: 10px;
         max-width: 1200px;
         margin: 0 auto;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-    }
-    
-    .ios-gallery.loaded {
-        opacity: 1;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
     }
     
     .ios-gallery-item {
-        display: inline-block;
-        width: 100%;
-        margin-bottom: 8px;
-        break-inside: avoid;
         position: relative;
+        flex: 0 0 calc(25% - 10px);
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         transition: all 0.3s ease;
         cursor: pointer;
-        background-color: #f5f5f5;
-        min-height: 150px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     }
     
     .ios-gallery-item:hover {
@@ -364,10 +355,18 @@
     
     .ios-gallery-item img {
         width: 100%;
-        height: auto;
+        height: 230px;
+        object-fit: cover;
         display: block;
-        transition: all 0.3s ease;
+        transition: opacity 0.3s ease, transform 0.3s ease;
         opacity: 0;
+    }
+    
+    .ios-gallery-item video {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        display: block;
     }
     
     .ios-gallery-item img.loaded {
@@ -418,12 +417,6 @@
         opacity: 0;
     }
     
-    /* 图片占位背景 */
-    .ios-gallery-item {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        position: relative;
-    }
-    
     /* 加载进度指示器 */
     .loading-progress {
         position: fixed;
@@ -448,40 +441,23 @@
         100% { transform: rotate(360deg); }
     }
     
-    /* 响应式设计 */
+    /* 响应式设计：不同屏宽列数 */
     @media only screen and (max-width: 1200px) {
-        .ios-gallery {
-            column-count: 3;
-            padding: 8px;
+        .ios-gallery-item {
+            flex: 0 0 calc(33.3333% - 10px);
         }
     }
     
     @media only screen and (max-width: 768px) {
-        .ios-gallery {
-            column-count: 2;
-            column-gap: 6px;
-            padding: 6px;
-        }
         .ios-gallery-item {
-            margin-bottom: 6px;
+            flex: 0 0 calc(50% - 10px);
         }
     }
     
     @media only screen and (max-width: 480px) {
-        .ios-gallery {
-            column-count: 2;
-            column-gap: 4px;
-            padding: 4px;
-        }
         .ios-gallery-item {
-            margin-bottom: 4px;
+            flex: 0 0 100%;
             border-radius: 8px;
-        }
-    }
-    
-    @media only screen and (max-width: 320px) {
-        .ios-gallery {
-            column-count: 1;
         }
     }
 </style>
@@ -510,7 +486,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(0, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15753.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15753.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15753.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -518,7 +496,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(1, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15758.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15758.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15758.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -526,7 +506,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(2, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15760.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15760.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15760.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -534,7 +516,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(3, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15763.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15763.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15763.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -542,7 +526,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(4, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15780.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15780.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15780.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -550,7 +536,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(5, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15789.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15789.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15789.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -558,7 +546,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(6, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15793.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15793.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15793.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -566,7 +556,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(7, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15794.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15794.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15794.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -574,7 +566,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(8, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15799.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15799.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15799.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -582,7 +576,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(9, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15802.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15802.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15802.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -590,7 +586,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(10, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15803.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15803.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15803.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -598,7 +596,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(11, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15805.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15805.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15805.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -606,7 +606,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(12, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15807.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15807.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15807.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -614,7 +616,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(13, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15818.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15818.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15818.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -622,7 +626,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(14, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15821.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15821.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15821.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -630,7 +636,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(15, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15827.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15827.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15827.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -638,7 +646,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(16, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15829.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15829.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15829.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -646,7 +656,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(17, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15831.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15831.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15831.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -654,7 +666,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(18, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15834.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15834.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15834.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -662,7 +676,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(19, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15836.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15836.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15836.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -670,7 +686,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(20, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15841.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15841.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15841.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -678,7 +696,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(21, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15842.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15842.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15842.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -686,7 +706,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(22, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15851.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15851.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15851.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -694,7 +716,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(23, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15861.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15861.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15861.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -702,7 +726,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(24, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15872.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15872.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15872.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -710,7 +736,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(25, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15875.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15875.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15875.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -718,7 +746,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(26, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15879.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15879.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15879.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -726,7 +756,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(27, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15881.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15881.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15881.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -734,7 +766,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(28, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15883.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15883.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15883.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -742,7 +776,9 @@
                     
                         
                         <div class="ios-gallery-item" data-aos="zoom-in-up" onclick="openImagePreview(29, 'https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15884.jpg')">
-                            <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15884.jpg" alt="" loading="lazy" />
+                            
+                                <img src="https://yoonada-lareinawang.oss-cn-shenzhen.aliyuncs.com/photo-album/marriage-certificate/LHF15884.jpg" alt="" loading="lazy" />
+                            
                             <div class="gallery-overlay">
                                 
                             </div>
@@ -1083,7 +1119,7 @@
                 if (preloadStarted) return;
                 preloadStarted = true;
                 
-                // 收集所有图片URL
+                // 收集所有图片URL（仅处理图片元素，视频不参与图片缓存）
                 const allImageUrls = [];
                 galleryItems.forEach(function(item) {
                     const img = item.querySelector('img');
@@ -1131,6 +1167,19 @@
                 for (let i = startIndex; i < endIndex && i < totalImages; i++) {
                     const item = galleryItems[i];
                     const img = item.querySelector('img');
+                    
+                    // 如果当前项没有图片（例如是视频），直接标记为已加载，避免脚本报错和空白
+                    if (!img) {
+                        item.classList.add('image-loaded');
+                        loadedCount++;
+                        batchLoadedCount++;
+                        updateProgress();
+                        
+                        if (batchLoadedCount === batchSize) {
+                            if (callback) callback();
+                        }
+                        continue;
+                    }
                     const imgSrc = img.src;
                     
                     // 检查缓存
@@ -1173,7 +1222,8 @@
                                 if (callback) callback();
                             }
                         }).catch(function() {
-                            // 即使图片加载失败也要计数
+                            // 图片加载失败时也要结束加载动画，避免出现永久空白
+                            img.classList.add('loaded');
                             item.classList.add('image-loaded');
                             loadedCount++;
                             batchLoadedCount++;
@@ -1194,6 +1244,9 @@
                     const img = item.querySelector('img');
                     if (img && img.complete && img.naturalHeight > 0 && !img.classList.contains('loaded')) {
                         img.classList.add('loaded');
+                        item.classList.add('image-loaded');
+                    } else if (!img) {
+                        // 没有图片的项（例如视频），直接标记为已加载，关闭加载动画
                         item.classList.add('image-loaded');
                     }
                 });
