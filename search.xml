@@ -807,9 +807,9 @@
       
         <tags>
             
-            <tag> redis </tag>
-            
             <tag> SpringBoot </tag>
+            
+            <tag> redis </tag>
             
         </tags>
       
@@ -1274,9 +1274,9 @@
       
         <tags>
             
-            <tag> ssh </tag>
-            
             <tag> git </tag>
+            
+            <tag> ssh </tag>
             
         </tags>
       
