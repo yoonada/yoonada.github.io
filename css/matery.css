@@ -1846,6 +1846,47 @@ footer a {
 
 footer .copy-right {
     color: #dbdbdb;
+    text-align: center;
+}
+
+#homeBeianBar {
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: transparent;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 0;
+    font-size: 12px;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    box-shadow: none;
+}
+
+#homeBeianBar a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* 备案图标统一尺寸 */
+#homeBeianBar img,
+#icp img,
+#gongan img {
+    height: 16px;
+    margin-right: 4px;
+    vertical-align: text-bottom;
+}
+
+#icp,
+#gongan {
+    display: inline-flex;
+    align-items: center;
 }
 
 /*搜索层样式*/

@@ -470,6 +470,39 @@
 
 
 
+
+
+<div id="homeBeianBar">
+    <a href="https://beian.miit.gov.cn/" target="_blank">
+        <img src="/medias/icp.png"/>
+        <span>粤ICP备20004989号-4</span>
+    </a>
+    
+    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=44200102445870" target="_blank" rel="noreferrer noopener">
+        <img src="https://beian.mps.gov.cn/img/logo01.dd7ff50e.png"/>
+        <span>粤公网安备44200102445870号</span>
+    </a>
+    
+</div>
+<script>
+    (function () {
+        var bar = document.getElementById('homeBeianBar');
+        if (!bar) {
+            return;
+        }
+        var handleScroll = function () {
+            if (window.scrollY > 10) {
+                bar.style.display = 'none';
+            } else {
+                bar.style.display = 'flex';
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    })();
+</script>
+
+
 <main class="content">
 
     
@@ -948,10 +981,20 @@ gr
             
             <br>
             
-                <span id="icp"><img src="/medias/icp.png"
-                                    style="vertical-align: text-bottom;"/>
-                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备20004989号-4</a>
-            </span>
+                <span id="icp">
+                    <img src="/medias/icp.png"/>
+                    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备20004989号-4</a>
+                </span>
+            
+            
+                
+                <span id="gongan" style="margin-left: 8px;">
+                    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=44200102445870" target="_blank" rel="noreferrer noopener"
+                       style="display: inline-flex; align-items: center; text-decoration: none; height: 20px; line-height: 20px;">
+                        <img src="https://beian.mps.gov.cn/img/logo01.dd7ff50e.png"/>
+                        <span style="margin-left: 5px;">粤公网安备44200102445870号</span>
+                    </a>
+                </span>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
