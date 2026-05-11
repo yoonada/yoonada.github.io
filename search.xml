@@ -807,9 +807,9 @@
       
         <tags>
             
-            <tag> SpringBoot </tag>
-            
             <tag> redis </tag>
+            
+            <tag> SpringBoot </tag>
             
         </tags>
       
@@ -867,9 +867,9 @@
             
             <tag> CentOS7 </tag>
             
-            <tag> MySQL </tag>
-            
             <tag> docker </tag>
+            
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -979,9 +979,9 @@
             
             <tag> MyBatis-Plus </tag>
             
-            <tag> 多数据源 </tag>
-            
             <tag> 日常随笔 </tag>
+            
+            <tag> 多数据源 </tag>
             
         </tags>
       
@@ -1274,9 +1274,9 @@
       
         <tags>
             
-            <tag> git </tag>
-            
             <tag> ssh </tag>
+            
+            <tag> git </tag>
             
         </tags>
       
@@ -1358,9 +1358,9 @@
       
         <tags>
             
-            <tag> MySQL </tag>
-            
             <tag> docker </tag>
+            
+            <tag> MySQL </tag>
             
         </tags>
       
