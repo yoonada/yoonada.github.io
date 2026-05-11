@@ -104,18 +104,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/resume" class="waves-effect waves-light">
-      
-      <i class="fas fa-file-pdf" style="zoom: 0.6;"></i>
-      
-      <span>简历</span>
+      <span>关于我</span>
     </a>
     
   </li>
@@ -216,18 +205,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/resume" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-file-pdf"></i>
-			
-			简历
+			关于我
 		</a>
           
         </li>
@@ -269,7 +247,10 @@
     <style type="text/css">
     /* don't remove. */
     .about-cover {
-        height: 75vh;
+        height: 40vh; /* 缩小背景图高度 */
+    }
+    .about-container {
+        margin-top: -60px; /* 让卡片整体上移一点，覆盖背景边缘 */
     }
 </style>
 
@@ -325,62 +306,12 @@
         <div class="card">
             <div class="card-content">
                 <div class="row">
-                    <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
-                        
-<div class="statis">
-    <span class="count"><a href="/">55</a></span>
-    <span class="name">文章</span>
-</div>
-
-
-
-<div class="statis">
-    <span class="count"><a href="/categories">48</a></span>
-    <span class="name">分类</span>
-</div>
-
-
-
-<div class="statis">
-    <span class="count"><a href="/tags">55</a></span>
-    <span class="name">标签</span>
-</div>
-
-
-                    </div>
-                    <div class="col s12 m12 l4">
+                    <div class="col s12">
                         <div class="profile center-align">
-                            <div class="avatar">
-                                <img src="https://yoonada.oss-cn-shenzhen.aliyuncs.com/blog/images/featureimages/ava.jpg" alt="YoonaDa"
-                                     class="circle responsive-img avatar-img">
-                            </div>
                             <div class="author">
-                                <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
-                                    
-<div class="statis">
-    <span class="count"><a href="/">55</a></span>
-    <span class="name">文章</span>
-</div>
-
-
-
-<div class="statis">
-    <span class="count"><a href="/categories">48</a></span>
-    <span class="name">分类</span>
-</div>
-
-
-
-<div class="statis">
-    <span class="count"><a href="/tags">55</a></span>
-    <span class="name">标签</span>
-</div>
-
-
-                                </div>
-                                <div class="title">YoonaDa</div>
+                                <div class="title" style="margin-top: 10px;">YoonaDa</div>
                                 <div class="career">Java开发工程师、全栈开发工程师、软件团队主管</div>
-                                <div class="social-link hide-on-large-only" data-aos="zoom-in-left">
+                                <div class="social-link" data-aos="zoom-in-up">
                                     
     <a href="https://github.com/YoonaDa" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
        data-position="top" data-delay="50">
@@ -423,223 +354,148 @@
 
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col l4 hide-on-med-and-down" data-aos="zoom-in-left">
-                        <div class="social-link">
-                            
-    <a href="https://github.com/YoonaDa" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
-       data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:m15602498163@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
-       data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="javascript:void(0)" class="tooltipped js-copy-contact"
-       data-tooltip="点击复制QQ: 970757399" data-position="top"
-       data-delay="50" data-copy="970757399">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-    <a href="javascript:void(0)" class="tooltipped js-copy-contact"
-       data-tooltip="点击复制微信: YoonaDa0915" data-position="top"
-       data-delay="50" data-copy="YoonaDa0915">
-        <i class="fab fa-weixin"></i>
-    </a>
-
-
-
-
-
-
-
-
                         </div>
                     </div>
                 </div>
 
                 <div class="introduction center-align" data-aos="fade-up"></div>
 
+                <!-- 个人简历部分 -->
                 <style type="text/css">
-    #posts-chart,
-    #categories-chart,
-    #tags-chart {
-        width: 100%;
-        height: 300px;
-        margin: 0.5rem auto;
-        padding: 0.5rem;
-    }
-</style>
-
-<div id="postCharts" class="post-charts">
-    <div class="title center-align" data-aos="zoom-in-up">
-        <i class="far fa-bar-chart"></i>&nbsp;&nbsp;文章统计图
-    </div>
-    <div class="row">
-        <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
-            <div id="posts-chart"></div>
-        </div>
-
-        <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
-            <div id="categories-chart"></div>
-        </div>
-
-        <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
-            <div id="tags-chart"></div>
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
-<script>
-    let postsChart = echarts.init(document.getElementById('posts-chart'));
-    let categoriesChart = echarts.init(document.getElementById('categories-chart'));
-    let tagsChart = echarts.init(document.getElementById('tags-chart'));
-
-    
-
-    let postsOption = {
-        title: {
-            text: '文章发布统计图',
-            top: -5,
-            x: 'center'
-        },
-        tooltip: {
-            trigger: 'axis'
-        },
-        xAxis: {
-            type: 'category',
-            data: ["2025-05","2025-06","2025-07","2025-08","2025-09","2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04","2026-05"]
-        },
-        yAxis: {
-            type: 'value',
-        },
-        series: [
-            {
-                name: '文章篇数',
-                type: 'line',
-                color: ['#6772e5'],
-                data: [1,0,0,1,0,0,0,0,0,0,0,0,0],
-                markPoint: {
-                    symbolSize: 45,
-                    color: ['#fa755a','#3ecf8e','#82d3f4'],
-                    data: [{
-                        type: 'max',
-                        itemStyle: {color: ['#3ecf8e']},
-                        name: '最大值'
-                    }, {
-                        type: 'min',
-                        itemStyle: {color: ['#fa755a']},
-                        name: '最小值'
-                    }]
-                },
-                markLine: {
-                    itemStyle: {color: ['#ab47bc']},
-                    data: [
-                        {type: 'average', name: '平均值'}
-                    ]
-                }
-            }
-        ]
-    };
-
-    
-
-    let categoriesOption = {
-        title: {
-            text: '文章分类统计图',
-            top: -4,
-            x: 'center'
-        },
-        tooltip: {
-            trigger: 'item',
-            formatter: "{a} <br/>{b} : {c} ({d}%)"
-        },
-        series: [
-            {
-                name: '分类',
-                type: 'pie',
-                radius: '50%',
-                color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"CentOS7","value":15},{"name":"MySQL","value":1},{"name":"SSH","value":1},{"name":"jdk","value":1},{"name":"docker","value":2},{"name":"命令","value":1},{"name":"Gitlab","value":1},{"name":"EasyExcel","value":1},{"name":"k8s","value":1},{"name":"Python","value":1},{"name":"Java","value":8},{"name":"PicGo","value":1},{"name":"JVM","value":1},{"name":"SpringBoot","value":2},{"name":"MySQL","value":1},{"name":"Hadoop","value":1},{"name":"redis","value":1},{"name":"命令","value":2},{"name":"Django","value":1},{"name":"docker","value":3},{"name":"日常随笔","value":4},{"name":"MySQL","value":1},{"name":"ssh","value":2},{"name":"RabbitMQ","value":1},{"name":"window","value":1},{"name":"面试","value":1},{"name":"ubuntu","value":1},{"name":"CentOS7","value":1},{"name":"CentOS7","value":1},{"name":"redis","value":1},{"name":"jenkins","value":1},{"name":"xxl-job","value":1},{"name":"frp","value":1},{"name":"mysql","value":1},{"name":"docker","value":1},{"name":"集群","value":1},{"name":"集群","value":1},{"name":"分布式","value":1},{"name":"装机软件","value":1},{"name":"算法","value":3},{"name":"Grafana","value":2},{"name":"排序","value":2},{"name":"认证鉴权","value":1},{"name":"知识总结","value":1},{"name":"数据结构","value":1},{"name":"Prometheus","value":1},{"name":"loki","value":1},{"name":"promtail","value":1}],
-                itemStyle: {
-                    emphasis: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    .resume-section {
+                        margin: 40px 0;
+                        padding-top: 20px;
+                        border-top: 1px dashed #eee;
                     }
-                }
-            }
-        ]
-    };
-
-    
-
-    let tagsOption = {
-        title: {
-            text: 'TOP10 标签统计图',
-            top: -5,
-            x: 'center'
-        },
-        tooltip: {},
-        xAxis: [
-            {
-                type: 'category',
-                data: ["CentOS7","docker","Java","MySQL","日常随笔","命令","redis","ssh","算法","docker-compose"]
-            }
-        ],
-        yAxis: [
-            {
-                type: 'value'
-            }
-        ],
-        series: [
-            {
-                type: 'bar',
-                color: ['#82d3f4'],
-                barWidth : 18,
-                data: [17,12,9,4,4,3,3,3,3,2],
-                markPoint: {
-                    symbolSize: 45,
-                    data: [{
-                        type: 'max',
-                        itemStyle: {color: ['#3ecf8e']},
-                        name: '最大值'
-                    }, {
-                        type: 'min',
-                        itemStyle: {color: ['#fa755a']},
-                        name: '最小值'
-                    }],
-                },
-                markLine: {
-                    itemStyle: {color: ['#ab47bc']},
-                    data: [
-                        {type: 'average', name: '平均值'}
-                    ]
-                }
-            }
-        ]
-    };
-
-    // render the charts
-    postsChart.setOption(postsOption);
-    categoriesChart.setOption(categoriesOption);
-    tagsChart.setOption(tagsOption);
-</script>
-
+                    .resume-header {
+                        text-align: center;
+                        margin-bottom: 20px;
+                    }
+                    .resume-header h2 {
+                        font-size: 1.6rem;
+                        color: #34495e;
+                        font-weight: 500;
+                        margin-bottom: 10px;
+                    }
+                    .resume-header .download-btn {
+                        display: inline-block;
+                        padding: 6px 18px;
+                        border-radius: 20px;
+                        background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+                        color: #fff;
+                        text-decoration: none;
+                        font-size: 0.9rem;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 2px 8px rgba(0, 242, 254, 0.3);
+                    }
+                    .resume-header .download-btn:hover {
+                        box-shadow: 0 4px 15px rgba(0, 242, 254, 0.5);
+                        transform: translateY(-2px);
+                    }
+                    .resume-iframe-container {
+                        position: relative;
+                        width: 100%;
+                        height: 85vh;
+                        background: #f5f5f5;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+                    }
+                    .resume-iframe {
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                        display: block;
+                    }
+                    @media only screen and (max-width: 600px) {
+                        .resume-iframe-container {
+                            height: 70vh;
+                        }
+                    }
+                    /* 美化 about 页面其他部分 */
+                    .about-container .card {
+                        border-radius: 16px; /* 增加圆角，更柔和 */
+                        box-shadow: 0 15px 35px rgba(0,0,0,0.08); /* 加深立体感阴影 */
+                        padding-top: 25px; /* 卡片顶部加点留白 */
+                        padding-bottom: 25px;
+                        position: relative;
+                        z-index: 10;
+                    }
+                    /* 覆盖原主题中作者信息的负边距 */
+                    .profile .author {
+                        margin-top: 0 !important;
+                    }
+                    .profile .title {
+                        font-weight: 600;
+                        color: #2c3e50;
+                        margin-top: 0;
+                        font-size: 2.2rem; /* 名字稍微放大 */
+                        letter-spacing: 2px;
+                    }
+                    .profile .career {
+                        color: #7f8c8d;
+                        font-size: 1.15rem;
+                        margin: 10px 0 0;
+                        font-weight: 300;
+                        letter-spacing: 1px;
+                    }
+                    #aboutme .social-link {
+                        margin-top: 20px;
+                        margin-bottom: 30px;
+                        display: flex;
+                        justify-content: center;
+                        gap: 20px;
+                    }
+                    #aboutme .social-link a {
+                        width: 48px !important;
+                        height: 48px !important;
+                        line-height: 46px !important;
+                        text-align: center;
+                        border-radius: 50% !important;
+                        background: #fff !important;
+                        color: #34495e !important;
+                        border: 1px solid #e0e6ed !important;
+                        font-size: 1.3rem !important;
+                        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+                        box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+                        display: inline-block;
+                        padding: 0;
+                        margin: 0 !important;
+                    }
+                    #aboutme .social-link a:hover {
+                        background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%) !important;
+                        color: white !important;
+                        border-color: transparent !important;
+                        transform: translateY(-5px) scale(1.1) !important;
+                        box-shadow: 0 10px 20px rgba(161, 140, 209, 0.4) !important;
+                    }
+                    /* PDF 预览框美化 */
+                    .resume-iframe-container {
+                        position: relative;
+                        width: 100%;
+                        height: 85vh;
+                        background: #fff;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        box-shadow: 0 0 0 1px #eee, 0 10px 30px rgba(0,0,0,0.08);
+                        padding: 10px;
+                    }
+                    .resume-iframe {
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                        display: block;
+                        border-radius: 8px;
+                        background-color: #fff;
+                    }
+                </style>
+                <div class="resume-section" data-aos="fade-up">
+                    <div class="resume-iframe-container">
+                        <iframe class="resume-iframe" src="https://yoonada-space.oss-cn-shenzhen.aliyuncs.com/resume/YoonaDa%27s%20resume.pdf#toolbar=0&navpanes=0&view=FitH" title="Resume">
+                            您的浏览器不支持直接在页面内预览 PDF。
+                        </iframe>
+                    </div>
+                </div>
 
                 
 
